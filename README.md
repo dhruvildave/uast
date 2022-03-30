@@ -3,7 +3,7 @@
 If you use this repository, please cite the following paper:
 
 ```bibtex
-@misc{uast2022,
+@misc{uast_2022,
     title = {UAST: Unicode Aware Sanskrit Transliteration},
     author = {Aneri Dalwadi and Dhruvil Dave},
     year = {2022},
