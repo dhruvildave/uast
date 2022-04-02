@@ -146,7 +146,7 @@ const unAspiratedConsonants: string[] = [
   'b',
   'ṭ',
   'ḍ',
-].sort();
+];
 
 /**
  * Function to map special characters to Unicode
