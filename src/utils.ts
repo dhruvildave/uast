@@ -246,7 +246,7 @@ function dataToIAST(data: string): string {
           continue;
         }
 
-        if (`${curr}` in characterDict.vowels) {
+        if (curr in characterDict.vowels) {
           arr.push(curr);
           i++;
 
