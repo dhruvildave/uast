@@ -135,6 +135,126 @@ const unicodeMap: CharMap = {
   9: '९',
 };
 
+const devanagariDataDict: CharMap = {
+  क: 'k',
+  ख: 'kh',
+  ग: 'g',
+  घ: 'gh',
+  ङ: '/nu/',
+  च: 'c',
+  छ: 'ch',
+  ज: 'j',
+  झ: 'jh',
+  ञ: '/n/',
+  ट: '/t/',
+  ठ: '/t/h',
+  ड: '/d/',
+  ढ: '/d/h',
+  ण: '/nl/',
+  त: 't',
+  थ: 'th',
+  द: 'd',
+  ध: 'dh',
+  न: 'n',
+  प: 'p',
+  फ: 'ph',
+  ब: 'b',
+  भ: 'bh',
+  म: 'm',
+  य: 'y',
+  र: 'r',
+  ल: 'l',
+  व: 'v',
+  श: '/su/',
+  ष: '/sl/',
+  स: 's',
+  ह: 'h',
+
+  अ: 'a',
+  आ: '/a/',
+  इ: 'i',
+  ई: '/i/',
+  उ: 'u',
+  ऊ: '/u/',
+  ऋ: '/r/',
+  ॠ: '/ru/',
+  ऌ: '/l/',
+  ॡ: '/lu/',
+  ए: 'e',
+  ऐ: 'ai',
+  ओ: 'o',
+  औ: 'au',
+
+  '': 'a',
+  'ा': '/a/',
+  'ि': 'i',
+  'ी': '/i/',
+  'ु': 'u',
+  'ू': '/u/',
+  'ृ': '/r/',
+  'ॄ': '/ru/',
+  'ॢ': '/l/',
+  'ॣ': '/lu/',
+  'े': 'e',
+  'ै': 'ai',
+  'ो': 'o',
+  'ौ': 'au',
+  'ं': '/m/',
+  'ः': '/h/',
+  'ँ': '/au/',
+  '्': '-',
+
+  ऽ: "\\/'/\\",
+  '।': '\\/./\\',
+  '॥': '\\/../\\',
+  ॐ: '\\/om/\\',
+
+  '०': '\\/0/\\',
+  '१': '\\/1/\\',
+  '२': '\\/2/\\',
+  '३': '\\/3/\\',
+  '४': '\\/4/\\',
+  '५': '\\/5/\\',
+  '६': '\\/6/\\',
+  '७': '\\/7/\\',
+  '८': '\\/8/\\',
+  '९': '\\/9/\\',
+};
+
+const iastDataDict: CharMap = {
+  '०': '0',
+  '१': '1',
+  '२': '2',
+  '३': '3',
+  '४': '4',
+  '५': '5',
+  '६': '6',
+  '७': '7',
+  '८': '8',
+  '९': '9',
+  ā: 'a',
+  ī: 'i',
+  ū: 'u',
+  ṛ: 'r',
+  ṝ: 'ru',
+  ḷ: 'l',
+  ḹ: 'lu',
+  ṭ: 't',
+  ḍ: 'd',
+  ṃ: 'm',
+  ḥ: 'h',
+  ñ: 'n',
+  ṅ: 'nu',
+  ṇ: 'nl',
+  ś: 'su',
+  ṣ: 'sl',
+  ऽ: "'",
+  '।': '.',
+  '॥': '..',
+  ॐ: 'om',
+  ã: 'au',
+};
+
 const unAspiratedConsonants: string[] = [
   'k',
   'g',
@@ -311,40 +431,6 @@ function dataToIAST(data: string): string {
  * @returns UAST string
  */
 function iastToUAST(data: string): string {
-  const dataDict: CharMap = {
-    '०': '0',
-    '१': '1',
-    '२': '2',
-    '३': '3',
-    '४': '4',
-    '५': '5',
-    '६': '6',
-    '७': '7',
-    '८': '8',
-    '९': '9',
-    ā: 'a',
-    ī: 'i',
-    ū: 'u',
-    ṛ: 'r',
-    ṝ: 'ru',
-    ḷ: 'l',
-    ḹ: 'lu',
-    ṭ: 't',
-    ḍ: 'd',
-    ṃ: 'm',
-    ḥ: 'h',
-    ñ: 'n',
-    ṅ: 'nu',
-    ṇ: 'nl',
-    ś: 'su',
-    ṣ: 'sl',
-    ऽ: "'",
-    '।': '.',
-    '॥': '..',
-    ॐ: 'om',
-    ã: 'au',
-  };
-
   let str = Array.from(data);
   let arr: string[] = [];
 
@@ -453,7 +539,7 @@ function iastToUAST(data: string): string {
     }
 
     ans.push(
-      (curr in dataDict ? `/${dataDict[curr]}/` : curr) +
+      (curr in iastDataDict ? `/${iastDataDict[curr]}/` : curr) +
         (unAspiratedConsonants.includes(curr) &&
         (arr[k + 1] ?? '').includes('h')
           ? 'a'
@@ -553,92 +639,6 @@ function dataToDevanagari(data: string): string {
  * @returns UAST string
  */
 function devanagariToUAST(data: string): string {
-  const dataDict: CharMap = {
-    क: 'k',
-    ख: 'kh',
-    ग: 'g',
-    घ: 'gh',
-    ङ: '/nu/',
-    च: 'c',
-    छ: 'ch',
-    ज: 'j',
-    झ: 'jh',
-    ञ: '/n/',
-    ट: '/t/',
-    ठ: '/t/h',
-    ड: '/d/',
-    ढ: '/d/h',
-    ण: '/nl/',
-    त: 't',
-    थ: 'th',
-    द: 'd',
-    ध: 'dh',
-    न: 'n',
-    प: 'p',
-    फ: 'ph',
-    ब: 'b',
-    भ: 'bh',
-    म: 'm',
-    य: 'y',
-    र: 'r',
-    ल: 'l',
-    व: 'v',
-    श: '/su/',
-    ष: '/sl/',
-    स: 's',
-    ह: 'h',
-
-    अ: 'a',
-    आ: '/a/',
-    इ: 'i',
-    ई: '/i/',
-    उ: 'u',
-    ऊ: '/u/',
-    ऋ: '/r/',
-    ॠ: '/ru/',
-    ऌ: '/l/',
-    ॡ: '/lu/',
-    ए: 'e',
-    ऐ: 'ai',
-    ओ: 'o',
-    औ: 'au',
-
-    '': 'a',
-    'ा': '/a/',
-    'ि': 'i',
-    'ी': '/i/',
-    'ु': 'u',
-    'ू': '/u/',
-    'ृ': '/r/',
-    'ॄ': '/ru/',
-    'ॢ': '/l/',
-    'ॣ': '/lu/',
-    'े': 'e',
-    'ै': 'ai',
-    'ो': 'o',
-    'ौ': 'au',
-    'ं': '/m/',
-    'ः': '/h/',
-    'ँ': '/au/',
-    '्': '-',
-
-    ऽ: "\\/'/\\",
-    '।': '\\/./\\',
-    '॥': '\\/../\\',
-    ॐ: '\\/om/\\',
-
-    '०': '\\/0/\\',
-    '१': '\\/1/\\',
-    '२': '\\/2/\\',
-    '३': '\\/3/\\',
-    '४': '\\/4/\\',
-    '५': '\\/5/\\',
-    '६': '\\/6/\\',
-    '७': '\\/7/\\',
-    '८': '\\/8/\\',
-    '९': '\\/9/\\',
-  };
-
   const str = Array.from(data);
   let arr: string[] = [];
 
@@ -656,8 +656,8 @@ function devanagariToUAST(data: string): string {
       continue;
     }
 
-    const val = dataDict[curr] ?? curr;
-    const next_val = dataDict[next] ?? next;
+    const val = devanagariDataDict[curr] ?? curr;
+    const next_val = devanagariDataDict[next] ?? next;
 
     if (
       Object.values(characterDict.vowels).includes(curr) &&
