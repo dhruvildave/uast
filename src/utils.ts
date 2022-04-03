@@ -660,11 +660,15 @@ function devanagariToUAST(data: string): string {
     const next_val = dataDict[next] ?? next;
 
     if (
-      (Object.values(characterDict.vowels).includes(curr) &&
-        Object.values(characterDict.consonants).includes(next)) ||
-      (unAspiratedConsonants.includes(val) && next_val === 'h')
+      Object.values(characterDict.vowels).includes(curr) &&
+      Object.values(characterDict.consonants).includes(next)
     ) {
       arr.push(`${val}\\`);
+      continue;
+    }
+
+    if (unAspiratedConsonants.includes(val) && next_val === 'h') {
+      arr.push(`${val}a`);
       continue;
     }
 
