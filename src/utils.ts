@@ -415,6 +415,12 @@ function dataToIAST(data: string): string {
           continue;
         }
 
+        if (['ḥ', 'ṃ', 'ã'].includes(curr)) {
+          arr.push(curr);
+          i++;
+          continue;
+        }
+
         arr.push(`${curr}a`);
         i++;
       }
