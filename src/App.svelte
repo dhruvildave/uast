@@ -4,7 +4,8 @@
     --primary-light: rgb(34 34 34);
     --primary-medium: rgb(17 17 17);
 
-    --font-family: 'IBM Plex Mono', monospace;
+    --font-family-mono: 'IBM Plex Mono', monospace;
+    --font-family-sans: 'Noto Sans Devanagari', sans-serif;
     --text-color: rgb(255 255 255);
   }
 
@@ -49,7 +50,7 @@
     padding: 0.125rem; /* 2px */
     margin: auto;
 
-    font-family: var(--font-family);
+    font-family: var(--font-family-mono);
   }
 
   main div textarea {
@@ -64,7 +65,6 @@
 
   textarea,
   select {
-    font-family: var(--font-family);
     color: var(--text-color);
 
     font-size: 1rem; /* 16px */
@@ -79,6 +79,14 @@
   textarea#output,
   select#to-select {
     background-color: var(--primary-dark);
+  }
+
+  textarea.sans {
+    font-family: var(--font-family-sans);
+  }
+
+  textarea.mono {
+    font-family: var(--font-family-mono);
   }
 
   @media (min-width: 1024px) {
@@ -106,6 +114,7 @@
   let input: string = '';
   let from: string;
   let to: string;
+
   $: output = input
     .split('\n')
     .map(i => {
@@ -125,6 +134,7 @@
 <main>
   <div>
     <textarea
+      class="{from === 'devanagari' ? 'sans' : 'mono'}"
       autocomplete="off"
       spellcheck="false"
       name="input"
@@ -140,6 +150,7 @@
   </div>
   <div>
     <textarea
+      class="{to === 'devanagari' ? 'sans' : 'mono'}"
       autocomplete="off"
       spellcheck="false"
       disabled
