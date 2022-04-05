@@ -4,7 +4,7 @@
     --primary-light: rgb(34 34 34);
     --primary-medium: rgb(17 17 17);
 
-    --font-family: 'IBM Plex Mono', monospace;
+    --font-family: 'Noto Sans Devanagari', sans-serif;
     --text-color: rgb(255 255 255);
   }
 
