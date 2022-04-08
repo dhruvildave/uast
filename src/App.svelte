@@ -48,7 +48,7 @@
   }
 
   header ul li {
-    margin: 0 1rem;
+    margin: 0 0.5rem;
   }
 
   header nav img {
@@ -140,6 +140,10 @@
   @media (min-width: 1024px) {
     main {
       flex-direction: row;
+    }
+
+    header ul li {
+      margin: 0 1rem;
     }
   }
 
