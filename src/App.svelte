@@ -191,7 +191,11 @@
     <section>
       <ul>
         <li>
-          <a href="https://arxiv.org/abs/2203.14277">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://arxiv.org/abs/2203.14277"
+          >
             <img
               src="https://unpkg.com/simple-icons@latest/icons/arxiv.svg"
               alt="arxiv icon"
@@ -201,7 +205,11 @@
           </a>
         </li>
         <li>
-          <a href="https://github.com/aneri0x4f/uast-cli">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/aneri0x4f/uast-cli"
+          >
             <img
               src="https://unpkg.com/simple-icons@latest/icons/go.svg"
               alt="go icon"
@@ -211,7 +219,11 @@
           </a>
         </li>
         <li>
-          <a href="https://github.com/dhruvildave/uast">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/dhruvildave/uast"
+          >
             <img
               src="https://unpkg.com/simple-icons@latest/icons/typescript.svg"
               alt="typescript icon"
