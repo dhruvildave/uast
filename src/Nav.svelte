@@ -41,16 +41,16 @@
     margin: 0 0.5rem;
   }
 
-  header nav img {
-    filter: invert(100%);
-  }
-
   @media (min-width: 1024px) {
     header ul li {
       margin: 0 1rem;
     }
   }
 </style>
+
+<script>
+  import Icon from './Icon.svelte';
+</script>
 
 <header>
   <nav>
@@ -60,46 +60,25 @@
     <section>
       <ul>
         <li>
-          <a
-            target="_blank"
-            rel="noreferrer"
+          <Icon
+            alt="arxiv icon"
             href="https://arxiv.org/abs/2203.14277"
-          >
-            <img
-              src="https://unpkg.com/simple-icons@latest/icons/arxiv.svg"
-              alt="arxiv icon"
-              width="28"
-              height="28"
-            />
-          </a>
+            src="https://unpkg.com/simple-icons@latest/icons/arxiv.svg"
+          />
         </li>
         <li>
-          <a
-            target="_blank"
-            rel="noreferrer"
+          <Icon
+            alt="go icon"
             href="https://github.com/aneri0x4f/uast-cli"
-          >
-            <img
-              src="https://unpkg.com/simple-icons@latest/icons/go.svg"
-              alt="go icon"
-              width="28"
-              height="28"
-            />
-          </a>
+            src="https://unpkg.com/simple-icons@latest/icons/go.svg"
+          />
         </li>
         <li>
-          <a
-            target="_blank"
-            rel="noreferrer"
+          <Icon
+            alt="typescript icon"
             href="https://github.com/dhruvildave/uast"
-          >
-            <img
-              src="https://unpkg.com/simple-icons@latest/icons/typescript.svg"
-              alt="typescript icon"
-              width="28"
-              height="28"
-            />
-          </a>
+            src="https://unpkg.com/simple-icons@latest/icons/typescript.svg"
+          />
         </li>
       </ul>
     </section>
