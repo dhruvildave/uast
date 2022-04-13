@@ -1,5 +1,8 @@
 # UAST: Unicode Aware Sanskrit Transliteration
 
+A tool for transliterating and typing Sanskrit in the easiest
+computer, language, and human-friendly way
+
 If you use this repository, please cite the following paper:
 
 ```bibtex
