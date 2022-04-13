@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Editor from './Editor.svelte';
-  import Nav from './Nav.svelte';
+  import Editor from './fe/Editor.svelte';
+  import Nav from './fe/Nav.svelte';
 </script>
 
 <Nav />

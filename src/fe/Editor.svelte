@@ -101,7 +101,7 @@
 </style>
 
 <script lang="ts">
-  import * as utils from './utils';
+  import * as utils from '../be/utils';
 
   let input: string = '';
   let from: string;
