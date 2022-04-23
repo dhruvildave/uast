@@ -16,7 +16,7 @@ specifiers:
   svelte: ^3.47.0
   svelte-check: ^2.7.0
   svelte-preprocess: ^4.10.6
-  tslib: ^2.3.1
+  tslib: ^2.4.0
   typescript: ^4.6.3
 
 dependencies:
@@ -25,7 +25,7 @@ dependencies:
 devDependencies:
   '@rollup/plugin-commonjs': 21.1.0_rollup@2.70.2
   '@rollup/plugin-node-resolve': 13.2.1_rollup@2.70.2
-  '@rollup/plugin-typescript': 8.3.2_eaab4980cb5a437133211ecd98513266
+  '@rollup/plugin-typescript': 8.3.2_056aba5e56e0ab5307259a29131f3fbe
   '@tsconfig/svelte': 3.0.0
   prettier: 2.6.2
   prettier-plugin-svelte: 2.7.0_prettier@2.6.2+svelte@3.47.0
@@ -37,7 +37,7 @@ devDependencies:
   svelte: 3.47.0
   svelte-check: 2.7.0_svelte@3.47.0
   svelte-preprocess: 4.10.6_svelte@3.47.0+typescript@4.6.3
-  tslib: 2.3.1
+  tslib: 2.4.0
   typescript: 4.6.3
 
 packages:
@@ -119,7 +119,7 @@ packages:
       rollup: 2.70.2
     dev: true
 
-  /@rollup/plugin-typescript/8.3.2_eaab4980cb5a437133211ecd98513266:
+  /@rollup/plugin-typescript/8.3.2_056aba5e56e0ab5307259a29131f3fbe:
     resolution: {integrity: sha512-MtgyR5LNHZr3GyN0tM7gNO9D0CS+Y+vflS4v/PHmrX17JCkHUYKvQ5jN5o3cz1YKllM3duXUqu3yOHwMPUxhDg==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
@@ -130,7 +130,7 @@ packages:
       '@rollup/pluginutils': 3.1.0_rollup@2.70.2
       resolve: 1.22.0
       rollup: 2.70.2
-      tslib: 2.3.1
+      tslib: 2.4.0
       typescript: 4.6.3
     dev: true
 
@@ -959,8 +959,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /tslib/2.3.1:
-    resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
+  /tslib/2.4.0:
+    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
     dev: true
 
   /typescript/4.6.3:
