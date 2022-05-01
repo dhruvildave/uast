@@ -347,6 +347,10 @@ function dataToIAST(data: string): string {
         return characterDict.misc[split];
       }
 
+      if (['ḥ', 'ṃ', 'ã'].includes(split)) {
+        return split;
+      }
+
       let str = Array.from(split);
 
       let arr: string[] = [];
