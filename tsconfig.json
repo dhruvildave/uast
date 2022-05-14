@@ -16,6 +16,11 @@
     "noEmitOnError": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+    "noFallthroughCasesInSwitch": true,
+    "importsNotUsedAsValues": "error",
+    "newLine": "lf",
+    "strict": true,
+    "strictPropertyInitialization": true
   }
 }
