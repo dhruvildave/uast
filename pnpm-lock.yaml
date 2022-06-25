@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@rollup/plugin-commonjs': ^22.0.0
+  '@rollup/plugin-commonjs': ^22.0.1
   '@rollup/plugin-node-resolve': ^13.3.0
   '@rollup/plugin-typescript': ^8.3.3
   '@tsconfig/svelte': ^3.0.0
@@ -23,7 +23,7 @@ dependencies:
   sirv-cli: 2.0.2
 
 devDependencies:
-  '@rollup/plugin-commonjs': 22.0.0_rollup@2.75.7
+  '@rollup/plugin-commonjs': 22.0.1_rollup@2.75.7
   '@rollup/plugin-node-resolve': 13.3.0_rollup@2.75.7
   '@rollup/plugin-typescript': 8.3.3_g4qkabtmybowem44p7ts7jnbqm
   '@tsconfig/svelte': 3.0.0
@@ -125,8 +125,8 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: false
 
-  /@rollup/plugin-commonjs/22.0.0_rollup@2.75.7:
-    resolution: {integrity: sha512-Ktvf2j+bAO+30awhbYoCaXpBcyPmJbaEUYClQns/+6SNCYFURbvBiNbWgHITEsIgDDWCDUclWRKEuf8cwZCFoQ==}
+  /@rollup/plugin-commonjs/22.0.1_rollup@2.75.7:
+    resolution: {integrity: sha512-dGfEZvdjDHObBiP5IvwTKMVeq/tBZGMBHZFMdIV1ClMM/YoWS34xrHFGfag9SN2ZtMgNZRFruqvxZQEa70O6nQ==}
     engines: {node: '>= 12.0.0'}
     peerDependencies:
       rollup: ^2.68.0
@@ -202,8 +202,8 @@ packages:
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
     dev: true
 
-  /@types/estree/0.0.51:
-    resolution: {integrity: sha512-CuPgU6f3eT/XgKKPqKd/gLZV1Xmvf1a2R5POBOGQa6uv82xpls89HU5zKeVoyR8XzHd1RGNOlQlvUe3CFkjWNQ==}
+  /@types/estree/0.0.52:
+    resolution: {integrity: sha512-BZWrtCU0bMVAIliIV+HJO1f1PR41M7NKjfxrFJwwhKI1KwhwOxYw1SXg9ao+CIMt774nFuGiG6eU+udtbEI9oQ==}
     dev: true
 
   /@types/node/18.0.0:
@@ -517,7 +517,7 @@ packages:
   /is-reference/1.2.1:
     resolution: {integrity: sha512-U82MsXXiFIrjCK4otLT+o2NA2Cd2g5MLoOVXUZjIOhLurrRxpEXzI8O0KZHr3IjLvlAH1kTPYSuqer5T9ZVBKQ==}
     dependencies:
-      '@types/estree': 0.0.51
+      '@types/estree': 0.0.52
     dev: true
 
   /jest-worker/26.6.2:
