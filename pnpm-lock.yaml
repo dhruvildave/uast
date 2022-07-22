@@ -226,8 +226,8 @@ packages:
       '@types/node': 18.0.6
     dev: true
 
-  /acorn/8.7.1:
-    resolution: {integrity: sha512-Xx54uLJQZ19lKygFXOWsscKUbsBZW0CPykPhVQdhIeIwrbPmJzqeASDInc8nKBnp/JT6igTs82qPXz069H8I/A==}
+  /acorn/8.8.0:
+    resolution: {integrity: sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==}
     engines: {node: '>=0.4.0'}
     hasBin: true
     dev: true
@@ -538,8 +538,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /livereload-js/3.4.0:
-    resolution: {integrity: sha512-F/pz9ZZP+R+arY94cECTZco7PXgBXyL+KVWUPZq8AQE9TOu14GV6fYeKOviv02JCvFa4Oi3Rs1hYEpfeajc+ow==}
+  /livereload-js/3.4.1:
+    resolution: {integrity: sha512-5MP0uUeVCec89ZbNOT/i97Mc+q3SxXmiUGhRFOTmhrGPn//uWVQdCvcLJDy64MSBR5MidFdOR7B9viumoavy6g==}
     dev: true
 
   /livereload/0.9.3:
@@ -548,7 +548,7 @@ packages:
     hasBin: true
     dependencies:
       chokidar: 3.5.3
-      livereload-js: 3.4.0
+      livereload-js: 3.4.1
       opts: 2.0.2
       ws: 7.5.9
     transitivePeerDependencies:
@@ -979,7 +979,7 @@ packages:
     hasBin: true
     dependencies:
       '@jridgewell/source-map': 0.3.2
-      acorn: 8.7.1
+      acorn: 8.8.0
       commander: 2.20.3
       source-map-support: 0.5.21
     dev: true
