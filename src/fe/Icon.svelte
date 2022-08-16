@@ -1,6 +1,12 @@
 <style>
   img {
-    filter: invert(100%);
+    filter: invert(0%);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    img {
+      filter: invert(100%);
+    }
   }
 </style>
 
