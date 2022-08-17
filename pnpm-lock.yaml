@@ -14,7 +14,7 @@ specifiers:
   rollup-plugin-terser: ^7.0.2
   sirv-cli: ^2.0.2
   svelte: ^3.49.0
-  svelte-check: ^2.8.0
+  svelte-check: ^2.8.1
   svelte-preprocess: ^4.10.7
   tslib: ^2.4.0
   typescript: ^4.7.4
@@ -35,7 +35,7 @@ devDependencies:
   rollup-plugin-svelte: 7.1.0_ka4dd4whw5obl7m3gcchoptbxq
   rollup-plugin-terser: 7.0.2_rollup@2.78.0
   svelte: 3.49.0
-  svelte-check: 2.8.0_svelte@3.49.0
+  svelte-check: 2.8.1_svelte@3.49.0
   svelte-preprocess: 4.10.7_uslzfc62di2n2otc2tvfklnwji
   tslib: 2.4.0
   typescript: 4.7.4
@@ -889,8 +889,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check/2.8.0_svelte@3.49.0:
-    resolution: {integrity: sha512-HRL66BxffMAZusqe5I5k26mRWQ+BobGd9Rxm3onh7ZVu0nTk8YTKJ9vu3LVPjUGLU9IX7zS+jmwPVhJYdXJ8vg==}
+  /svelte-check/2.8.1_svelte@3.49.0:
+    resolution: {integrity: sha512-cibyY1sgt3ONIDnQbSgV2X9AJFhwEslRHNo95lijrYfPzVEvTvbmL2ohsUyqB5L7j1GhLXtQbjCJ4lZZ/fwbeQ==}
     hasBin: true
     peerDependencies:
       svelte: ^3.24.0
