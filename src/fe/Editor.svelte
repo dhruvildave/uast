@@ -77,6 +77,10 @@
     font-family: var(--font-family-sans);
   }
 
+  textarea.iast {
+    font-family: var(--font-family-iast);
+  }
+
   textarea.mono {
     font-family: var(--font-family-mono);
   }
@@ -126,7 +130,11 @@
 <main>
   <div>
     <textarea
-      class="{from === 'devanagari' ? 'sans' : 'mono'}"
+      class="{from === 'devanagari'
+        ? 'sans'
+        : from === 'iast'
+        ? 'iast'
+        : 'mono'}"
       autocomplete="off"
       spellcheck="false"
       name="input"
@@ -142,7 +150,7 @@
   </div>
   <div>
     <textarea
-      class="{to === 'devanagari' ? 'sans' : 'mono'}"
+      class="{to === 'devanagari' ? 'sans' : to === 'iast' ? 'iast' : 'mono'}"
       autocomplete="off"
       spellcheck="false"
       disabled
