@@ -98,7 +98,6 @@ const characterDict: {
     s: 'स',
     h: 'ह',
     ḻ: 'ळ',
-    ḻh: 'ळ्ह',
   },
 };
 
@@ -173,7 +172,6 @@ const devanagariDataDict: CharMap = {
   स: 's',
   ह: 'h',
   ळ: '/ll/',
-  ळ्ह: '/ll/h',
 
   अ: 'a',
   आ: '/a/',
