@@ -97,6 +97,8 @@ const characterDict: {
     ṣ: 'ष',
     s: 'स',
     h: 'ह',
+    ḻ: 'ळ',
+    ḻh: 'ळ्ह',
   },
 };
 
@@ -108,6 +110,7 @@ const unicodeMap: CharMap = {
   ru: 'ṝ',
   l: 'ḷ',
   lu: 'ḹ',
+  ll: 'ḻ',
   t: 'ṭ',
   d: 'ḍ',
   m: 'ṃ',
@@ -169,6 +172,8 @@ const devanagariDataDict: CharMap = {
   ष: '/sl/',
   स: 's',
   ह: 'h',
+  ळ: '/ll/',
+  ळ्ह: '/ll/h',
 
   अ: 'a',
   आ: '/a/',
@@ -239,6 +244,7 @@ const iastDataDict: CharMap = {
   ṝ: 'ru',
   ḷ: 'l',
   ḹ: 'lu',
+  ḻ: 'll',
   ṭ: 't',
   ḍ: 'd',
   ṃ: 'm',
@@ -331,7 +337,6 @@ function dataToIAST(data: string): string {
   return data
     .replaceAll('\n', '')
     .replaceAll("/'/", '/_/')
-    .replaceAll(/[`']/gu, '')
     .replaceAll('/_/', "/'/")
     .split('\\')
     .map(split => {
@@ -357,6 +362,19 @@ function dataToIAST(data: string): string {
 
       for (let i = 0; i < str.length; ) {
         const curr = str.at(i) ?? '';
+
+        if (curr === "'") {
+          // arr.push('॑');
+          i++;
+          continue;
+        }
+
+        if (curr === '`') {
+          // arr.push('॒');
+          i++;
+          continue;
+        }
+
         const next = str.at(i + 1) ?? '';
 
         if (['ḥ', 'ṃ', 'ã'].includes(next)) {
@@ -431,7 +449,8 @@ function dataToIAST(data: string): string {
 
       return arr.join('');
     })
-    .join('');
+    .join('')
+    .normalize();
 }
 
 /**
@@ -566,7 +585,7 @@ function iastToUAST(data: string): string {
     ans.push('-');
   }
 
-  return ans.join('');
+  return ans.join('').normalize();
 }
 
 /**
@@ -639,7 +658,8 @@ function dataToDevanagari(data: string): string {
 
       return arr.join('');
     })
-    .join('');
+    .join('')
+    .normalize();
 }
 
 /**
@@ -685,7 +705,7 @@ function devanagariToUAST(data: string): string {
     arr.push(val);
   }
 
-  return arr.join('');
+  return arr.join('').normalize();
 }
 
 export const convertor: {
