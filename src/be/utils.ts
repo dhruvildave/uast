@@ -272,6 +272,62 @@ const unAspiratedConsonants: string[] = [
   'ḍ',
 ];
 
+const slpDataDict: CharMap = {
+  a: 'a',
+  A: 'ā',
+  i: 'i',
+  I: 'ī',
+  u: 'u',
+  U: 'ū',
+  e: 'e',
+  E: 'ai',
+  o: 'o',
+  O: 'au',
+  f: 'ṛ',
+  F: 'ṝ',
+  x: 'ḷ',
+  X: 'ḹ',
+  L: 'ḻ',
+  '|': 'ḻh',
+  k: 'k',
+  K: 'kh',
+  g: 'g',
+  G: 'gh',
+  N: 'ṅ',
+  c: 'c',
+  C: 'ch',
+  j: 'j',
+  J: 'jh',
+  Y: 'ñ',
+  w: 'ṭ',
+  W: 'ṭh',
+  q: 'ḍ',
+  Q: 'ḍ',
+  R: 'ṇ',
+  t: 't',
+  T: 'th',
+  d: 'd',
+  D: 'dh',
+  n: 'n',
+  p: 'p',
+  P: 'ph',
+  b: 'b',
+  B: 'bh',
+  m: 'm',
+  M: 'ṃ',
+  H: 'ḥ',
+  y: 'y',
+  r: 'r',
+  l: 'l',
+  v: 'v',
+  S: 'ś',
+  z: 'ṣ',
+  s: 's',
+  h: 'h',
+  "'": "'",
+  '~': 'ã',
+};
+
 /**
  * Function to map special characters to Unicode
  *
@@ -706,6 +762,19 @@ function devanagariToUAST(data: string): string {
   return arr.join('').normalize();
 }
 
+/**
+ * Convert SLP1 to IAST
+ *
+ * @param data SLP1 string
+ * @returns IAST string
+ */
+function slpToIAST(data: string): string {
+  return Array.from(data)
+    .map(i => slpDataDict[i] ?? '')
+    .join('')
+    .normalize();
+}
+
 export const convertor: {
   [from: string]: {
     [to: string]: ((data: string) => string)[];
@@ -717,6 +786,11 @@ export const convertor: {
   },
   raw: {
     iast: [handleUnicode],
+  },
+  slp: {
+    iast: [slpToIAST],
+    uast: [slpToIAST, iastToUAST],
+    devanagari: [slpToIAST, iastToUAST, handleUnicode, dataToDevanagari],
   },
   devanagari: {
     uast: [devanagariToUAST],

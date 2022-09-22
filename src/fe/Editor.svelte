@@ -146,6 +146,7 @@
       <option value="iast">IAST</option>
       <option value="devanagari">देवनागरी (devanāgarī)</option>
       <option value="raw">Raw</option>
+      <option value="slp">SLP1</option>
     </select>
   </div>
   <div>
@@ -162,7 +163,6 @@
       <option selected value="devanagari">देवनागरी (devanāgarī)</option>
       <option value="iast">IAST</option>
       <option value="uast">UAST</option>
-      <option value="raw">Raw</option>
     </select>
   </div>
 </main>
