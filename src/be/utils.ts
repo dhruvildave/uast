@@ -302,7 +302,7 @@ const slpDataDict: CharMap = {
   w: 'ṭ',
   W: 'ṭh',
   q: 'ḍ',
-  Q: 'ḍ',
+  Q: 'ḍh',
   R: 'ṇ',
   t: 't',
   T: 'th',
