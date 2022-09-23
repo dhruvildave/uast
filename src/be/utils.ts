@@ -622,7 +622,7 @@ function iastToUAST(data: string): string {
     }
 
     ans.push(
-      (curr in iastDataDict ? `/${iastDataDict[curr]}/` : curr) +
+      curr +
         (unAspiratedConsonants.includes(curr) &&
         (arr[k + 1] ?? '').includes('h')
           ? 'a'
@@ -639,7 +639,10 @@ function iastToUAST(data: string): string {
     ans.push('-');
   }
 
-  return ans.join('').normalize();
+  return Array.from(ans.join(''))
+    .map(i => (i in iastDataDict ? `/${iastDataDict[i]}/` : i))
+    .join('')
+    .normalize();
 }
 
 /**
