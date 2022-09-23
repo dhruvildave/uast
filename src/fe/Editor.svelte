@@ -135,6 +135,7 @@
         : from === 'iast'
         ? 'iast'
         : 'mono'}"
+      label="input"
       autocomplete="off"
       spellcheck="false"
       name="input"
@@ -155,6 +156,7 @@
       autocomplete="off"
       spellcheck="false"
       disabled
+      label="output"
       name="output"
       id="output"
       value="{output}"></textarea>
