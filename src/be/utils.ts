@@ -2,16 +2,19 @@ type CharMap = {
   [k: string]: string;
 };
 
-const gujaratiCharacterDict: {
+type LangMap = {
   numbers: CharMap;
   vowels: CharMap;
   vowelSigns: CharMap;
   consonants: CharMap;
   misc: CharMap;
-} = {
+};
+
+const gujaratiCharacterDict: LangMap = {
   misc: {
-    '।': '.',
-    '॥': '..',
+    ',': ',',
+    '.': '.',
+    '?': '?',
     ऽ: "'",
     ॐ: 'om',
   },
@@ -95,13 +98,7 @@ const gujaratiCharacterDict: {
   },
 };
 
-const devanagariCharacterDict: {
-  numbers: CharMap;
-  vowels: CharMap;
-  vowelSigns: CharMap;
-  consonants: CharMap;
-  misc: CharMap;
-} = {
+const devanagariCharacterDict: LangMap = {
   misc: {
     '।': '.',
     '॥': '..',
@@ -744,22 +741,14 @@ function iastToUAST(data: string): string {
 /**
  * Function to create the function of parser
  *
- * @param lang
+ * @param lang Language to choose as renderer
  * @returns Function that can parse the `lang`
  */
-function createDataFunction(lang: 'gu' | 'sa') {
-  let obj: {
-    numbers: CharMap;
-    vowels: CharMap;
-    vowelSigns: CharMap;
-    consonants: CharMap;
-    misc: CharMap;
-  };
+function createDataFunction(lang: 'gu' | 'sa'): (data: string) => string {
+  let obj: LangMap = devanagariCharacterDict;
 
   if (lang === 'gu') {
     obj = gujaratiCharacterDict;
-  } else {
-    obj = devanagariCharacterDict;
   }
 
   return function (data: string): string {
