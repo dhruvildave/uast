@@ -12,9 +12,8 @@ type LangMap = {
 
 const gujaratiCharacterDict: LangMap = {
   misc: {
-    ',': ',',
-    '.': '.',
-    '?': '?',
+    '।': '.',
+    '॥': '..',
     ऽ: "'",
     ॐ: 'om',
   },
