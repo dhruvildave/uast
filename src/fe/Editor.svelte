@@ -85,6 +85,10 @@
     font-family: var(--font-family-mono);
   }
 
+  textarea.guj {
+    font-family: var(--font-family-guj);
+  }
+
   @media (min-width: 1024px) {
     main {
       flex-direction: row;
@@ -152,7 +156,13 @@
   </div>
   <div>
     <textarea
-      class="{to === 'devanagari' ? 'sans' : to === 'iast' ? 'iast' : 'mono'}"
+      class="{to === 'devanagari'
+        ? 'sans'
+        : to === 'iast'
+        ? 'iast'
+        : to === 'guj'
+        ? 'guj'
+        : 'mono'}"
       autocomplete="off"
       spellcheck="false"
       disabled
@@ -165,6 +175,7 @@
       <option selected value="devanagari">देवनागरी (devanāgarī)</option>
       <option value="iast">IAST</option>
       <option value="uast">UAST</option>
+      <option value="guj">ગુજરાતી (gujarātī)</option>
     </select>
   </div>
 </main>
