@@ -10,6 +10,8 @@ type LangMap = {
   misc: CharMap;
 };
 
+type LangList = 'gu' | 'sa';
+
 export const gujaratiCharDict: LangMap = {
   misc: {
     '।': '.',
@@ -412,7 +414,7 @@ const slpDataDict: CharMap = {
  * @param lang input UAST string
  * @returns parsed AnDy output string
  */
-function createHandleUnicode(lang: 'gu' | 'sa'): (uast: string) => string {
+function createHandleUnicode(lang: LangList): (uast: string) => string {
   let numberMap: CharMap = {
     0: '०',
     1: '१',
@@ -762,7 +764,7 @@ function iastToUAST(data: string): string {
  * @param lang Language to choose as renderer
  * @returns Function that can parse the `lang`
  */
-function createDataFunction(lang: 'gu' | 'sa'): (data: string) => string {
+function createDataFunction(lang: LangList): (data: string) => string {
   let obj: LangMap = devanagariCharDict;
 
   if (lang === 'gu') {
