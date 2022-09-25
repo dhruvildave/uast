@@ -10,7 +10,7 @@ type LangMap = {
   misc: CharMap;
 };
 
-const gujaratiCharacterDict: LangMap = {
+export const gujaratiCharDict: LangMap = {
   misc: {
     '।': '.',
     '॥': '..',
@@ -97,7 +97,7 @@ const gujaratiCharacterDict: LangMap = {
   },
 };
 
-const devanagariCharacterDict: LangMap = {
+const devanagariCharDict: LangMap = {
   misc: {
     '।': '.',
     '॥': '..',
@@ -213,17 +213,6 @@ const unicodeMap: CharMap = {
   '..': '॥',
   om: 'ॐ',
   au: 'ã',
-
-  0: '०',
-  1: '१',
-  2: '२',
-  3: '३',
-  4: '४',
-  5: '५',
-  6: '६',
-  7: '७',
-  8: '८',
-  9: '९',
 };
 
 const devanagariDataDict: CharMap = {
@@ -420,54 +409,84 @@ const slpDataDict: CharMap = {
 /**
  * Function to map special characters to Unicode
  *
- * @param uast input UAST string
+ * @param lang input UAST string
  * @returns parsed AnDy output string
  */
-function handleUnicode(uast: string): string {
-  uast = uast.toLowerCase();
+function createHandleUnicode(lang: 'gu' | 'sa'): (uast: string) => string {
+  let numberMap: CharMap = {
+    0: '०',
+    1: '१',
+    2: '२',
+    3: '३',
+    4: '४',
+    5: '५',
+    6: '६',
+    7: '७',
+    8: '८',
+    9: '९',
+  };
 
-  if (uast.startsWith('\\')) {
-    uast = uast.slice(1);
+  if (lang === 'gu') {
+    numberMap = {
+      0: '૦',
+      1: '૧',
+      2: '૨',
+      3: '૩',
+      4: '૪',
+      5: '૫',
+      6: '૬',
+      7: '૭',
+      8: '૮',
+      9: '૯',
+    };
   }
+  return function (uast: string): string {
+    const d: CharMap = { ...unicodeMap, ...numberMap };
+    uast = uast.toLowerCase();
 
-  if (uast.endsWith('\\')) {
-    uast = uast.slice(0, uast.length - 1);
-  }
-
-  let str = Array.from(uast);
-  let arr: string[] = [];
-
-  for (let i = 0; i < str.length; ) {
-    let curr = str.at(i) ?? '';
-
-    if (str.at(i) === '/') {
-      let char: string[] = [];
-
-      for (let j = i + 1; j < str.length; j++) {
-        let curr = str.at(j) ?? '';
-
-        if (curr === '/') {
-          i = j;
-          break;
-        }
-
-        if (j === str.length - 1) {
-          i = j;
-        }
-
-        char.push(curr);
-      }
-
-      arr.push(unicodeMap[char.join('')] ?? '');
-      i++;
-      continue;
+    if (uast.startsWith('\\')) {
+      uast = uast.slice(1);
     }
 
-    arr.push(curr);
-    i++;
-  }
+    if (uast.endsWith('\\')) {
+      uast = uast.slice(0, uast.length - 1);
+    }
 
-  return arr.join('');
+    let str = Array.from(uast);
+    let arr: string[] = [];
+
+    for (let i = 0; i < str.length; ) {
+      let curr = str.at(i) ?? '';
+
+      if (str.at(i) === '/') {
+        let char: string[] = [];
+
+        for (let j = i + 1; j < str.length; j++) {
+          let curr = str.at(j) ?? '';
+
+          if (curr === '/') {
+            i = j;
+            break;
+          }
+
+          if (j === str.length - 1) {
+            i = j;
+          }
+
+          char.push(curr);
+        }
+
+        arr.push(d[char.join('')] ?? '');
+        i++;
+        continue;
+      }
+
+      arr.push(curr);
+      i++;
+    }
+
+    return arr.join('');
+  };
 }
 
 /**
@@ -487,12 +506,12 @@ function dataToIAST(data: string): string {
         return 'oṃ';
       }
 
-      if (split in devanagariCharacterDict.numbers) {
-        return devanagariCharacterDict.numbers[split];
+      if (split in devanagariCharDict.numbers) {
+        return devanagariCharDict.numbers[split];
       }
 
-      if (split in devanagariCharacterDict.misc) {
-        return devanagariCharacterDict.misc[split];
+      if (split in devanagariCharDict.misc) {
+        return devanagariCharDict.misc[split];
       }
 
       if (['ḥ', 'ṃ', 'ã'].includes(split)) {
@@ -521,7 +540,7 @@ function dataToIAST(data: string): string {
         const next = str.at(i + 1) ?? '';
 
         if (['ḥ', 'ṃ', 'ã'].includes(next)) {
-          if (curr in devanagariCharacterDict.consonants) {
+          if (curr in devanagariCharDict.consonants) {
             arr.push(`${curr}a${next}`);
           } else {
             arr.push(`${curr}${next}`);
@@ -531,7 +550,7 @@ function dataToIAST(data: string): string {
           continue;
         }
 
-        if (curr in devanagariCharacterDict.vowels) {
+        if (curr in devanagariCharDict.vowels) {
           arr.push(curr);
           i++;
 
@@ -546,7 +565,7 @@ function dataToIAST(data: string): string {
 
         if (next === 'h' && unAspiratedConsonants.includes(curr)) {
           const last = str.at(i + 2) ?? '';
-          if (last in devanagariCharacterDict.vowelSigns === false) {
+          if (last in devanagariCharDict.vowelSigns === false) {
             arr.push(`${curr}${next}a`);
             i += 2;
             continue;
@@ -574,7 +593,7 @@ function dataToIAST(data: string): string {
           continue;
         }
 
-        if (next in devanagariCharacterDict.vowelSigns) {
+        if (next in devanagariCharDict.vowelSigns) {
           arr.push(curr);
           i++;
           continue;
@@ -610,7 +629,7 @@ function iastToUAST(data: string): string {
     const curr = str.at(i) ?? '';
     const next = str.at(i + 1) ?? '';
 
-    if (curr in devanagariCharacterDict.consonants) {
+    if (curr in devanagariCharDict.consonants) {
       if (unAspiratedConsonants.includes(curr)) {
         if (next === 'a' && (str.at(i + 2) ?? '') === 'h') {
           arr.push(`${curr}\\`);
@@ -620,7 +639,7 @@ function iastToUAST(data: string): string {
 
         if (next === 'h') {
           let last = str.at(i + 2) ?? '';
-          if (last in devanagariCharacterDict.consonants) {
+          if (last in devanagariCharDict.consonants) {
             arr.push(`${curr}${next}-`);
             i += 2;
             continue;
@@ -658,7 +677,7 @@ function iastToUAST(data: string): string {
       }
 
       if (
-        next in devanagariCharacterDict.consonants ||
+        next in devanagariCharDict.consonants ||
         ['.', '..', "'"].includes(next) ||
         i === str.length - 1
       ) {
@@ -679,8 +698,8 @@ function iastToUAST(data: string): string {
     }
 
     if (
-      curr in devanagariCharacterDict.vowels &&
-      next in devanagariCharacterDict.consonants
+      curr in devanagariCharDict.vowels &&
+      next in devanagariCharDict.consonants
     ) {
       arr.push(`${curr}\\`);
       i++;
@@ -701,9 +720,9 @@ function iastToUAST(data: string): string {
       hasDash = true;
     }
     curr = curr.replaceAll(/[\\-]/gu, '');
-    for (let j of Object.values(devanagariCharacterDict.misc)
+    for (let j of Object.values(devanagariCharDict.misc)
       .filter(i => ['om', '..'].includes(i) === false)
-      .concat(Object.values(devanagariCharacterDict.numbers))) {
+      .concat(Object.values(devanagariCharDict.numbers))) {
       if (curr === '.' && arr[k + 1] === '.') {
         curr = curr.replaceAll(curr, '\\/../\\');
         k++;
@@ -720,12 +739,12 @@ function iastToUAST(data: string): string {
           ? 'a'
           : '') +
         (hasDash === true ? '-' : '') +
-        (curr in devanagariCharacterDict.vowels ? '\\' : '')
+        (curr in devanagariCharDict.vowels ? '\\' : '')
     );
   }
 
   if (
-    (ans.at(-1) ?? '') in devanagariCharacterDict.consonants &&
+    (ans.at(-1) ?? '') in devanagariCharDict.consonants &&
     (str.at(-1) ?? '') !== 'a'
   ) {
     ans.push('-');
@@ -744,19 +763,17 @@ function iastToUAST(data: string): string {
  * @returns Function that can parse the `lang`
  */
 function createDataFunction(lang: 'gu' | 'sa'): (data: string) => string {
-  let obj: LangMap = devanagariCharacterDict;
+  let obj: LangMap = devanagariCharDict;
 
   if (lang === 'gu') {
-    obj = gujaratiCharacterDict;
+    obj = gujaratiCharDict;
   }
 
   return function (data: string): string {
     return data
       .split('\\')
       .map(split => {
-        if (
-          Object.keys(obj.misc).concat(Object.keys(obj.numbers)).includes(split)
-        ) {
+        if (split in obj.misc || split in obj.numbers) {
           return split;
         }
 
@@ -845,8 +862,8 @@ function devanagariToUAST(data: string): string {
     const next_val = devanagariDataDict[next] ?? next;
 
     if (
-      Object.values(devanagariCharacterDict.vowels).includes(curr) &&
-      Object.values(devanagariCharacterDict.consonants).includes(next)
+      Object.values(devanagariCharDict.vowels).includes(curr) &&
+      Object.values(devanagariCharDict.consonants).includes(next)
     ) {
       arr.push(`${val}\\`);
       continue;
@@ -882,12 +899,12 @@ export const convertor: {
   };
 } = {
   uast: {
-    iast: [handleUnicode, dataToIAST],
-    devanagari: [handleUnicode, createDataFunction('sa')],
-    guj: [handleUnicode, createDataFunction('gu')],
+    iast: [createHandleUnicode('sa'), dataToIAST],
+    devanagari: [createHandleUnicode('sa'), createDataFunction('sa')],
+    guj: [createHandleUnicode('gu'), createDataFunction('gu')],
   },
   raw: {
-    iast: [handleUnicode],
+    iast: [createHandleUnicode('sa')],
   },
   slp: {
     iast: [slpToIAST],
@@ -895,16 +912,20 @@ export const convertor: {
     devanagari: [
       slpToIAST,
       iastToUAST,
-      handleUnicode,
+      createHandleUnicode('sa'),
       createDataFunction('sa'),
     ],
   },
   devanagari: {
     uast: [devanagariToUAST],
-    iast: [devanagariToUAST, handleUnicode, dataToIAST],
+    iast: [devanagariToUAST, createHandleUnicode('sa'), dataToIAST],
   },
   iast: {
     uast: [iastToUAST],
-    devanagari: [iastToUAST, handleUnicode, createDataFunction('sa')],
+    devanagari: [
+      iastToUAST,
+      createHandleUnicode('sa'),
+      createDataFunction('sa'),
+    ],
   },
 };

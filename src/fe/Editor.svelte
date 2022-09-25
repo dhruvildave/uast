@@ -123,6 +123,7 @@
         .map(j => {
           for (const f of utils.convertor[from]?.[to] ?? []) {
             j = f(j);
+            console.log(j);
           }
           return j;
         })
