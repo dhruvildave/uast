@@ -12,7 +12,7 @@ type LangMap = {
 
 type LangList = 'gu' | 'sa';
 
-export const gujaratiCharDict: LangMap = {
+const gujaratiCharDict: LangMap = {
   misc: {
     '।': '.',
     '॥': '..',
