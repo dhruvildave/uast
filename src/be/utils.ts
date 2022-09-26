@@ -442,7 +442,7 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
       9: '૯',
     };
   }
-  return function (uast: string): string {
+  return function handleUnicode(uast: string): string {
     const d: CharMap = { ...unicodeMap, ...numberMap };
     uast = uast.toLowerCase();
 
@@ -771,7 +771,7 @@ function createDataFunction(lang: LangList): (data: string) => string {
     obj = gujaratiCharDict;
   }
 
-  return function (data: string): string {
+  return function dataToScript(data: string): string {
     return data
       .split('\\')
       .map(split => {
