@@ -4,7 +4,8 @@
   "include": ["src/**/*"],
   "exclude": ["node_modules/*", "__sapper__/*", "public/*"],
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "esnext",
+    "module": "esnext",
     "alwaysStrict": true,
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
