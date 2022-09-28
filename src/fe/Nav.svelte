@@ -23,11 +23,6 @@
     margin: 0 1rem;
   }
 
-  header nav h1 {
-    font-size: 1.25rem; /* 20px */
-    font-family: var(--font-family-mono);
-  }
-
   header nav section:last-child ul {
     display: flex;
     flex-direction: row;
@@ -55,7 +50,7 @@
 <header>
   <nav>
     <section>
-      <h1>UAST</h1>
+      <img src="/icon.svg" width="48" height="48" alt="uast logo" />
     </section>
     <section>
       <ul>

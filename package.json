@@ -11,9 +11,10 @@
     "podman": "podman build --pull --compress -t uast . && podman system prune -f",
     "start": "sirv public --no-clear",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "format": "prettier --write --plugin-search-dir=. \"**/*.{html,ts,svelte,json,md}\""
+    "format": "prettier --write --plugin-search-dir=. \"**/*.{html,ts,svelte,json,md,svg}\""
   },
   "devDependencies": {
+    "@prettier/plugin-xml": "^2.2.0",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^14.1.0",
     "@rollup/plugin-typescript": "^8.5.0",
