@@ -516,7 +516,7 @@ function dataToIAST(data: string): string {
         return devanagariCharDict.misc[split];
       }
 
-      if (['ḥ', 'ṃ', 'ã'].includes(split)) {
+      if (split === 'ḥ' || split === 'ṃ' || split === 'ã') {
         return split;
       }
 
@@ -541,7 +541,7 @@ function dataToIAST(data: string): string {
 
         const next = str.at(i + 1) ?? '';
 
-        if (['ḥ', 'ṃ', 'ã'].includes(next)) {
+        if (next === 'ḥ' || next === 'ṃ' || next === 'ã') {
           if (curr in devanagariCharDict.consonants) {
             arr.push(`${curr}a${next}`);
           } else {
@@ -560,6 +560,12 @@ function dataToIAST(data: string): string {
         }
 
         if (i === str.length - 1) {
+          if (curr === 'ḥ' || curr === 'ṃ' || curr === 'ã') {
+            arr.push(curr);
+            i++;
+            continue;
+          }
+
           arr.push(`${curr}a`);
           i++;
           continue;
@@ -573,7 +579,7 @@ function dataToIAST(data: string): string {
             continue;
           }
 
-          if (['ḥ', 'ṃ', 'ã'].includes(last)) {
+          if (last === 'ḥ' || last === 'ṃ' || last === 'ã') {
             arr.push(`${curr}${next}a${last}`);
             i += 3;
             continue;
@@ -601,7 +607,7 @@ function dataToIAST(data: string): string {
           continue;
         }
 
-        if (['ḥ', 'ṃ', 'ã'].includes(curr)) {
+        if (curr === 'ḥ' || curr === 'ṃ' || curr === 'ã') {
           arr.push(curr);
           i++;
           continue;
