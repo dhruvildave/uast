@@ -58,7 +58,7 @@ const gujaratiCharDict: LangMap = {
     au: 'ૌ',
     ṃ: 'ં',
     ḥ: 'ઃ',
-    ã: 'ँ',
+    ã: 'ઁ',
     '-': '્',
   },
   consonants: {
@@ -927,6 +927,11 @@ export const convertor: {
   devanagari: {
     uast: [devanagariToUAST],
     iast: [devanagariToUAST, createHandleUnicode('sa'), dataToIAST],
+    guj: [
+      devanagariToUAST,
+      createHandleUnicode('gu'),
+      createDataFunction('gu'),
+    ],
   },
   iast: {
     uast: [iastToUAST],
@@ -935,5 +940,6 @@ export const convertor: {
       createHandleUnicode('sa'),
       createDataFunction('sa'),
     ],
+    guj: [iastToUAST, createHandleUnicode('gu'), createDataFunction('gu')],
   },
 };
