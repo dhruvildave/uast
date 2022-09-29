@@ -181,7 +181,7 @@
         '\n\n\n' +
         (from === 'devanagari'
           ? 'भारतवर्षे अनेर्या अनिरुद्धेन च प्रणयात् एव निर्मित।'
-          : 'Made with ♥ in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave')}"
+          : 'Made with 🫶🏼 in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave')}"
       bind:value="{input}"></textarea>
 
     <select id="from-select" name="from" bind:value="{from}">
