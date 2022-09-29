@@ -19,19 +19,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <style>
-      @import 'https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati&family=IBM+Plex+Mono&family=Noto+Sans+Devanagari&display=swap';
+      @import 'https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati&family=IBM+Plex+Mono&family=Tiro+Devanagari+Sanskrit&display=swap';
 
       :root {
-        --primary-dark: rgb(0 0 0);
-        --primary-light: rgb(34 34 34);
-        --primary-medium: rgb(17 17 17);
+        --dark-primary-dark: rgb(0 0 0);
+        --dark-primary-light: rgb(34 34 34);
+        --dark-primary-medium: rgb(17 17 17);
+
+        --light-primary-light: rgb(255 255 255);
+        --light-primary-dark: rgb(221 221 221);
+        --light-primary-medium: rgb(238 238 238);
 
         --font-family-mono: 'IBM Plex Mono', monospace;
-        --font-family-sans: 'Noto Sans Devanagari', sans-serif;
+        --font-family-sans: 'Tiro Devanagari Sanskrit', serif;
         --font-family-iast: var(--font-family-mono);
         --font-family-guj: 'Noto Sans Gujarati', sans-serif;
 
-        --text-color: rgb(255 255 255);
+        --dark-text-color: rgb(255 255 255);
+        --light-text-color: rgb(0 0 0);
+      }
+
+      html {
+        color-scheme: dark light;
       }
 
       *,

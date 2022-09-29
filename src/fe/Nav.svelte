@@ -1,8 +1,6 @@
 <style>
   header {
     width: 100vw;
-
-    color: var(--text-color);
   }
 
   header nav {
@@ -16,7 +14,13 @@
 
     user-select: none;
 
-    background-color: var(--primary-dark);
+    background-color: var(--light-primary-light);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    header nav {
+      background-color: var(--dark-primary-dark);
+    }
   }
 
   header nav section {
@@ -39,6 +43,16 @@
   @media (min-width: 1024px) {
     header ul li {
       margin: 0 1rem;
+    }
+  }
+
+  img {
+    filter: invert(100%);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    img {
+      filter: invert(0%);
     }
   }
 </style>

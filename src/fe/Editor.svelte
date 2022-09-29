@@ -15,11 +15,11 @@
   }
 
   main div:first-child {
-    background-color: var(--primary-medium);
+    background-color: var(--light-primary-light);
   }
 
   main div:last-child {
-    background-color: var(--primary-dark);
+    background-color: var(--light-primary-medium);
   }
 
   main div select {
@@ -57,7 +57,7 @@
 
   textarea,
   select {
-    color: var(--text-color);
+    color: var(--light-text-color);
 
     font-size: 1rem; /* 16px */
     line-height: 1.5rem; /* 24px */
@@ -65,12 +65,12 @@
 
   textarea#input,
   select#from-select {
-    background-color: var(--primary-medium);
+    background-color: var(--light-primary-light);
   }
 
   textarea#output,
   select#to-select {
-    background-color: var(--primary-dark);
+    background-color: var(--light-primary-medium);
   }
 
   textarea.sans {
@@ -87,6 +87,31 @@
 
   textarea.guj {
     font-family: var(--font-family-guj);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    textarea,
+    select {
+      color: var(--dark-text-color);
+    }
+
+    main div:first-child {
+      background-color: var(--dark-primary-dark);
+    }
+
+    main div:last-child {
+      background-color: var(--dark-primary-medium);
+    }
+
+    textarea#input,
+    select#from-select {
+      background-color: var(--dark-primary-dark);
+    }
+
+    textarea#output,
+    select#to-select {
+      background-color: var(--dark-primary-medium);
+    }
   }
 
   @media (min-width: 1024px) {
