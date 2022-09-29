@@ -923,6 +923,12 @@ export const convertor: {
       createHandleUnicode('sa'),
       createDataFunction('sa'),
     ],
+    guj: [
+      slpToIAST,
+      iastToUAST,
+      createHandleUnicode('gu'),
+      createDataFunction('gu'),
+    ],
   },
   devanagari: {
     uast: [devanagariToUAST],
