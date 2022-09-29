@@ -169,6 +169,19 @@
       spellcheck="false"
       name="input"
       id="input"
+      placeholder="{(from === 'slp'
+        ? 'tasmAdyogI BavArjuna'
+        : from === 'iast'
+        ? 'tasmādyogī bhavārjuna'
+        : from === 'raw'
+        ? 'tasm/a/dyog/i/ bhav/a/rjuna'
+        : from === 'devanagari'
+        ? 'तस्माद्योगी भवार्जुन'
+        : 'ts-m/a/d-yog/i/ bhv/a/r-jun') +
+        '\n\n\n' +
+        (from === 'devanagari'
+          ? 'भारतवर्षे अनेर्या अनिरुद्धेन च प्रणयात् एव निर्मित।'
+          : 'Made with ♥ in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave')}"
       bind:value="{input}"></textarea>
 
     <select id="from-select" name="from" bind:value="{from}">
@@ -194,6 +207,13 @@
       label="output"
       name="output"
       id="output"
+      placeholder="{to === 'devanagari'
+        ? 'तस्माद्योगी भवार्जुन'
+        : to === 'iast'
+        ? 'tasmādyogī bhavārjuna'
+        : to === 'guj'
+        ? 'તસ્માદ્યોગી ભવાર્જુન'
+        : 'ts-m/a/d-yog/i/ bhv/a/r-jun'}"
       value="{output}"></textarea>
 
     <select id="to-select" bind:value="{to}" name="to">
