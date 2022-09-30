@@ -742,8 +742,7 @@ function iastToUAST(data: string): string {
 
     ans.push(
       curr +
-        (unAspiratedConsonants.includes(curr) &&
-        (arr[k + 1] ?? '').includes('h')
+        (unAspiratedConsonants.includes(curr) && (arr[k + 1] ?? '') === 'h'
           ? 'a'
           : '') +
         (hasDash === true ? '-' : '') +
