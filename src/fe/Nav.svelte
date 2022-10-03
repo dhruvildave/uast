@@ -17,12 +17,6 @@
     background-color: var(--light-primary-light);
   }
 
-  @media (prefers-color-scheme: dark) {
-    header nav {
-      background-color: var(--dark-primary-dark);
-    }
-  }
-
   header nav section {
     margin: 0 1rem;
   }
@@ -53,6 +47,10 @@
   @media (prefers-color-scheme: dark) {
     img {
       filter: invert(0%);
+    }
+
+    header nav {
+      background-color: var(--dark-primary-dark);
     }
   }
 </style>
