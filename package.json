@@ -7,8 +7,8 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "docker": "docker buildx build --pull --compress -t uast . && docker system prune -f",
-    "podman": "podman build --pull --compress -t uast . && podman system prune -f",
+    "docker": "docker buildx build --no-cache --pull --compress -t uast . && docker system prune -f",
+    "podman": "podman build --no-cache --pull --compress -t uast . && podman system prune -f",
     "start": "sirv public --no-clear",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "format": "prettier --write --plugin-search-dir=. \"**/*.{html,ts,svelte,json,md,svg}\""
