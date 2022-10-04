@@ -900,18 +900,41 @@ function slpToIAST(data: string): string {
     .normalize();
 }
 
+const builderFuncs: {
+  [k in LangList]: {
+    [f in 'handleUnicode' | 'dataFunction']: ReturnType<
+      typeof createDataFunction & typeof createHandleUnicode
+    >;
+  };
+} = {
+  gu: {
+    handleUnicode: createHandleUnicode('gu'),
+    dataFunction: createDataFunction('gu'),
+  },
+  sa: {
+    handleUnicode: createHandleUnicode('sa'),
+    dataFunction: createDataFunction('sa'),
+  },
+};
+
 export const convertor: {
   [from: string]: {
     [to: string]: ((data: string) => string)[];
   };
 } = {
   uast: {
-    iast: [createHandleUnicode('sa'), dataToIAST],
-    devanagari: [createHandleUnicode('sa'), createDataFunction('sa')],
-    guj: [createHandleUnicode('gu'), createDataFunction('gu')],
+    iast: [builderFuncs['sa']['handleUnicode'], dataToIAST],
+    devanagari: [
+      builderFuncs['sa']['handleUnicode'],
+      builderFuncs['sa']['dataFunction'],
+    ],
+    guj: [
+      builderFuncs['gu']['handleUnicode'],
+      builderFuncs['gu']['dataFunction'],
+    ],
   },
   raw: {
-    iast: [createHandleUnicode('sa')],
+    iast: [builderFuncs['sa']['handleUnicode']],
   },
   slp: {
     iast: [slpToIAST],
@@ -919,32 +942,36 @@ export const convertor: {
     devanagari: [
       slpToIAST,
       iastToUAST,
-      createHandleUnicode('sa'),
-      createDataFunction('sa'),
+      builderFuncs['sa']['handleUnicode'],
+      builderFuncs['sa']['dataFunction'],
     ],
     guj: [
       slpToIAST,
       iastToUAST,
-      createHandleUnicode('gu'),
-      createDataFunction('gu'),
+      builderFuncs['gu']['handleUnicode'],
+      builderFuncs['gu']['dataFunction'],
     ],
   },
   devanagari: {
     uast: [devanagariToUAST],
-    iast: [devanagariToUAST, createHandleUnicode('sa'), dataToIAST],
+    iast: [devanagariToUAST, builderFuncs['sa']['handleUnicode'], dataToIAST],
     guj: [
       devanagariToUAST,
-      createHandleUnicode('gu'),
-      createDataFunction('gu'),
+      builderFuncs['gu']['handleUnicode'],
+      builderFuncs['gu']['dataFunction'],
     ],
   },
   iast: {
     uast: [iastToUAST],
     devanagari: [
       iastToUAST,
-      createHandleUnicode('sa'),
-      createDataFunction('sa'),
+      builderFuncs['sa']['handleUnicode'],
+      builderFuncs['sa']['dataFunction'],
     ],
-    guj: [iastToUAST, createHandleUnicode('gu'), createDataFunction('gu')],
+    guj: [
+      iastToUAST,
+      builderFuncs['gu']['handleUnicode'],
+      builderFuncs['gu']['dataFunction'],
+    ],
   },
 };
