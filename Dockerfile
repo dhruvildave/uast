@@ -1,4 +1,5 @@
-FROM golang AS cli
+FROM golang:alpine AS cli
+RUN apk add --no-cache git make
 RUN git clone https://github.com/aneri0x4f/uast-cli
 RUN make -C uast-cli install
 
