@@ -908,9 +908,11 @@ function slpToIAST(data: string): string {
     .normalize();
 }
 
+type FuncList = 'handleUnicode' | 'dataFunction';
+
 const builderFuncs: {
   [k in LangList]: {
-    [f in 'handleUnicode' | 'dataFunction']: ReturnType<
+    [f in FuncList]: ReturnType<
       typeof createDataFunction & typeof createHandleUnicode
     >;
   };
