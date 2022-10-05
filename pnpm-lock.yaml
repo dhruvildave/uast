@@ -785,7 +785,7 @@ packages:
       jest-worker: 26.6.2
       rollup: 2.79.1
       serialize-javascript: 4.0.0
-      terser: 5.15.0
+      terser: 5.15.1
     dev: true
 
   /rollup-pluginutils/2.8.2:
@@ -998,8 +998,8 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /terser/5.15.0:
-    resolution: {integrity: sha512-L1BJiXVmheAQQy+as0oF3Pwtlo4s3Wi1X2zNZ2NxOB4wx9bdS9Vk67XQENLFdLYGCK/Z2di53mTj/hBafR+dTA==}
+  /terser/5.15.1:
+    resolution: {integrity: sha512-K1faMUvpm/FBxjBXud0LWVAGxmvoPbZbfTCYbSgaaYQaIXI3/TdI7a7ZGA73Zrou6Q8Zmz3oeUTsp/dj+ag2Xw==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
