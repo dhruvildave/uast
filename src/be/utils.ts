@@ -497,7 +497,7 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
       i++;
     }
 
-    return arr.join('');
+    return arr.join('').normalize();
   };
 }
 
@@ -509,6 +509,7 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
  */
 function dataToIAST(data: string): string {
   return data
+    .normalize()
     .replaceAll(/[\[\](),?!^~=@#$%&*_;\n\v\t\r\f]/gu, '')
     .split('\\')
     .map(split => {
