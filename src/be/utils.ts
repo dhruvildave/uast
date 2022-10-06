@@ -509,7 +509,7 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
  */
 function dataToIAST(data: string): string {
   return data
-    .replaceAll(/[\[\](),?!^~@#$%&*_;\n\v\t\r\f]/gu, '')
+    .replaceAll(/[\[\](),?!^~=@#$%&*_;\n\v\t\r\f]/gu, '')
     .split('\\')
     .map(split => {
       if (split === 'ॐ') {
@@ -638,7 +638,7 @@ function dataToIAST(data: string): string {
  * @returns UAST string
  */
 function iastToUAST(data: string): string {
-  let str = Array.from(data.replaceAll(/[\[\](),?!^~@#$%&*\-_;]/gu, ''));
+  let str = Array.from(data.replaceAll(/[\[\](),?!^~=@#$%&*\-_;]/gu, ''));
   let arr: string[] = [];
 
   for (let i = 0; i < str.length; ) {
