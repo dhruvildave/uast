@@ -638,7 +638,9 @@ function dataToIAST(data: string): string {
  * @returns UAST string
  */
 function iastToUAST(data: string): string {
-  let str = Array.from(data.replaceAll(/[\[\](),?!^~=@#$%&*\-_;]/gu, ''));
+  let str = Array.from(
+    data.normalize().replaceAll(/[\[\](),?!^~=@#$%&*\-_;]/gu, '')
+  );
   let arr: string[] = [];
 
   for (let i = 0; i < str.length; ) {
@@ -856,7 +858,7 @@ function createDataFunction(lang: LangList): (data: string) => string {
  * @returns UAST string
  */
 function devanagariToUAST(data: string): string {
-  const str = Array.from(data);
+  const str = Array.from(data.normalize());
   let arr: string[] = [];
 
   for (let i = 0; i < str.length; i++) {
