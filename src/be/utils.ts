@@ -453,7 +453,7 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
     };
   }
   return function handleUnicode(uast: string): string {
-    const d: CharMap = { ...unicodeMap, ...numberMap };
+    const scriptDict: CharMap = { ...unicodeMap, ...numberMap };
     uast = uast.toLowerCase();
 
     if (uast.startsWith('\\')) {
@@ -488,7 +488,7 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
           char.push(curr);
         }
 
-        arr.push(d[char.join('')] ?? '');
+        arr.push(scriptDict[char.join('')] ?? '');
         i++;
         continue;
       }
