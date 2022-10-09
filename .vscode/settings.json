@@ -1,0 +1,6 @@
+{
+  "editor.formatOnSave": true,
+  "editor.trimAutoWhitespace": true,
+  "editor.autoClosingBrackets": "always",
+  "editor.autoIndent": "advanced"
+}
