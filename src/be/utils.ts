@@ -2,7 +2,6 @@
 // हे कृष्ण हे यादव हे सखेति।
 // अजानता महिमानं तवेदं
 // मया प्रमादात्प्रणयेन वापि॥
-
 // यच्चावहासार्थमसत्कृतोऽसि
 // विहारशय्यासनभोजनेषु।
 // एकोऽथवाप्यच्युत तत्समक्षं
@@ -510,7 +509,7 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
 function dataToIAST(data: string): string {
   return data
     .normalize()
-    .replaceAll(/[\[\](),?!^~=@#$%&*_;\n\v\t\r\f]/gu, '')
+    .replaceAll(/[\[\]()^~=@#$%&*_;\n\v\t\r\f]/gu, '')
     .split('\\')
     .map(split => {
       if (split === 'ॐ') {
@@ -544,6 +543,12 @@ function dataToIAST(data: string): string {
 
         if (curr === '`') {
           // arr.push('॒');
+          i++;
+          continue;
+        }
+
+        if ([',', '?', '!', '"', '-', ':', "'"].includes(curr)) {
+          arr.push(curr);
           i++;
           continue;
         }
@@ -640,7 +645,7 @@ function dataToIAST(data: string): string {
  */
 function iastToUAST(data: string): string {
   let str = Array.from(
-    data.normalize().replaceAll(/[\[\](),?!^~=@#$%&*\-_;]/gu, '')
+    data.normalize().replaceAll(/[\[\]()^~=@#$%&*\-_;]/gu, '')
   );
   let arr: string[] = [];
 
@@ -813,6 +818,12 @@ function createDataFunction(lang: LangList): (data: string) => string {
 
           if (curr === '`') {
             arr.push('॒');
+            i++;
+            continue;
+          }
+
+          if ([',', '?', '!', '"', ':', "'"].includes(curr)) {
+            arr.push(curr);
             i++;
             continue;
           }
