@@ -547,7 +547,7 @@ function dataToIAST(data: string): string {
           continue;
         }
 
-        if ([',', '?', '!', '"', '-', ':', "'"].includes(curr)) {
+        if ([',', '?', '!', '"', '-', ':'].includes(curr)) {
           arr.push(curr);
           i++;
           continue;
@@ -822,7 +822,7 @@ function createDataFunction(lang: LangList): (data: string) => string {
             continue;
           }
 
-          if ([',', '?', '!', '"', ':', "'"].includes(curr)) {
+          if ([',', '?', '!', '"', ':'].includes(curr)) {
             arr.push(curr);
             i++;
             continue;
