@@ -2,5 +2,6 @@
   "editor.formatOnSave": true,
   "editor.trimAutoWhitespace": true,
   "editor.autoClosingBrackets": "always",
-  "editor.autoIndent": "advanced"
+  "editor.autoIndent": "advanced",
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
