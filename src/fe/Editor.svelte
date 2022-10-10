@@ -78,8 +78,8 @@
   textarea.sans {
     font-family: var(--font-family-sans);
 
-    font-size: 1.875rem; /* 30px */
-    line-height: 2.25rem; /* 36px */
+    font-size: 1.5rem; /* 24px */
+    line-height: 2rem; /* 32px */
   }
 
   textarea.iast {
@@ -93,8 +93,8 @@
   textarea.guj {
     font-family: var(--font-family-guj);
 
-    font-size: 1.875rem; /* 30px */
-    line-height: 2.25rem; /* 36px */
+    font-size: 1.5rem; /* 24px */
+    line-height: 2rem; /* 32px */
   }
 
   @media (prefers-color-scheme: dark) {
