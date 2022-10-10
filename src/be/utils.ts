@@ -862,7 +862,7 @@ function createDataFunction(lang: LangList): (data: string) => string {
 }
 
 /**
- * Convert UAST to देवनागरी
+ * Convert देवनागरी to UAST
  *
  * @param data देवनागरी string
  * @returns UAST string
