@@ -66,15 +66,20 @@
   textarea#input,
   select#from-select {
     background-color: var(--light-primary-light);
+    padding: 0.5rem; /* 8px */
   }
 
   textarea#output,
   select#to-select {
     background-color: var(--light-primary-medium);
+    padding: 0.5rem; /* 8px */
   }
 
   textarea.sans {
     font-family: var(--font-family-sans);
+
+    font-size: 1.875rem; /* 30px */
+    line-height: 2.25rem; /* 36px */
   }
 
   textarea.iast {
@@ -87,6 +92,9 @@
 
   textarea.guj {
     font-family: var(--font-family-guj);
+
+    font-size: 1.875rem; /* 30px */
+    line-height: 2.25rem; /* 36px */
   }
 
   @media (prefers-color-scheme: dark) {
