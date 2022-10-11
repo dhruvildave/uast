@@ -34,8 +34,10 @@ function serve() {
   };
 }
 
+/** @type {import('rollup').RollupOptions} */
 export default {
   input: 'src/main.ts',
+  treeshake: true,
   output: {
     sourcemap: !production,
     format: 'iife',
@@ -84,4 +86,5 @@ export default {
   watch: {
     clearScreen: false,
   },
+  strictDeprecations: true,
 };
