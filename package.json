@@ -11,7 +11,7 @@
     "podman": "podman build --no-cache --pull --compress -t uast . && podman system prune -f",
     "start": "sirv public --host --no-clear",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "format": "prettier --write --plugin-search-dir=. \"**/*.{html,ts,svelte,json,md,svg}\""
+    "format": "prettier --write \"**/*.{html,ts,svelte,json,md,svg}\""
   },
   "devDependencies": {
     "@prettier/plugin-xml": "^2.2.0",
@@ -41,6 +41,13 @@
     "svelteIndentScriptAndStyle": true,
     "svelteSortOrder": "options-styles-scripts-markup",
     "singleQuote": true,
-    "jsxSingleQuote": true
+    "jsxSingleQuote": true,
+    "plugins": [
+      "@prettier/plugin-xml",
+      "prettier-plugin-svelte"
+    ],
+    "pluginSearchDirs": [
+      "."
+    ]
   }
 }
