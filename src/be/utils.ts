@@ -737,10 +737,8 @@ function iastToUAST(data: string): string {
   for (let k = 0; k < arr.length; k++) {
     let curr = arr[k] ?? '';
 
-    let hasDash = false;
-    if (curr.includes('-')) {
-      hasDash = true;
-    }
+    const hasDash = curr.includes('-') ? true : false;
+
     curr = curr.replaceAll(/[\\-]/gu, '');
     for (let j of Object.values(devanagariCharDict.misc)
       .filter(i => ['om', '..'].includes(i) === false)
@@ -759,7 +757,7 @@ function iastToUAST(data: string): string {
         (unAspiratedConsonants.includes(curr) && (arr[k + 1] ?? '') === 'h'
           ? 'a'
           : '') +
-        (hasDash === true ? '-' : '') +
+        (hasDash ? '-' : '') +
         (curr in devanagariCharDict.vowels ? '\\' : '')
     );
   }
