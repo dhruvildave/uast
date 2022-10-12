@@ -69,6 +69,7 @@
         <li>
           <Icon
             alt="arxiv icon"
+            title="Link to paper on arXiv"
             href="https://arxiv.org/abs/2203.14277"
             src="https://unpkg.com/simple-icons@latest/icons/arxiv.svg"
           />
@@ -76,6 +77,7 @@
         <li>
           <Icon
             alt="go icon"
+            title="Link to CLI GitHub repository"
             href="https://github.com/aneri0x4f/uast-cli"
             src="https://unpkg.com/simple-icons@latest/icons/go.svg"
           />
@@ -83,6 +85,7 @@
         <li>
           <Icon
             alt="typescript icon"
+            title="Link to web GitHub repository"
             href="https://github.com/dhruvildave/uast"
             src="https://unpkg.com/simple-icons@latest/icons/typescript.svg"
           />
@@ -90,6 +93,7 @@
         <li>
           <Icon
             alt="help icon"
+            title="Help"
             href="https://github.com/aneri0x4f/uast-cli/wiki"
             src="/img/help.svg"
           />

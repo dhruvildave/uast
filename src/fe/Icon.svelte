@@ -14,8 +14,9 @@
   export let href: string;
   export let src: string;
   export let alt: string;
+  export let title: string;
 </script>
 
-<a target="_blank" rel="noreferrer" href="{href}">
+<a target="_blank" title="{title}" rel="noreferrer" href="{href}">
   <img src="{src}" alt="{alt}" width="28" height="28" />
 </a>
