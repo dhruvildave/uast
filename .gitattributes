@@ -4,4 +4,4 @@
 *.png binary
 *.svg binary
 
-*.mjs linguist-language=TypeScript
+*.js linguist-language=TypeScript
