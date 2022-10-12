@@ -463,7 +463,7 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
       uast = uast.slice(0, uast.length - 1);
     }
 
-    let str = Array.from(uast);
+    const str = Array.from(uast);
     let arr: string[] = [];
 
     for (let i = 0; i < str.length; ) {
@@ -528,7 +528,7 @@ function dataToIAST(data: string): string {
         return split;
       }
 
-      let str = Array.from(split);
+      const str = Array.from(split);
 
       let arr: string[] = [];
 
@@ -644,7 +644,9 @@ function dataToIAST(data: string): string {
  * @returns UAST string
  */
 function iastToUAST(data: string): string {
-  let str = Array.from(data.normalize().replaceAll(/[\[\]^~@#$%&*\-_;]/gu, ''));
+  const str = Array.from(
+    data.normalize().replaceAll(/[\[\]^~@#$%&*\-_;]/gu, '')
+  );
   let arr: string[] = [];
 
   for (let i = 0; i < str.length; ) {
