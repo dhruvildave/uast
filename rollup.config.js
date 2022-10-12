@@ -1,6 +1,7 @@
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
+import * as child_process from 'node:child_process';
 import css from 'rollup-plugin-css-only';
 import livereload from 'rollup-plugin-livereload';
 import svelte from 'rollup-plugin-svelte';
@@ -19,14 +20,10 @@ function serve() {
   return {
     writeBundle() {
       if (server) return;
-      server = require('child_process').spawn(
-        'npm',
-        ['run', 'start', '--', '--dev', '--host'],
-        {
-          stdio: ['ignore', 'inherit', 'inherit'],
-          shell: true,
-        }
-      );
+      server = child_process.spawn('npm', ['run', 'start', '--', '--dev'], {
+        stdio: ['ignore', 'inherit', 'inherit'],
+        shell: true,
+      });
 
       process.on('SIGTERM', toExit);
       process.on('exit', toExit);

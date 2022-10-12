@@ -62,7 +62,7 @@
 <header>
   <nav>
     <section>
-      <img src="/icon.svg" width="48" height="48" alt="uast logo" />
+      <img src="/img/icon.svg" width="48" height="48" alt="uast logo" />
     </section>
     <section>
       <ul>
@@ -85,6 +85,13 @@
             alt="typescript icon"
             href="https://github.com/dhruvildave/uast"
             src="https://unpkg.com/simple-icons@latest/icons/typescript.svg"
+          />
+        </li>
+        <li>
+          <Icon
+            alt="help icon"
+            href="https://github.com/aneri0x4f/uast-cli/wiki"
+            src="/img/help.svg"
           />
         </li>
       </ul>
