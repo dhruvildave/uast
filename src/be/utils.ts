@@ -808,16 +808,19 @@ function createDataFunction(lang: LangList): (data: string) => string {
 
         for (let i = 0; i < str.length; ) {
           const curr = str[i] ?? '';
-          if (curr === "'") {
-            arr.push('॑');
-            i++;
-            continue;
-          }
 
-          if (curr === '`') {
-            arr.push('॒');
-            i++;
-            continue;
+          if (lang === 'sa') {
+            if (curr === "'") {
+              arr.push('॑');
+              i++;
+              continue;
+            }
+
+            if (curr === '`') {
+              arr.push('॒');
+              i++;
+              continue;
+            }
           }
 
           if ([',', '?', '!', '"', ':', '(', ')', '='].includes(curr)) {
