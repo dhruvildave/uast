@@ -14,7 +14,13 @@
 
     user-select: none;
 
+    font-family: var(--font-family-mono);
     background-color: var(--light-primary-light);
+  }
+
+  header nav h1 {
+    font-size: 1rem; /* 16px */
+    font-weight: bold;
   }
 
   header nav section {
@@ -34,9 +40,17 @@
     margin: 0 0.5rem;
   }
 
+  header nav section:nth-child(2) {
+    display: none;
+  }
+
   @media (min-width: 1024px) {
     header ul li {
       margin: 0 1rem;
+    }
+
+    header nav section:nth-child(2) {
+      display: block;
     }
   }
 
@@ -63,6 +77,9 @@
   <nav>
     <section>
       <img src="/img/icon.svg" width="48" height="48" alt="uast logo" />
+    </section>
+    <section>
+      <h1>UAST: All in one tool for Sanskrit transliteration</h1>
     </section>
     <section>
       <ul>
