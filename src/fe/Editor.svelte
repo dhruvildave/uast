@@ -7,22 +7,24 @@
     height: calc(100vh - 3rem);
   }
 
-  main div {
+  main article,
+  main aside {
     flex: 1;
 
     display: flex;
     flex-direction: column;
   }
 
-  main div:first-child {
+  main article {
     background-color: var(--light-primary-light);
   }
 
-  main div:last-child {
+  main aside {
     background-color: var(--light-primary-medium);
   }
 
-  main div select {
+  main article select,
+  main aside select {
     height: 3rem; /* 48px */
     width: 40%;
     min-width: max-content;
@@ -43,7 +45,8 @@
     font-family: var(--font-family-mono);
   }
 
-  main div textarea {
+  main article textarea,
+  main aside textarea {
     height: 100%;
     width: 100%;
     resize: none;
@@ -103,11 +106,11 @@
       color: var(--dark-text-color);
     }
 
-    main div:first-child {
+    main article {
       background-color: var(--dark-primary-dark);
     }
 
-    main div:last-child {
+    main aside {
       background-color: var(--dark-primary-medium);
     }
 
@@ -136,7 +139,8 @@
     }
   }
 
-  main div textarea:focus {
+  main article textarea:focus,
+  main aside textarea:focus {
     outline: none;
   }
 </style>
@@ -165,7 +169,7 @@
 </script>
 
 <main>
-  <div>
+  <article>
     <textarea
       class="{from === 'devanagari'
         ? 'sans'
@@ -195,12 +199,13 @@
     <select id="from-select" name="from" bind:value="{from}">
       <option selected value="uast">UAST</option>
       <option value="iast">IAST</option>
-      <option value="devanagari">देवनागरी (devanāgarī)</option>
+      <option value="devanagari">देवनागरी</option>
       <option value="raw">Raw</option>
       <option value="slp">SLP1</option>
     </select>
-  </div>
-  <div>
+  </article>
+
+  <aside>
     <textarea
       class="{to === 'devanagari'
         ? 'sans'
@@ -225,10 +230,10 @@
       value="{output}"></textarea>
 
     <select id="to-select" bind:value="{to}" name="to">
-      <option selected value="devanagari">देवनागरी (devanāgarī)</option>
+      <option selected value="devanagari">देवनागरी</option>
       <option value="iast">IAST</option>
       <option value="uast">UAST</option>
-      <option value="guj">ગુજરાતી (gujarātī)</option>
+      <option value="guj">ગુજરાતી</option>
     </select>
-  </div>
+  </aside>
 </main>
