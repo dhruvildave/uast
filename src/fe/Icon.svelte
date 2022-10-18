@@ -1,4 +1,9 @@
 <style>
+  a {
+    display: flex;
+    align-items: center;
+  }
+
   img {
     filter: invert(0%);
   }

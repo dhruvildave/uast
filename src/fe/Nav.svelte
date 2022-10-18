@@ -25,6 +25,9 @@
 
   header nav section {
     margin: 0 1rem;
+
+    display: flex;
+    align-items: center;
   }
 
   header nav section:last-child ul {
@@ -38,6 +41,9 @@
 
   header ul li {
     margin: 0 0.5rem;
+
+    display: flex;
+    align-items: center;
   }
 
   header nav section:nth-child(2) {
