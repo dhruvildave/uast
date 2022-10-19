@@ -451,8 +451,9 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
       9: '૯',
     };
   }
+  const scriptDict: CharMap = { ...unicodeMap, ...numberMap };
+
   return function handleUnicode(uast: string): string {
-    const scriptDict: CharMap = { ...unicodeMap, ...numberMap };
     uast = uast.toLowerCase();
 
     if (uast.startsWith('\\')) {
