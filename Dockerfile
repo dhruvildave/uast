@@ -12,4 +12,4 @@ RUN pnpm build
 
 FROM nginx:alpine AS deploy
 COPY --from=cli /go/bin/uast /usr/local/bin/uast
-COPY --from=builder /usr/src/public /usr/share/nginx/html
+COPY --from=builder /usr/src/dist /usr/share/nginx/html

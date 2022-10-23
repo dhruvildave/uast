@@ -3,5 +3,8 @@
   "editor.trimAutoWhitespace": true,
   "editor.autoClosingBrackets": "always",
   "editor.autoIndent": "advanced",
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  }
 }

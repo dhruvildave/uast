@@ -1,0 +1,31 @@
+@import "https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati&family=IBM+Plex+Mono&family=Noto+Serif+Devanagari&display=swap";
+
+:root {
+  --dark-primary-dark: rgb(0 0 0);
+  --dark-primary-light: rgb(34 34 34);
+  --dark-primary-medium: rgb(17 17 17);
+
+  --light-primary-light: rgb(255 255 255);
+  --light-primary-dark: rgb(221 221 221);
+  --light-primary-medium: rgb(238 238 238);
+
+  --font-family-mono: "IBM Plex Mono", monospace;
+  --font-family-sans: "Noto Serif Devanagari", serif;
+  --font-family-iast: var(--font-family-mono);
+  --font-family-guj: "Noto Serif Gujarati", serif;
+
+  --dark-text-color: rgb(255 255 255);
+  --light-text-color: rgb(0 0 0);
+}
+
+html {
+  color-scheme: dark light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
