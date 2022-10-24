@@ -967,6 +967,13 @@ export const convertor: {
       builderFuncs['sa']['handleUnicode'],
       builderFuncs['sa']['dataFunction'],
     ],
+    uast: [builderFuncs['sa']['handleUnicode'], iastToUAST],
+    guj: [
+      builderFuncs['gu']['handleUnicode'],
+      iastToUAST,
+      builderFuncs['gu']['handleUnicode'],
+      builderFuncs['gu']['dataFunction'],
+    ],
   },
   slp: {
     iast: [slpToIAST],
