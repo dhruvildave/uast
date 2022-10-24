@@ -46,7 +46,7 @@
     align-items: center;
   }
 
-  header nav section:last-child {
+  header nav section:nth-child(2) {
     display: none;
   }
 
@@ -55,7 +55,7 @@
       margin: 0 1rem;
     }
 
-    header nav section:last-child {
+    header nav section:nth-child(2) {
       display: block;
     }
   }
