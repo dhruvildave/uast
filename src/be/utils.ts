@@ -961,6 +961,12 @@ export const convertor: {
   },
   raw: {
     iast: [builderFuncs['sa']['handleUnicode']],
+    devanagari: [
+      builderFuncs['sa']['handleUnicode'],
+      iastToUAST,
+      builderFuncs['sa']['handleUnicode'],
+      builderFuncs['sa']['dataFunction'],
+    ],
   },
   slp: {
     iast: [slpToIAST],
