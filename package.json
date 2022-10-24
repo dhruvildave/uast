@@ -13,7 +13,6 @@
     "format": "prettier --write \"**/*.{html,ts,svelte,json,md,svg}\""
   },
   "devDependencies": {
-    "@prettier/plugin-xml": "^2.2.0",
     "@sveltejs/vite-plugin-svelte": "^1.0.9",
     "@tsconfig/svelte": "^3.0.0",
     "prettier": "^2.7.1",
@@ -33,11 +32,18 @@
     "singleQuote": true,
     "jsxSingleQuote": true,
     "plugins": [
-      "@prettier/plugin-xml",
       "prettier-plugin-svelte"
     ],
     "pluginSearchDirs": [
       "."
+    ],
+    "overrides": [
+      {
+        "files": "*.svg",
+        "options": {
+          "parser": "html"
+        }
+      }
     ]
   }
 }
