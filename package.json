@@ -13,7 +13,7 @@
     "format": "prettier --write \"**/*.{html,ts,svelte,json,md,svg}\""
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.9",
+    "@sveltejs/vite-plugin-svelte": "^1.1.0",
     "@tsconfig/svelte": "^3.0.0",
     "prettier": "^2.7.1",
     "prettier-plugin-svelte": "^2.8.0",
