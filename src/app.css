@@ -1,4 +1,6 @@
-@import 'https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati&family=IBM+Plex+Mono&family=Noto+Serif+Devanagari&display=swap';
+@import '@fontsource/ibm-plex-mono';
+@import '@fontsource/noto-serif-devanagari';
+@import '@fontsource/noto-serif-gujarati';
 
 :root {
   --dark-primary-dark: rgb(0 0 0);
