@@ -741,9 +741,9 @@ function iastToUAST(data: string): string {
     const hasDash = curr.includes('-') ? true : false;
 
     curr = curr.replaceAll(/[\\-]/gu, '');
-    for (let j of Array.from(devanagariCharDict.misc.values())
+    for (let j of [...devanagariCharDict.misc.values()]
       .filter(i => ['om', '..'].includes(i) === false)
-      .concat(Array.from(devanagariCharDict.numbers.values()))) {
+      .concat([...devanagariCharDict.numbers.values()])) {
       if (curr === '.' && arr[k + 1] === '.') {
         curr = curr.replaceAll(curr, '\\/../\\');
         k++;
@@ -891,8 +891,8 @@ function devanagariToUAST(data: string): string {
     const next_val = devanagariDataDict.get(next) ?? next;
 
     if (
-      Array.from(devanagariCharDict.vowels.values()).includes(curr) &&
-      Array.from(devanagariCharDict.consonants.values()).includes(next)
+      [...devanagariCharDict.vowels.values()].includes(curr) &&
+      [...devanagariCharDict.consonants.values()].includes(next)
     ) {
       arr.push(`${val}\\`);
       continue;
