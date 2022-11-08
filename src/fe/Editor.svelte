@@ -64,6 +64,8 @@
 
     font-size: 1rem; /* 16px */
     line-height: 1.5rem; /* 24px */
+
+    animation: fade 300ms ease-in-out;
   }
 
   textarea#input,
@@ -136,6 +138,16 @@
     select {
       font-size: 1.5rem; /* 24px */
       line-height: 2rem; /* 32px */
+    }
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
     }
   }
 
