@@ -6,8 +6,8 @@ RUN make -C uast-cli install
 FROM node:alpine AS builder
 WORKDIR /usr/src
 COPY . .
-RUN npm install -g pnpm
-RUN pnpm install
+RUN npm i -g pnpm
+RUN pnpm i
 RUN pnpm build
 
 FROM nginx:alpine AS deploy
