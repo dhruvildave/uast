@@ -16,7 +16,7 @@
     "@fontsource/ibm-plex-mono": "^4.5.12",
     "@fontsource/noto-serif-devanagari": "^4.5.13",
     "@fontsource/noto-serif-gujarati": "^4.5.11",
-    "@sveltejs/vite-plugin-svelte": "^1.1.0",
+    "@sveltejs/vite-plugin-svelte": "^1.1.1",
     "@tsconfig/svelte": "^3.0.0",
     "prettier": "^2.7.1",
     "prettier-plugin-svelte": "^2.8.0",

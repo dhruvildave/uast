@@ -4,7 +4,7 @@ specifiers:
   '@fontsource/ibm-plex-mono': ^4.5.12
   '@fontsource/noto-serif-devanagari': ^4.5.13
   '@fontsource/noto-serif-gujarati': ^4.5.11
-  '@sveltejs/vite-plugin-svelte': ^1.1.0
+  '@sveltejs/vite-plugin-svelte': ^1.1.1
   '@tsconfig/svelte': ^3.0.0
   prettier: ^2.7.1
   prettier-plugin-svelte: ^2.8.0
@@ -19,7 +19,7 @@ devDependencies:
   '@fontsource/ibm-plex-mono': 4.5.12
   '@fontsource/noto-serif-devanagari': 4.5.13
   '@fontsource/noto-serif-gujarati': 4.5.11
-  '@sveltejs/vite-plugin-svelte': 1.1.0_svelte@3.53.1+vite@3.2.3
+  '@sveltejs/vite-plugin-svelte': 1.1.1_svelte@3.53.1+vite@3.2.3
   '@tsconfig/svelte': 3.0.0
   prettier: 2.7.1
   prettier-plugin-svelte: 2.8.0_nryolsexf6k3znhuh4uzpugsem
@@ -99,8 +99,8 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.1.0_svelte@3.53.1+vite@3.2.3:
-    resolution: {integrity: sha512-cFRfEdztubtj1c/rYh7ArK7XCfFJn6wG6+J8/e9amFsKtEJILovoBrK0/mxt1AjPQg0vaX+fHPKvhx+q8mTPaQ==}
+  /@sveltejs/vite-plugin-svelte/1.1.1_svelte@3.53.1+vite@3.2.3:
+    resolution: {integrity: sha512-NzIaGIzWh5hCSMUoxukYEGmxFCWgzaVglqHJLV5r0BA7hHZbHXu8DYR80i6QUX4xyoQ4PZ8ir7SUYsThbreMcg==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
       diff-match-patch: ^1.0.5
