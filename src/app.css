@@ -1,4 +1,4 @@
-@import '@fontsource/ibm-plex-mono';
+@import '@fontsource/source-code-pro';
 @import '@fontsource/noto-serif-devanagari';
 @import '@fontsource/noto-serif-gujarati';
 
@@ -11,7 +11,7 @@
   --light-primary-dark: rgb(221 221 221);
   --light-primary-medium: rgb(238 238 238);
 
-  --font-family-mono: 'IBM Plex Mono', monospace;
+  --font-family-mono: 'Source Code Pro', monospace;
   --font-family-sans: 'Noto Serif Devanagari', serif;
   --font-family-guj: 'Noto Serif Gujarati', serif;
 

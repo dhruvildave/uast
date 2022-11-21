@@ -1,9 +1,9 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@fontsource/ibm-plex-mono': ^4.5.12
   '@fontsource/noto-serif-devanagari': ^4.5.13
   '@fontsource/noto-serif-gujarati': ^4.5.11
+  '@fontsource/source-code-pro': ^4.5.12
   '@sveltejs/vite-plugin-svelte': ^1.2.0
   '@tsconfig/svelte': ^3.0.0
   prettier: ^2.7.1
@@ -16,9 +16,9 @@ specifiers:
   vite: ^3.2.4
 
 devDependencies:
-  '@fontsource/ibm-plex-mono': 4.5.12
   '@fontsource/noto-serif-devanagari': 4.5.13
   '@fontsource/noto-serif-gujarati': 4.5.11
+  '@fontsource/source-code-pro': 4.5.12
   '@sveltejs/vite-plugin-svelte': 1.2.0_svelte@3.53.1+vite@3.2.4
   '@tsconfig/svelte': 3.0.0
   prettier: 2.7.1
@@ -50,16 +50,16 @@ packages:
     dev: true
     optional: true
 
-  /@fontsource/ibm-plex-mono/4.5.12:
-    resolution: {integrity: sha512-ysF4GfudxLgDnpycjzrHFKqsEMOYHt0IUJN6dRECg6YLvVggLMj/SPh+w0QWjdgXkIbjqIbcho0O5mNcLCJMiQ==}
-    dev: true
-
   /@fontsource/noto-serif-devanagari/4.5.13:
     resolution: {integrity: sha512-yp3sqxdIhUu5CkpVcn4StLQBaqv9qRHiQm5KmlAKoItIppi1B96iRuwwzX6DKENnUJG9GS2Y59kFTRTS379g5w==}
     dev: true
 
   /@fontsource/noto-serif-gujarati/4.5.11:
     resolution: {integrity: sha512-7y2dKyAQmutOhqzhQnxu3ze5ue0nT5Ll7OsDCmI4rFfrboY1dxTuXRfOwxhK+rYYIRvPStpaJyMDTN7Hurzuiw==}
+    dev: true
+
+  /@fontsource/source-code-pro/4.5.12:
+    resolution: {integrity: sha512-6r1dykX7SH1Orm7xUh4sA8pjM1uNPKo9fV+y9/wxS+y/fwN+sMf6b1jHDUTmfEtw1OxlTaHGrr2I7dGeNqxdPA==}
     dev: true
 
   /@jridgewell/resolve-uri/3.1.0:
