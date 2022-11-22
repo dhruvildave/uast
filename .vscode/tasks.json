@@ -5,7 +5,11 @@
       "label": "build",
       "command": "pnpm",
       "args": ["build"],
-      "problemMatcher": "$tsc"
+      "problemMatcher": "$tsc",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     }
   ]
 }
