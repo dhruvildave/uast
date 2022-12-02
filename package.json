@@ -16,7 +16,7 @@
     "@fontsource/noto-serif-devanagari": "^4.5.13",
     "@fontsource/noto-serif-gujarati": "^4.5.11",
     "@fontsource/source-code-pro": "^4.5.12",
-    "@sveltejs/vite-plugin-svelte": "^1.3.1",
+    "@sveltejs/vite-plugin-svelte": "^1.4.0",
     "@tsconfig/svelte": "^3.0.0",
     "prettier": "^2.8.0",
     "prettier-plugin-svelte": "^2.8.1",
