@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@fontsource/noto-serif-devanagari': ^4.5.13
   '@fontsource/noto-serif-gujarati': ^4.5.11
+  '@fontsource/noto-serif-oriya': ^4.5.0
   '@fontsource/source-code-pro': ^4.5.12
   '@sveltejs/vite-plugin-svelte': ^1.4.0
   '@tsconfig/svelte': ^3.0.0
@@ -18,6 +19,7 @@ specifiers:
 devDependencies:
   '@fontsource/noto-serif-devanagari': 4.5.13
   '@fontsource/noto-serif-gujarati': 4.5.11
+  '@fontsource/noto-serif-oriya': 4.5.0
   '@fontsource/source-code-pro': 4.5.12
   '@sveltejs/vite-plugin-svelte': 1.4.0_svelte@3.53.1+vite@3.2.4
   '@tsconfig/svelte': 3.0.0
@@ -56,6 +58,10 @@ packages:
 
   /@fontsource/noto-serif-gujarati/4.5.11:
     resolution: {integrity: sha512-7y2dKyAQmutOhqzhQnxu3ze5ue0nT5Ll7OsDCmI4rFfrboY1dxTuXRfOwxhK+rYYIRvPStpaJyMDTN7Hurzuiw==}
+    dev: true
+
+  /@fontsource/noto-serif-oriya/4.5.0:
+    resolution: {integrity: sha512-jJQAKmeekrmW17am4DbP99zqag0E3kDDSzRrvPRKpMMjxMfXDxo4vWqnMkvrZMuVvxCM3Rtgulniy4o4c/Vnwg==}
     dev: true
 
   /@fontsource/source-code-pro/4.5.12:

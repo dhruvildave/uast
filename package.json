@@ -15,6 +15,7 @@
   "devDependencies": {
     "@fontsource/noto-serif-devanagari": "^4.5.13",
     "@fontsource/noto-serif-gujarati": "^4.5.11",
+    "@fontsource/noto-serif-oriya": "^4.5.0",
     "@fontsource/source-code-pro": "^4.5.12",
     "@sveltejs/vite-plugin-svelte": "^1.4.0",
     "@tsconfig/svelte": "^3.0.0",

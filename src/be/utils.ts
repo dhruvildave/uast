@@ -17,13 +17,13 @@ type LangMap = {
   misc: CharMap;
 };
 
-type LangList = 'gu' | 'sa';
+type LangList = 'gu' | 'sa' | 'or';
 
 const gujaratiCharDict: LangMap = {
   misc: new Map([
     ['।', '.'],
     ['॥', '..'],
-    ['ऽ', "'"],
+    ['ઽ', "'"],
     ['ॐ', 'om'],
   ]),
   numbers: new Map([
@@ -46,6 +46,9 @@ const gujaratiCharDict: LangMap = {
     ['u', 'ઉ'],
     ['ū', 'ઊ'],
     ['ṛ', 'ઋ'],
+    ['ṝ', 'ૠ'],
+    ['ḷ', 'ઌ'],
+    ['ḹ', 'ૡ'],
     ['e', 'એ'],
     ['ai', 'ઐ'],
     ['o', 'ઓ'],
@@ -59,6 +62,9 @@ const gujaratiCharDict: LangMap = {
     ['u', 'ુ'],
     ['ū', 'ૂ'],
     ['ṛ', 'ૃ'],
+    ['ṝ', 'ૄ'],
+    ['ḷ', 'ૢ'],
+    ['ḹ', 'ૣ'],
     ['e', 'ે'],
     ['ai', 'ૈ'],
     ['o', 'ો'],
@@ -103,6 +109,99 @@ const gujaratiCharDict: LangMap = {
     ['s', 'સ'],
     ['h', 'હ'],
     ['ḻ', 'ળ'],
+  ]),
+};
+
+const odiaCharDict: LangMap = {
+  misc: new Map([
+    ['।', '.'],
+    ['॥', '..'],
+    ['ଽ', "'"],
+    ['ଓଁ', 'om'],
+  ]),
+  numbers: new Map([
+    ['୦', '0'],
+    ['୧', '1'],
+    ['୨', '2'],
+    ['୩', '3'],
+    ['୪', '4'],
+    ['୫', '5'],
+    ['୬', '6'],
+    ['୭', '7'],
+    ['୮', '8'],
+    ['୯', '9'],
+  ]),
+  vowels: new Map([
+    ['a', 'ଅ'],
+    ['ā', 'ଆ'],
+    ['i', 'ଇ'],
+    ['ī', 'ଈ'],
+    ['u', 'ଉ'],
+    ['ū', 'ଊ'],
+    ['ṛ', 'ଋ'],
+    ['ṝ', 'ୠ'],
+    ['ḷ', 'ଌ'],
+    ['ḹ', 'ୡ'],
+    ['e', 'ଏ'],
+    ['ai', 'ଐ'],
+    ['o', 'ଓ'],
+    ['au', 'ଔ'],
+  ]),
+  vowelSigns: new Map([
+    ['a', ''],
+    ['ā', 'ା'],
+    ['i', 'ି'],
+    ['ī', 'ୀ'],
+    ['u', 'ୁ'],
+    ['ū', 'ୂ'],
+    ['ṛ', 'ୃ'],
+    ['ṝ', 'ୄ'],
+    ['ḷ', 'ୢ'],
+    ['ḹ', 'ୣ'],
+    ['e', 'େ'],
+    ['ai', 'ୈ'],
+    ['o', 'ୋ'],
+    ['au', 'ୌ'],
+    ['ṃ', 'ଂ'],
+    ['ḥ', 'ଃ'],
+    ['ã', '‍ଁ'],
+    ['-', '‍୍'],
+  ]),
+  consonants: new Map([
+    ['k', 'କ'],
+    ['kh', 'ଖ'],
+    ['g', 'ଗ'],
+    ['gh', 'ଘ'],
+    ['ṅ', 'ଙ'],
+    ['c', 'ଚ'],
+    ['ch', 'ଛ'],
+    ['j', 'ଜ'],
+    ['jh', 'ଝ'],
+    ['ñ', 'ଞ'],
+    ['ṭ', 'ଟ'],
+    ['ṭh', 'ଠ'],
+    ['ḍ', 'ଡ'],
+    ['ḍh', 'ଢ'],
+    ['ṇ', 'ଣ'],
+    ['t', 'ତ'],
+    ['th', 'ଥ'],
+    ['d', 'ଦ'],
+    ['dh', 'ଧ'],
+    ['n', 'ନ'],
+    ['p', 'ପ'],
+    ['ph', 'ଫ'],
+    ['b', 'ବ'],
+    ['bh', 'ଭ'],
+    ['m', 'ମ'],
+    ['y', 'ୟ'],
+    ['r', 'ର'],
+    ['l', 'ଲ'],
+    ['v', 'ୱ'],
+    ['ś', 'ଶ'],
+    ['ṣ', 'ଷ'],
+    ['s', 'ସ'],
+    ['h', 'ହ'],
+    ['ḻ', 'ଳ'],
   ]),
 };
 
@@ -217,10 +316,8 @@ const unicodeMap: CharMap = new Map([
   ['nl', 'ṇ'],
   ['su', 'ś'],
   ['sl', 'ṣ'],
-  ["'", 'ऽ'],
   ['.', '।'],
   ['..', '॥'],
-  ['om', 'ॐ'],
   ['au', 'ã'],
 ]);
 
@@ -422,7 +519,7 @@ const slpDataDict: CharMap = new Map([
  * @returns parsed AnDy output string
  */
 function createHandleUnicode(lang: LangList): (uast: string) => string {
-  let numberMap: CharMap = new Map([
+  let scriptMap: CharMap = new Map([
     ['0', '०'],
     ['1', '१'],
     ['2', '२'],
@@ -433,23 +530,50 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
     ['7', '७'],
     ['8', '८'],
     ['9', '९'],
+    ['om', 'ॐ'],
+    ["'", 'ऽ'],
   ]);
 
-  if (lang === 'gu') {
-    numberMap = new Map([
-      ['0', '૦'],
-      ['1', '૧'],
-      ['2', '૨'],
-      ['3', '૩'],
-      ['4', '૪'],
-      ['5', '૫'],
-      ['6', '૬'],
-      ['7', '૭'],
-      ['8', '૮'],
-      ['9', '૯'],
-    ]);
+  switch (lang) {
+    case 'gu':
+      scriptMap = new Map([
+        ['0', '૦'],
+        ['1', '૧'],
+        ['2', '૨'],
+        ['3', '૩'],
+        ['4', '૪'],
+        ['5', '૫'],
+        ['6', '૬'],
+        ['7', '૭'],
+        ['8', '૮'],
+        ['9', '૯'],
+        ['om', 'ॐ'],
+        ["'", 'ઽ'],
+      ]);
+      break;
+
+    case 'or':
+      scriptMap = new Map([
+        ['0', '୦'],
+        ['1', '୧'],
+        ['2', '୨'],
+        ['3', '୩'],
+        ['4', '୪'],
+        ['5', '୫'],
+        ['6', '୬'],
+        ['7', '୭'],
+        ['8', '୮'],
+        ['9', '୯'],
+        ['om', 'ଓଁ'],
+        ["'", 'ଽ'],
+      ]);
+      break;
+
+    default:
+      break;
   }
-  const scriptDict: CharMap = new Map([...unicodeMap, ...numberMap]);
+
+  const scriptDict: CharMap = new Map([...unicodeMap, ...scriptMap]);
 
   return function handleUnicode(uast: string): string {
     uast = uast.toLowerCase();
@@ -785,8 +909,17 @@ function iastToUAST(data: string): string {
 function createDataFunction(lang: LangList): (data: string) => string {
   let obj: LangMap = devanagariCharDict;
 
-  if (lang === 'gu') {
-    obj = gujaratiCharDict;
+  switch (lang) {
+    case 'gu':
+      obj = gujaratiCharDict;
+      break;
+
+    case 'or':
+      obj = odiaCharDict;
+      break;
+
+    default:
+      break;
   }
 
   return function dataToScript(data: string): string {
@@ -924,22 +1057,34 @@ function slpToIAST(data: string): string {
 
 type FuncList = 'handleUnicode' | 'dataFunction';
 
-const builderFuncs: {
+function makeBuilder(): {
   [k in LangList]: {
     [f in FuncList]: ReturnType<
       typeof createDataFunction & typeof createHandleUnicode
     >;
   };
-} = {
-  gu: {
-    handleUnicode: createHandleUnicode('gu'),
-    dataFunction: createDataFunction('gu'),
-  },
-  sa: {
-    handleUnicode: createHandleUnicode('sa'),
-    dataFunction: createDataFunction('sa'),
-  },
-};
+} {
+  type T = {
+    [k in LangList]: {
+      [f in FuncList]: ReturnType<
+        typeof createDataFunction & typeof createHandleUnicode
+      >;
+    };
+  };
+
+  const y: Partial<T> = {};
+  const t: LangList[] = ['gu', 'sa', 'or'];
+  for (const l of t) {
+    y[l] = {
+      dataFunction: createDataFunction(l),
+      handleUnicode: createHandleUnicode(l),
+    };
+  }
+
+  return y as Required<T>;
+}
+
+const builderFuncs = makeBuilder();
 
 export const convertor: {
   [from: string]: {
@@ -955,6 +1100,10 @@ export const convertor: {
     guj: [
       builderFuncs['gu']['handleUnicode'],
       builderFuncs['gu']['dataFunction'],
+    ],
+    odia: [
+      builderFuncs['or']['handleUnicode'],
+      builderFuncs['or']['dataFunction'],
     ],
   },
   raw: {
@@ -972,6 +1121,12 @@ export const convertor: {
       builderFuncs['gu']['handleUnicode'],
       builderFuncs['gu']['dataFunction'],
     ],
+    odia: [
+      builderFuncs['or']['handleUnicode'],
+      iastToUAST,
+      builderFuncs['or']['handleUnicode'],
+      builderFuncs['or']['dataFunction'],
+    ],
   },
   slp: {
     iast: [slpToIAST],
@@ -988,6 +1143,12 @@ export const convertor: {
       builderFuncs['gu']['handleUnicode'],
       builderFuncs['gu']['dataFunction'],
     ],
+    odia: [
+      slpToIAST,
+      iastToUAST,
+      builderFuncs['or']['handleUnicode'],
+      builderFuncs['or']['dataFunction'],
+    ],
   },
   devanagari: {
     uast: [devanagariToUAST],
@@ -996,6 +1157,11 @@ export const convertor: {
       devanagariToUAST,
       builderFuncs['gu']['handleUnicode'],
       builderFuncs['gu']['dataFunction'],
+    ],
+    odia: [
+      devanagariToUAST,
+      builderFuncs['or']['handleUnicode'],
+      builderFuncs['or']['dataFunction'],
     ],
   },
   iast: {
@@ -1009,6 +1175,11 @@ export const convertor: {
       iastToUAST,
       builderFuncs['gu']['handleUnicode'],
       builderFuncs['gu']['dataFunction'],
+    ],
+    odia: [
+      iastToUAST,
+      builderFuncs['or']['handleUnicode'],
+      builderFuncs['or']['dataFunction'],
     ],
   },
 };

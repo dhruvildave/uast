@@ -82,20 +82,25 @@
 
   textarea.sans {
     font-family: var(--font-family-sans);
-
-    font-size: 1.5rem; /* 24px */
-    line-height: 2rem; /* 32px */
   }
 
   textarea.mono {
     font-family: var(--font-family-mono);
   }
 
-  textarea.guj {
-    font-family: var(--font-family-guj);
-
+  textarea.guj,
+  textarea.sans,
+  textarea.odia {
     font-size: 1.5rem; /* 24px */
     line-height: 2rem; /* 32px */
+  }
+
+  textarea.guj {
+    font-family: var(--font-family-guj);
+  }
+
+  textarea.odia {
+    font-family: var(--font-family-odia);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -166,8 +171,11 @@
       return i
         .split(' ')
         .map(j => {
+          console.clear();
           for (const f of utils.convertor[from]?.[to] ?? []) {
+            console.log('before', j);
             j = f(j);
+            console.log('after', j);
           }
           return j;
         })
@@ -211,7 +219,13 @@
 
   <aside>
     <textarea
-      class="{to === 'devanagari' ? 'sans' : to === 'guj' ? 'guj' : 'mono'}"
+      class="{to === 'devanagari'
+        ? 'sans'
+        : to === 'guj'
+        ? 'guj'
+        : to === 'odia'
+        ? 'odia'
+        : 'mono'}"
       autocomplete="off"
       spellcheck="false"
       disabled
@@ -224,6 +238,8 @@
         ? 'tasmādyogī bhavārjuna'
         : to === 'guj'
         ? 'તસ્માદ્યોગી ભવાર્જુન'
+        : to === 'odia'
+        ? 'ତସ‍୍ମାଦ‍୍ୟୋଗୀ ଭୱାର‍୍ଜୁନ'
         : 'ts-m/a/d-yog/i/ bhv/a/r-jun'}"
       value="{output}"></textarea>
 
@@ -232,6 +248,7 @@
       <option value="iast">IAST</option>
       <option value="uast">UAST</option>
       <option value="guj">ગુજરાતી</option>
+      <option value="odia">ଓଡ଼ିଆ</option>
     </select>
   </aside>
 </main>
