@@ -17,7 +17,8 @@ type LangMap = {
   misc: CharMap;
 };
 
-type LangList = 'gu' | 'sa' | 'or';
+const langs = ['gu', 'sa', 'or'] as const;
+type LangList = typeof langs[number];
 
 const gujaratiCharDict: LangMap = {
   misc: new Map([
@@ -1073,8 +1074,7 @@ function makeBuilder(): {
   };
 
   const y: Partial<T> = {};
-  const t: LangList[] = ['gu', 'sa', 'or'];
-  for (const l of t) {
+  for (const l of langs) {
     y[l] = {
       dataFunction: createDataFunction(l),
       handleUnicode: createHandleUnicode(l),
