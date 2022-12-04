@@ -1,6 +1,7 @@
 @import '@fontsource/source-code-pro';
 @import '@fontsource/noto-serif-devanagari';
 @import '@fontsource/noto-serif-gujarati';
+@import '@fontsource/noto-serif-kannada';
 @import '@fontsource/noto-serif-oriya';
 
 :root {
@@ -16,6 +17,7 @@
   --font-family-sans: 'Noto Serif Devanagari', serif;
   --font-family-guj: 'Noto Serif Gujarati', serif;
   --font-family-odia: 'Noto Serif Oriya', serif;
+  --font-family-kn: 'Noto Serif Kannada', serif;
 
   --dark-text-color: rgb(255 255 255);
   --light-text-color: rgb(0 0 0);

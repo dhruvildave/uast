@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@fontsource/noto-serif-devanagari': ^4.5.13
   '@fontsource/noto-serif-gujarati': ^4.5.11
+  '@fontsource/noto-serif-kannada': ^4.5.11
   '@fontsource/noto-serif-oriya': ^4.5.0
   '@fontsource/source-code-pro': ^4.5.12
   '@sveltejs/vite-plugin-svelte': ^1.4.0
@@ -19,6 +20,7 @@ specifiers:
 devDependencies:
   '@fontsource/noto-serif-devanagari': 4.5.13
   '@fontsource/noto-serif-gujarati': 4.5.11
+  '@fontsource/noto-serif-kannada': 4.5.11
   '@fontsource/noto-serif-oriya': 4.5.0
   '@fontsource/source-code-pro': 4.5.12
   '@sveltejs/vite-plugin-svelte': 1.4.0_svelte@3.53.1+vite@3.2.4
@@ -58,6 +60,10 @@ packages:
 
   /@fontsource/noto-serif-gujarati/4.5.11:
     resolution: {integrity: sha512-7y2dKyAQmutOhqzhQnxu3ze5ue0nT5Ll7OsDCmI4rFfrboY1dxTuXRfOwxhK+rYYIRvPStpaJyMDTN7Hurzuiw==}
+    dev: true
+
+  /@fontsource/noto-serif-kannada/4.5.11:
+    resolution: {integrity: sha512-OgGXmIPwtnS52QOtuLOJqG/1XWSY5jYblmgrFXGUM3BF1SP/zOu3kHK+935kEc3yc7gVJBcg4IKIzXKbi4+d4Q==}
     dev: true
 
   /@fontsource/noto-serif-oriya/4.5.0:
@@ -768,6 +774,7 @@ packages:
 
   /sourcemap-codec/1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
+    deprecated: Please use @jridgewell/sourcemap-codec instead
     dev: true
 
   /strip-indent/3.0.0:

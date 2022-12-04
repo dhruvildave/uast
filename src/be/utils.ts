@@ -17,7 +17,7 @@ type LangMap = {
   misc: CharMap;
 };
 
-const langs = ['gu', 'sa', 'or'] as const;
+const langs = ['gu', 'sa', 'or', 'kn'] as const;
 type LangList = typeof langs[number];
 
 const gujaratiCharDict: LangMap = {
@@ -110,6 +110,99 @@ const gujaratiCharDict: LangMap = {
     ['s', 'સ'],
     ['h', 'હ'],
     ['ḻ', 'ળ'],
+  ]),
+};
+
+const kannadaCharDict: LangMap = {
+  misc: new Map([
+    ['।', '.'],
+    ['॥', '..'],
+    ['ಽ', "'"],
+    ['ಓಂ', 'om'],
+  ]),
+  numbers: new Map([
+    ['೦', '0'],
+    ['೧', '1'],
+    ['೨', '2'],
+    ['೩', '3'],
+    ['೪', '4'],
+    ['೫', '5'],
+    ['೬', '6'],
+    ['೭', '7'],
+    ['೮', '8'],
+    ['೯', '9'],
+  ]),
+  vowels: new Map([
+    ['a', 'ಅ'],
+    ['ā', 'ಆ'],
+    ['i', 'ಇ'],
+    ['ī', 'ಈ'],
+    ['u', 'ಉ'],
+    ['ū', 'ಊ'],
+    ['ṛ', 'ಋ'],
+    ['ṝ', 'ೠ'],
+    ['ḷ', 'ಌ'],
+    ['ḹ', 'ೡ'],
+    ['e', 'ಎ'],
+    ['ai', 'ಐ'],
+    ['o', 'ಒ'],
+    ['au', 'ಔ'],
+  ]),
+  vowelSigns: new Map([
+    ['a', ''],
+    ['ā', 'ಾ'],
+    ['i', 'ಿ'],
+    ['ī', 'ೀ'],
+    ['u', 'ು'],
+    ['ū', 'ೂ'],
+    ['ṛ', 'ೃ'],
+    ['ṝ', 'ೄ'],
+    ['ḷ', 'ೢ'],
+    ['ḹ', 'ೣ'],
+    ['e', 'ೆ'],
+    ['ai', 'ೈ'],
+    ['o', 'ೊ'],
+    ['au', 'ೌ'],
+    ['ṃ', 'ಂ'],
+    ['ḥ', 'ಃ'],
+    ['ã', 'ಁ'],
+    ['-', '್'],
+  ]),
+  consonants: new Map([
+    ['k', 'ಕ'],
+    ['kh', 'ಖ'],
+    ['g', 'ಗ'],
+    ['gh', 'ಘ'],
+    ['ṅ', 'ಙ'],
+    ['c', 'ಚ'],
+    ['ch', 'ಛ'],
+    ['j', 'ಜ'],
+    ['jh', 'ಝ'],
+    ['ñ', 'ಞ'],
+    ['ṭ', 'ಟ'],
+    ['ṭh', 'ಠ'],
+    ['ḍ', 'ಡ'],
+    ['ḍh', 'ಢ'],
+    ['ṇ', 'ಣ'],
+    ['t', 'ತ'],
+    ['th', 'ಥ'],
+    ['d', 'ದ'],
+    ['dh', 'ಧ'],
+    ['n', 'ನ'],
+    ['p', 'ಪ'],
+    ['ph', 'ಫ'],
+    ['b', 'ಬ'],
+    ['bh', 'ಭ'],
+    ['m', 'ಮ'],
+    ['y', 'ಯ'],
+    ['r', 'ರ'],
+    ['l', 'ಲ'],
+    ['v', 'ವ'],
+    ['ś', 'ಶ'],
+    ['ṣ', 'ಷ'],
+    ['s', 'ಸ'],
+    ['h', 'ಹ'],
+    ['ḻ', 'ಳ'],
   ]),
 };
 
@@ -570,6 +663,23 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
       ]);
       break;
 
+    case 'kn':
+      scriptMap = new Map([
+        ['0', '೦'],
+        ['1', '೧'],
+        ['2', '೨'],
+        ['3', '೩'],
+        ['4', '೪'],
+        ['5', '೫'],
+        ['6', '೬'],
+        ['7', '೭'],
+        ['8', '೮'],
+        ['9', '೯'],
+        ['om', 'ಓಂ'],
+        ["'", 'ಽ'],
+      ]);
+      break;
+
     default:
       break;
   }
@@ -919,6 +1029,10 @@ function createDataFunction(lang: LangList): (data: string) => string {
       obj = odiaCharDict;
       break;
 
+    case 'kn':
+      obj = kannadaCharDict;
+      break;
+
     default:
       break;
   }
@@ -1098,6 +1212,10 @@ export const convertor: {
     odia: [
       builderFuncs['or']['handleUnicode'],
       builderFuncs['or']['dataFunction'],
+    ],
+    kn: [
+      builderFuncs['kn']['handleUnicode'],
+      builderFuncs['kn']['dataFunction'],
     ],
   },
   raw: {

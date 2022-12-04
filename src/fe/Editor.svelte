@@ -90,7 +90,8 @@
 
   textarea.guj,
   textarea.sans,
-  textarea.odia {
+  textarea.odia,
+  textarea.kn {
     font-size: 1.5rem; /* 24px */
     line-height: 2rem; /* 32px */
   }
@@ -101,6 +102,10 @@
 
   textarea.odia {
     font-family: var(--font-family-odia);
+  }
+
+  textarea.kn {
+    font-family: var(--font-family-kn);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -225,6 +230,8 @@
         ? 'guj'
         : to === 'odia'
         ? 'odia'
+        : to === 'kn'
+        ? 'kn'
         : 'mono'}"
       autocomplete="off"
       spellcheck="false"
@@ -240,6 +247,8 @@
         ? 'તસ્માદ્યોગી ભવાર્જુન'
         : to === 'odia'
         ? 'ତସ‍୍ମାଦ‍୍ୟୋଗୀ ଭୱାର‍୍ଜୁନ'
+        : to === 'kn'
+        ? 'ತಸ್ಮಾದ್ಯೊಗೀ ಭವಾರ್ಜುನ'
         : 'ts-m/a/d-yog/i/ bhv/a/r-jun'}"
       value="{output}"></textarea>
 
@@ -249,6 +258,7 @@
       <option value="uast">UAST</option>
       <option value="guj">ગુજરાતી</option>
       <option value="odia">ଓଡ଼ିଆ</option>
+      <option value="kn">ಕನ್ನಡ</option>
     </select>
   </aside>
 </main>
