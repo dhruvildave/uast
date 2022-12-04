@@ -1017,7 +1017,7 @@ function iastToUAST(data: string): string {
   }
 
   if (
-    (ans.at(-1) ?? '') in devanagariCharDict.consonants &&
+    devanagariCharDict.consonants.has(ans.at(-1) ?? '') &&
     (str.at(-1) ?? '') !== 'a'
   ) {
     ans.push('-');
