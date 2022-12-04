@@ -1058,22 +1058,16 @@ function slpToIAST(data: string): string {
 
 type FuncList = 'handleUnicode' | 'dataFunction';
 
-function makeBuilder(): {
+type Builder = {
   [k in LangList]: {
     [f in FuncList]: ReturnType<
       typeof createDataFunction & typeof createHandleUnicode
     >;
   };
-} {
-  type T = {
-    [k in LangList]: {
-      [f in FuncList]: ReturnType<
-        typeof createDataFunction & typeof createHandleUnicode
-      >;
-    };
-  };
+};
 
-  const y: Partial<T> = {};
+function makeBuilder(): Builder {
+  const y: Partial<Builder> = {};
   for (const l of langs) {
     y[l] = {
       dataFunction: createDataFunction(l),
@@ -1081,7 +1075,7 @@ function makeBuilder(): {
     };
   }
 
-  return y as Required<T>;
+  return y as Required<Builder>;
 }
 
 const builderFuncs = makeBuilder();
