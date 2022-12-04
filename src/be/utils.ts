@@ -17,7 +17,7 @@ type LangMap = {
   misc: CharMap;
 };
 
-const langs = ['gu', 'sa', 'or', 'kn'] as const;
+const langs = ['gu', 'sa', 'or', 'te', 'kn'] as const;
 type LangList = typeof langs[number];
 
 const gujaratiCharDict: LangMap = {
@@ -110,6 +110,99 @@ const gujaratiCharDict: LangMap = {
     ['s', 'સ'],
     ['h', 'હ'],
     ['ḻ', 'ળ'],
+  ]),
+};
+
+const teluguCharDict: LangMap = {
+  misc: new Map([
+    ['।', '.'],
+    ['॥', '..'],
+    ['ఽ', "'"],
+    ['ఓం', 'om'],
+  ]),
+  numbers: new Map([
+    ['౦', '0'],
+    ['౧', '1'],
+    ['౨', '2'],
+    ['౩', '3'],
+    ['౪', '4'],
+    ['౫', '5'],
+    ['౬', '6'],
+    ['౭', '7'],
+    ['౮', '8'],
+    ['౯', '9'],
+  ]),
+  vowels: new Map([
+    ['a', 'అ'],
+    ['ā', 'ఆ'],
+    ['i', 'ఇ'],
+    ['ī', 'ఈ'],
+    ['u', 'ఉ'],
+    ['ū', 'ఊ'],
+    ['ṛ', 'ఋ'],
+    ['ṝ', 'ౠ'],
+    ['ḷ', 'ఌ'],
+    ['ḹ', 'ౡ'],
+    ['e', 'ఎ'],
+    ['ai', 'ఐ'],
+    ['o', 'ఒ'],
+    ['au', 'ఔ'],
+  ]),
+  vowelSigns: new Map([
+    ['a', ''],
+    ['ā', 'ా'],
+    ['i', 'ి'],
+    ['ī', 'ీ'],
+    ['u', 'ు'],
+    ['ū', 'ూ'],
+    ['ṛ', 'ృ'],
+    ['ṝ', 'ౄ'],
+    ['ḷ', 'ౢ'],
+    ['ḹ', 'ౣ'],
+    ['e', 'ె'],
+    ['ai', 'ై'],
+    ['o', 'ొ'],
+    ['au', 'ౌ'],
+    ['ṃ', 'ం'],
+    ['ḥ', 'ః'],
+    ['ã', 'ఁ'],
+    ['-', '్'],
+  ]),
+  consonants: new Map([
+    ['k', 'క'],
+    ['kh', 'ఖ'],
+    ['g', 'గ'],
+    ['gh', 'ఘ'],
+    ['ṅ', 'ఙ'],
+    ['c', 'చ'],
+    ['ch', 'ఛ'],
+    ['j', 'జ'],
+    ['jh', 'ఝ'],
+    ['ñ', 'ఞ'],
+    ['ṭ', 'ట'],
+    ['ṭh', 'ఠ'],
+    ['ḍ', 'డ'],
+    ['ḍh', 'ఢ'],
+    ['ṇ', 'ణ'],
+    ['t', 'త'],
+    ['th', 'థ'],
+    ['d', 'ద'],
+    ['dh', 'ధ'],
+    ['n', 'న'],
+    ['p', 'ప'],
+    ['ph', 'ఫ'],
+    ['b', 'బ'],
+    ['bh', 'భ'],
+    ['m', 'మ'],
+    ['y', 'య'],
+    ['r', 'ర'],
+    ['l', 'ల'],
+    ['v', 'వ'],
+    ['ś', 'శ'],
+    ['ṣ', 'ష'],
+    ['s', 'స'],
+    ['h', 'హ'],
+    ['ḻ', 'ళ'],
   ]),
 };
 
@@ -698,6 +791,23 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
       });
       break;
 
+    case 'te':
+      scriptMap = createScriptMap({
+        '0': '౦',
+        '1': '౧',
+        '2': '౨',
+        '3': '౩',
+        '4': '౪',
+        '5': '౫',
+        '6': '౬',
+        '7': '౭',
+        '8': '౮',
+        '9': '౯',
+        "'": 'ఽ',
+        om: 'ఓం',
+      });
+      break;
+
     default:
       break;
   }
@@ -1051,6 +1161,10 @@ function createDataFunction(lang: LangList): (data: string) => string {
       obj = kannadaCharDict;
       break;
 
+    case 'te':
+      obj = teluguCharDict;
+      break;
+
     default:
       break;
   }
@@ -1235,6 +1349,10 @@ export const convertor: {
       builderFuncs['kn']['handleUnicode'],
       builderFuncs['kn']['dataFunction'],
     ],
+    te: [
+      builderFuncs['te']['handleUnicode'],
+      builderFuncs['te']['dataFunction'],
+    ],
   },
   raw: {
     iast: [builderFuncs['sa']['handleUnicode']],
@@ -1262,6 +1380,12 @@ export const convertor: {
       iastToUAST,
       builderFuncs['kn']['handleUnicode'],
       builderFuncs['kn']['dataFunction'],
+    ],
+    te: [
+      builderFuncs['te']['handleUnicode'],
+      iastToUAST,
+      builderFuncs['te']['handleUnicode'],
+      builderFuncs['te']['dataFunction'],
     ],
   },
   slp: {
@@ -1291,6 +1415,12 @@ export const convertor: {
       builderFuncs['kn']['handleUnicode'],
       builderFuncs['kn']['dataFunction'],
     ],
+    te: [
+      slpToIAST,
+      iastToUAST,
+      builderFuncs['te']['handleUnicode'],
+      builderFuncs['te']['dataFunction'],
+    ],
   },
   devanagari: {
     uast: [devanagariToUAST],
@@ -1309,6 +1439,11 @@ export const convertor: {
       devanagariToUAST,
       builderFuncs['kn']['handleUnicode'],
       builderFuncs['kn']['dataFunction'],
+    ],
+    te: [
+      devanagariToUAST,
+      builderFuncs['te']['handleUnicode'],
+      builderFuncs['te']['dataFunction'],
     ],
   },
   iast: {
@@ -1332,6 +1467,11 @@ export const convertor: {
       iastToUAST,
       builderFuncs['kn']['handleUnicode'],
       builderFuncs['kn']['dataFunction'],
+    ],
+    te: [
+      iastToUAST,
+      builderFuncs['te']['handleUnicode'],
+      builderFuncs['te']['dataFunction'],
     ],
   },
 } as const;

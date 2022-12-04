@@ -17,6 +17,7 @@
     "@fontsource/noto-serif-gujarati": "^4.5.11",
     "@fontsource/noto-serif-kannada": "^4.5.11",
     "@fontsource/noto-serif-oriya": "^4.5.0",
+    "@fontsource/noto-serif-telugu": "^4.5.11",
     "@fontsource/source-code-pro": "^4.5.12",
     "@sveltejs/vite-plugin-svelte": "^1.4.0",
     "@tsconfig/svelte": "^3.0.0",

@@ -5,6 +5,7 @@ specifiers:
   '@fontsource/noto-serif-gujarati': ^4.5.11
   '@fontsource/noto-serif-kannada': ^4.5.11
   '@fontsource/noto-serif-oriya': ^4.5.0
+  '@fontsource/noto-serif-telugu': ^4.5.11
   '@fontsource/source-code-pro': ^4.5.12
   '@sveltejs/vite-plugin-svelte': ^1.4.0
   '@tsconfig/svelte': ^3.0.0
@@ -22,6 +23,7 @@ devDependencies:
   '@fontsource/noto-serif-gujarati': 4.5.11
   '@fontsource/noto-serif-kannada': 4.5.11
   '@fontsource/noto-serif-oriya': 4.5.0
+  '@fontsource/noto-serif-telugu': 4.5.11
   '@fontsource/source-code-pro': 4.5.12
   '@sveltejs/vite-plugin-svelte': 1.4.0_svelte@3.53.1+vite@3.2.4
   '@tsconfig/svelte': 3.0.0
@@ -68,6 +70,10 @@ packages:
 
   /@fontsource/noto-serif-oriya/4.5.0:
     resolution: {integrity: sha512-jJQAKmeekrmW17am4DbP99zqag0E3kDDSzRrvPRKpMMjxMfXDxo4vWqnMkvrZMuVvxCM3Rtgulniy4o4c/Vnwg==}
+    dev: true
+
+  /@fontsource/noto-serif-telugu/4.5.11:
+    resolution: {integrity: sha512-X+MW8RpBJ79ZcZ0sufM8JjhlkPlzHuejc1I7lr3iAQhZHXuSHlAYV7pD52y9rw6gk6rZjGrOv+ElqkwmGEZYaw==}
     dev: true
 
   /@fontsource/source-code-pro/4.5.12:
