@@ -1239,6 +1239,12 @@ export const convertor: {
       builderFuncs['or']['handleUnicode'],
       builderFuncs['or']['dataFunction'],
     ],
+    kn: [
+      builderFuncs['kn']['handleUnicode'],
+      iastToUAST,
+      builderFuncs['kn']['handleUnicode'],
+      builderFuncs['kn']['dataFunction'],
+    ],
   },
   slp: {
     iast: [slpToIAST],
@@ -1261,6 +1267,12 @@ export const convertor: {
       builderFuncs['or']['handleUnicode'],
       builderFuncs['or']['dataFunction'],
     ],
+    kn: [
+      slpToIAST,
+      iastToUAST,
+      builderFuncs['kn']['handleUnicode'],
+      builderFuncs['kn']['dataFunction'],
+    ],
   },
   devanagari: {
     uast: [devanagariToUAST],
@@ -1274,6 +1286,11 @@ export const convertor: {
       devanagariToUAST,
       builderFuncs['or']['handleUnicode'],
       builderFuncs['or']['dataFunction'],
+    ],
+    kn: [
+      devanagariToUAST,
+      builderFuncs['kn']['handleUnicode'],
+      builderFuncs['kn']['dataFunction'],
     ],
   },
   iast: {
@@ -1292,6 +1309,11 @@ export const convertor: {
       iastToUAST,
       builderFuncs['or']['handleUnicode'],
       builderFuncs['or']['dataFunction'],
+    ],
+    kn: [
+      iastToUAST,
+      builderFuncs['kn']['handleUnicode'],
+      builderFuncs['kn']['dataFunction'],
     ],
   },
 };
