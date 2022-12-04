@@ -176,11 +176,8 @@
       return i
         .split(' ')
         .map(j => {
-          console.clear();
           for (const f of utils.convertor[from]?.[to] ?? []) {
-            console.log('before', j);
             j = f(j);
-            console.log('after', j);
           }
           return j;
         })
