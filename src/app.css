@@ -1,10 +1,10 @@
+@import '@fontsource/noto-sans-devanagari';
+@import '@fontsource/noto-sans-gujarati';
+@import '@fontsource/noto-sans-kannada';
+@import '@fontsource/noto-sans-malayalam';
+@import '@fontsource/noto-sans-oriya';
+@import '@fontsource/noto-sans-telugu';
 @import '@fontsource/source-code-pro';
-@import '@fontsource/noto-serif-devanagari';
-@import '@fontsource/noto-serif-gujarati';
-@import '@fontsource/noto-serif-kannada';
-@import '@fontsource/noto-serif-malayalam';
-@import '@fontsource/noto-serif-oriya';
-@import '@fontsource/noto-serif-telugu';
 
 :root {
   --dark-primary-dark: rgb(0 0 0);
@@ -16,12 +16,12 @@
   --light-primary-medium: rgb(238 238 238);
 
   --font-family-mono: 'Source Code Pro', monospace;
-  --font-family-sans: 'Noto Serif Devanagari', serif;
-  --font-family-guj: 'Noto Serif Gujarati', serif;
-  --font-family-odia: 'Noto Serif Oriya', serif;
-  --font-family-kn: 'Noto Serif Kannada', serif;
-  --font-family-te: 'Noto Serif Telugu', serif;
-  --font-family-ml: 'Noto Serif Malayalam', serif;
+  --font-family-sans: 'Noto Sans Devanagari', sans-serif;
+  --font-family-guj: 'Noto Sans Gujarati', sans-serif;
+  --font-family-odia: 'Noto Sans Oriya', sans-serif;
+  --font-family-kn: 'Noto Sans Kannada', sans-serif;
+  --font-family-te: 'Noto Sans Telugu', sans-serif;
+  --font-family-ml: 'Noto Sans Malayalam', sans-serif;
 
   --dark-text-color: rgb(255 255 255);
   --light-text-color: rgb(0 0 0);
