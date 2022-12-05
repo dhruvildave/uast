@@ -92,7 +92,8 @@
   textarea.sans,
   textarea.odia,
   textarea.kn,
-  textarea.te {
+  textarea.te,
+  textarea.ml {
     font-size: 1.5rem; /* 24px */
     line-height: 2rem; /* 32px */
   }
@@ -111,6 +112,10 @@
 
   textarea.te {
     font-family: var(--font-family-te);
+  }
+
+  textarea.ml {
+    font-family: var(--font-family-ml);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -236,6 +241,8 @@
         ? 'kn'
         : to === 'te'
         ? 'te'
+        : to === 'ml'
+        ? 'ml'
         : 'mono'}"
       autocomplete="off"
       spellcheck="false"
@@ -255,6 +262,8 @@
         ? 'ತಸ್ಮಾದ್ಯೊಗೀ ಭವಾರ್ಜುನ'
         : to === 'te'
         ? 'తస్మాద్యొగీ భవార్జున'
+        : to === 'ml'
+        ? 'തസ്മാദ്യൊഗീ ഭവാര്ജുന'
         : 'ts-m/a/d-yog/i/ bhv/a/r-jun'}"
       value="{output}"></textarea>
 
@@ -266,6 +275,7 @@
       <option value="odia">ଓଡ଼ିଆ</option>
       <option value="kn">ಕನ್ನಡ</option>
       <option value="te">తెలుగు</option>
+      <option value="ml">മലയാളം</option>
     </select>
   </aside>
 </main>
