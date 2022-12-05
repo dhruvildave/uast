@@ -16,12 +16,9 @@
   --light-primary-medium: rgb(238 238 238);
 
   --font-family-mono: 'Source Code Pro', monospace;
-  --font-family-sans: 'Noto Sans Devanagari', sans-serif;
-  --font-family-guj: 'Noto Sans Gujarati', sans-serif;
-  --font-family-odia: 'Noto Sans Oriya', sans-serif;
-  --font-family-kn: 'Noto Sans Kannada', sans-serif;
-  --font-family-te: 'Noto Sans Telugu', sans-serif;
-  --font-family-ml: 'Noto Sans Malayalam', sans-serif;
+  --font-family-sans: 'Noto Sans Devanagari', 'Noto Sans Gujarati',
+    'Noto Sans Oriya', 'Noto Sans Kannada', 'Noto Sans Telugu',
+    'Noto Sans Malayalam', sans-serif;
 
   --dark-text-color: rgb(255 255 255);
   --light-text-color: rgb(0 0 0);
@@ -35,4 +32,24 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font: inherit;
+}
+
+body {
+  min-height: 100vh;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
 }

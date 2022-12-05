@@ -88,34 +88,9 @@
     font-family: var(--font-family-mono);
   }
 
-  textarea.guj,
-  textarea.sans,
-  textarea.odia,
-  textarea.kn,
-  textarea.te,
-  textarea.ml {
+  textarea.sans {
     font-size: 1.5rem; /* 24px */
     line-height: 2rem; /* 32px */
-  }
-
-  textarea.guj {
-    font-family: var(--font-family-guj);
-  }
-
-  textarea.odia {
-    font-family: var(--font-family-odia);
-  }
-
-  textarea.kn {
-    font-family: var(--font-family-kn);
-  }
-
-  textarea.te {
-    font-family: var(--font-family-te);
-  }
-
-  textarea.ml {
-    font-family: var(--font-family-ml);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -231,18 +206,8 @@
 
   <aside>
     <textarea
-      class="{to === 'devanagari'
+      class="{['devanagari', 'guj', 'odia', 'kn', 'te', 'ml'].includes(to)
         ? 'sans'
-        : to === 'guj'
-        ? 'guj'
-        : to === 'odia'
-        ? 'odia'
-        : to === 'kn'
-        ? 'kn'
-        : to === 'te'
-        ? 'te'
-        : to === 'ml'
-        ? 'ml'
         : 'mono'}"
       autocomplete="off"
       spellcheck="false"
