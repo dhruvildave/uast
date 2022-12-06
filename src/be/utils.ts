@@ -1842,8 +1842,8 @@ function makeBuilder(): Builder {
 const builderFuncs = makeBuilder();
 
 export const convertor: {
-  [from: string]: {
-    [to: string]: ((data: string) => string)[];
+  readonly [from: string]: {
+    readonly [to: string]: readonly ((data: string) => string)[];
   };
 } = {
   uast: {
@@ -2161,4 +2161,4 @@ export const convertor: {
       builderFuncs['ta']['dataFunction'],
     ],
   },
-};
+} as const;
