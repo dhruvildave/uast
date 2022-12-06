@@ -151,6 +151,20 @@
 <script lang="ts">
   import * as utils from '../be/utils';
 
+  const placeholders = {
+    uast: 'ts-m/a/d-yog/i/ bhv/a/r-jun',
+    iast: 'tasmādyogī bhavārjuna',
+    guj: 'તસ્માદ્યોગી ભવાર્જુન',
+    odia: 'ତସ‍୍ମାଦ‍୍ୟୋଗୀ ଭୱାର‍୍ଜୁନ',
+    devanagari: 'तस्माद्योगी भवार्जुन',
+    slp: 'tasmAdyogI BavArjuna',
+    kn: 'ತಸ್ಮಾದ್ಯೊಗೀ ಭವಾರ್ಜುನ',
+    te: 'తస్మాద్యొగీ భవార్జున',
+    ta: '𑌤𑌸𑍍𑌮𑌾𑌦𑍍𑌯𑍋𑌗𑍀 𑌭𑌵𑌾𑌰𑍍𑌜𑍁𑌨',
+    ml: 'തസ്മാദ്യൊഗീ ഭവാര്ജുന',
+    raw: 'tasm/a/dyog/i/ bhav/a/rjuna',
+  } as const;
+
   let input: string = '';
   let from: string;
   let to: string;
@@ -181,14 +195,16 @@
       name="input"
       id="input"
       placeholder="{(from === 'slp'
-        ? 'tasmAdyogI BavArjuna'
+        ? placeholders['slp']
         : from === 'iast'
-        ? 'tasmādyogī bhavārjuna'
+        ? placeholders['iast']
         : from === 'raw'
-        ? 'tasm/a/dyog/i/ bhav/a/rjuna'
+        ? placeholders['raw']
         : from === 'devanagari'
-        ? 'तस्माद्योगी भवार्जुन'
-        : 'ts-m/a/d-yog/i/ bhv/a/r-jun') +
+        ? placeholders['devanagari']
+        : from === 'guj'
+        ? placeholders['guj']
+        : placeholders['uast']) +
         '\n\n\n' +
         (from === 'devanagari'
           ? 'भारतवर्षे अनेर्या अनिरुद्धेन च प्रणयात् एव निर्मित।'
@@ -199,6 +215,7 @@
       <option selected value="uast">UAST</option>
       <option value="iast">IAST</option>
       <option value="devanagari">देवनागरी</option>
+      <option value="guj">ગુજરાતી</option>
       <option value="raw">Raw</option>
       <option value="slp">SLP1</option>
     </select>
@@ -216,22 +233,22 @@
       name="output"
       id="output"
       placeholder="{to === 'devanagari'
-        ? 'तस्माद्योगी भवार्जुन'
+        ? placeholders['devanagari']
         : to === 'iast'
-        ? 'tasmādyogī bhavārjuna'
+        ? placeholders['iast']
         : to === 'guj'
-        ? 'તસ્માદ્યોગી ભવાર્જુન'
+        ? placeholders['guj']
         : to === 'odia'
-        ? 'ତସ‍୍ମାଦ‍୍ୟୋଗୀ ଭୱାର‍୍ଜୁନ'
+        ? placeholders['odia']
         : to === 'kn'
-        ? 'ತಸ್ಮಾದ್ಯೊಗೀ ಭವಾರ್ಜುನ'
+        ? placeholders['kn']
         : to === 'te'
-        ? 'తస్మాద్యొగీ భవార్జున'
+        ? placeholders['te']
         : to === 'ml'
-        ? 'തസ്മാദ്യൊഗീ ഭവാര്ജുന'
+        ? placeholders['ml']
         : to === 'ta'
-        ? '𑌤𑌸𑍍𑌮𑌾𑌦𑍍𑌯𑍋𑌗𑍀 𑌭𑌵𑌾𑌰𑍍𑌜𑍁𑌨'
-        : 'ts-m/a/d-yog/i/ bhv/a/r-jun'}"
+        ? placeholders['ta']
+        : placeholders['uast']}"
       value="{output}"></textarea>
 
     <select class="sans" id="to-select" bind:value="{to}" name="to">

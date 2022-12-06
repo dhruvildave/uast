@@ -1082,6 +1082,113 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
   };
 }
 
+const gujaratiDevanagariMap: CharMap = new Map([
+  ['।', '।'],
+  ['॥', '॥'],
+  ['ઽ', "'"],
+  ['ॐ', 'om'],
+
+  ['૦', '०'],
+  ['૧', '१'],
+  ['૨', '२'],
+  ['૩', '३'],
+  ['૪', '४'],
+  ['૫', '५'],
+  ['૬', '६'],
+  ['૭', '७'],
+  ['૮', '८'],
+  ['૯', '९'],
+
+  ['અ', 'अ'],
+  ['આ', 'आ'],
+  ['ઇ', 'इ'],
+  ['ઈ', 'ई'],
+  ['ઉ', 'उ'],
+  ['ઊ', 'ऊ'],
+  ['ઋ', 'ऋ'],
+  ['ૠ', 'ॠ'],
+  ['ઌ', 'ऌ'],
+  ['ૡ', 'ॡ'],
+  ['એ', 'ए'],
+  ['ઐ', 'ऐ'],
+  ['ઓ', 'ओ'],
+  ['ઔ', 'औ'],
+
+  ['ા', 'ा'],
+  ['િ', 'ि'],
+  ['ી', 'ी'],
+  ['ુ', 'ु'],
+  ['ૂ', 'ू'],
+  ['ૃ', 'ृ'],
+  ['ૄ', 'ॄ'],
+  ['ૢ', 'ॢ'],
+  ['ૣ', 'ॣ'],
+  ['ે', 'े'],
+  ['ૈ', 'ै'],
+  ['ો', 'ो'],
+  ['ૌ', 'ौ'],
+  ['ં', 'ं'],
+  ['ઃ', 'ः'],
+  ['ઁ', 'ः'],
+  ['્', '्'],
+
+  ['ક', 'क'],
+  ['ખ', 'ख'],
+  ['ગ', 'ग'],
+  ['ઘ', 'घ'],
+  ['ઙ', 'ङ'],
+  ['ચ', 'च'],
+  ['છ', 'छ'],
+  ['જ', 'ज'],
+  ['ઝ', 'झ'],
+  ['ઞ', 'ञ'],
+  ['ટ', 'ट'],
+  ['ઠ', 'ठ'],
+  ['ડ', 'ड'],
+  ['ઢ', 'ढ'],
+  ['ણ', 'ण'],
+  ['ત', 'त'],
+  ['થ', 'थ'],
+  ['દ', 'द'],
+  ['ધ', 'ध'],
+  ['ન', 'न'],
+  ['પ', 'प'],
+  ['ફ', 'फ'],
+  ['બ', 'ब'],
+  ['ભ', 'भ'],
+  ['મ', 'म'],
+  ['ય', 'य'],
+  ['ર', 'र'],
+  ['લ', 'ल'],
+  ['વ', 'व'],
+  ['શ', 'श'],
+  ['ષ', 'ष'],
+  ['સ', 'स'],
+  ['હ', 'ह'],
+  ['ળ', 'ळ'],
+]);
+
+function createScriptFunction(lang: LangList): (data: string) => string {
+  let obj: CharMap;
+
+  switch (lang) {
+    case 'gu':
+      obj = gujaratiDevanagariMap;
+      break;
+
+    case 'sa':
+    default:
+      break;
+  }
+
+  return function scriptToDevanagari(data: string): string {
+    return Array.from(data)
+      .map(i => obj.get(i) ?? '')
+      .join('')
+      .normalize();
+  };
+}
+
 /**
  * Convert AnDy to IAST
  *
@@ -1530,12 +1637,14 @@ function slpToIAST(data: string): string {
     .normalize();
 }
 
-type FuncList = 'handleUnicode' | 'dataFunction';
+type FuncList = 'handleUnicode' | 'dataFunction' | 'scriptToDevanagari';
 
 type Builder = {
   [k in LangList]: {
     [f in FuncList]: ReturnType<
-      typeof createDataFunction & typeof createHandleUnicode
+      typeof createDataFunction &
+        typeof createHandleUnicode &
+        typeof createScriptFunction
     >;
   };
 };
@@ -1546,6 +1655,7 @@ function makeBuilder(): Builder {
     y[l] = {
       dataFunction: createDataFunction(l),
       handleUnicode: createHandleUnicode(l),
+      scriptToDevanagari: createScriptFunction(l),
     };
   }
 
@@ -1555,8 +1665,8 @@ function makeBuilder(): Builder {
 const builderFuncs = makeBuilder();
 
 export const convertor: {
-  readonly [from: string]: {
-    readonly [to: string]: readonly ((data: string) => string)[];
+  [from: string]: {
+    [to: string]: ((data: string) => string)[];
   };
 } = {
   uast: {
@@ -1754,4 +1864,44 @@ export const convertor: {
       builderFuncs['ta']['dataFunction'],
     ],
   },
-} as const;
+  guj: {
+    devanagari: [builderFuncs['gu']['scriptToDevanagari']],
+    uast: [builderFuncs['gu']['scriptToDevanagari'], devanagariToUAST],
+    iast: [
+      builderFuncs['gu']['scriptToDevanagari'],
+      devanagariToUAST,
+      builderFuncs['sa']['handleUnicode'],
+      dataToIAST,
+    ],
+    odia: [
+      builderFuncs['gu']['scriptToDevanagari'],
+      devanagariToUAST,
+      builderFuncs['or']['handleUnicode'],
+      builderFuncs['or']['dataFunction'],
+    ],
+    kn: [
+      builderFuncs['gu']['scriptToDevanagari'],
+      devanagariToUAST,
+      builderFuncs['kn']['handleUnicode'],
+      builderFuncs['kn']['dataFunction'],
+    ],
+    te: [
+      builderFuncs['gu']['scriptToDevanagari'],
+      devanagariToUAST,
+      builderFuncs['te']['handleUnicode'],
+      builderFuncs['te']['dataFunction'],
+    ],
+    ml: [
+      builderFuncs['gu']['scriptToDevanagari'],
+      devanagariToUAST,
+      builderFuncs['ml']['handleUnicode'],
+      builderFuncs['ml']['dataFunction'],
+    ],
+    ta: [
+      builderFuncs['gu']['scriptToDevanagari'],
+      devanagariToUAST,
+      builderFuncs['ta']['handleUnicode'],
+      builderFuncs['ta']['dataFunction'],
+    ],
+  },
+};
