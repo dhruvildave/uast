@@ -1262,7 +1262,98 @@ function createScriptFunction(lang: LangList): (data: string) => string {
       ]);
       break;
 
+    case 'kn':
+      obj = new Map([
+        ['।', '।'],
+        ['॥', '॥'],
+        ['ಽ', 'ऽ'],
+        ['ಓಂ', 'ॐ'],
+
+        ['೦', '०'],
+        ['೧', '१'],
+        ['೨', '२'],
+        ['೩', '३'],
+        ['೪', '४'],
+        ['೫', '५'],
+        ['೬', '६'],
+        ['೭', '७'],
+        ['೮', '८'],
+        ['೯', '९'],
+
+        ['ಅ', 'अ'],
+        ['ಆ', 'आ'],
+        ['ಇ', 'इ'],
+        ['ಈ', 'ई'],
+        ['ಉ', 'उ'],
+        ['ಊ', 'ऊ'],
+        ['ಋ', 'ऋ'],
+        ['ೠ', 'ॠ'],
+        ['ಌ', 'ऌ'],
+        ['ೡ', 'ॡ'],
+        ['ಎ', 'ए'],
+        ['ಐ', 'ऐ'],
+        ['ಒ', 'ओ'],
+        ['ಔ', 'औ'],
+
+        ['ಾ', 'ा'],
+        ['ಿ', 'ि'],
+        ['ೀ', 'ी'],
+        ['ು', 'ु'],
+        ['ೂ', 'ू'],
+        ['ೃ', 'ृ'],
+        ['ೄ', 'ॄ'],
+        ['ೢ', 'ॢ'],
+        ['ೣ', 'ॣ'],
+        ['ೆ', 'े'],
+        ['ೈ', 'ै'],
+        ['ೊ', 'ो'],
+        ['ೌ', 'ौ'],
+        ['ಂ', 'ं'],
+        ['ಃ', 'ः'],
+        ['ಁ', 'ँ'],
+        ['್', '्'],
+
+        ['ಕ', 'क'],
+        ['ಖ', 'ख'],
+        ['ಗ', 'ग'],
+        ['ಘ', 'घ'],
+        ['ಙ', 'ङ'],
+        ['ಚ', 'च'],
+        ['ಛ', 'छ'],
+        ['ಜ', 'ज'],
+        ['ಝ', 'झ'],
+        ['ಞ', 'ञ'],
+        ['ಟ', 'ट'],
+        ['ಠ', 'ठ'],
+        ['ಡ', 'ड'],
+        ['ಢ', 'ढ'],
+        ['ಣ', 'ण'],
+        ['ತ', 'त'],
+        ['ಥ', 'थ'],
+        ['ದ', 'द'],
+        ['ಧ', 'ध'],
+        ['ನ', 'न'],
+        ['ಪ', 'प'],
+        ['ಫ', 'फ'],
+        ['ಬ', 'ब'],
+        ['ಭ', 'भ'],
+        ['ಮ', 'म'],
+        ['ಯ', 'य'],
+        ['ರ', 'र'],
+        ['ಲ', 'ल'],
+        ['ವ', 'व'],
+        ['ಶ', 'श'],
+        ['ಷ', 'ष'],
+        ['ಸ', 'स'],
+        ['ಹ', 'ह'],
+        ['ಳ', 'ळ'],
+      ]);
+      break;
+
     case 'sa':
+      obj = new Map();
+      break;
+
     default:
       break;
   }
@@ -2025,6 +2116,46 @@ export const convertor: {
     ],
     ta: [
       builderFuncs['or']['scriptToDevanagari'],
+      devanagariToUAST,
+      builderFuncs['ta']['handleUnicode'],
+      builderFuncs['ta']['dataFunction'],
+    ],
+  },
+  kn: {
+    devanagari: [builderFuncs['kn']['scriptToDevanagari']],
+    uast: [builderFuncs['kn']['scriptToDevanagari'], devanagariToUAST],
+    iast: [
+      builderFuncs['kn']['scriptToDevanagari'],
+      devanagariToUAST,
+      builderFuncs['sa']['handleUnicode'],
+      dataToIAST,
+    ],
+    guj: [
+      builderFuncs['kn']['scriptToDevanagari'],
+      devanagariToUAST,
+      builderFuncs['gu']['handleUnicode'],
+      builderFuncs['gu']['dataFunction'],
+    ],
+    or: [
+      builderFuncs['kn']['scriptToDevanagari'],
+      devanagariToUAST,
+      builderFuncs['or']['handleUnicode'],
+      builderFuncs['or']['dataFunction'],
+    ],
+    te: [
+      builderFuncs['kn']['scriptToDevanagari'],
+      devanagariToUAST,
+      builderFuncs['te']['handleUnicode'],
+      builderFuncs['te']['dataFunction'],
+    ],
+    ml: [
+      builderFuncs['kn']['scriptToDevanagari'],
+      devanagariToUAST,
+      builderFuncs['ml']['handleUnicode'],
+      builderFuncs['ml']['dataFunction'],
+    ],
+    ta: [
+      builderFuncs['kn']['scriptToDevanagari'],
       devanagariToUAST,
       builderFuncs['ta']['handleUnicode'],
       builderFuncs['ta']['dataFunction'],

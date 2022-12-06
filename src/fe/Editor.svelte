@@ -206,6 +206,8 @@
         ? placeholders['guj']
         : from === 'odia'
         ? placeholders['odia']
+        : from === 'kn'
+        ? placeholders['kn']
         : placeholders['uast']) +
         '\n\n\n' +
         (from === 'devanagari'
@@ -219,6 +221,7 @@
       <option value="devanagari">देवनागरी</option>
       <option value="guj">ગુજરાતી</option>
       <option value="odia">ଓଡ଼ିଆ</option>
+      <option value="kn">ಕನ್ನಡ</option>
       <option value="raw">Raw</option>
       <option value="slp">SLP1</option>
     </select>
