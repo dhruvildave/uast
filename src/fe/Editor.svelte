@@ -195,7 +195,7 @@
           : 'Made with 🫶🏼 in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave')}"
       bind:value="{input}"></textarea>
 
-    <select id="from-select" name="from" bind:value="{from}">
+    <select class="sans" id="from-select" name="from" bind:value="{from}">
       <option selected value="uast">UAST</option>
       <option value="iast">IAST</option>
       <option value="devanagari">देवनागरी</option>
@@ -234,23 +234,16 @@
         : 'ts-m/a/d-yog/i/ bhv/a/r-jun'}"
       value="{output}"></textarea>
 
-    <select
-      class="{['devanagari', 'guj', 'odia', 'kn', 'te', 'ml', 'ta'].includes(to)
-        ? 'sans'
-        : 'mono'}"
-      id="to-select"
-      bind:value="{to}"
-      name="to"
-    >
-      <option class="sans" selected value="devanagari">देवनागरी</option>
-      <option class="mono" value="iast">IAST</option>
-      <option class="mono" value="uast">UAST</option>
-      <option class="sans" value="guj">ગુજરાતી</option>
-      <option class="sans" value="odia">ଓଡ଼ିଆ</option>
-      <option class="sans" value="kn">ಕನ್ನಡ</option>
-      <option class="sans" value="te">తెలుగు</option>
-      <option class="sans" value="ml">മലയാളം</option>
-      <option class="sans" value="ta">𑌗𑍍𑌰𑌨𑍍𑌥</option>
+    <select class="sans" id="to-select" bind:value="{to}" name="to">
+      <option selected value="devanagari">देवनागरी</option>
+      <option value="iast">IAST</option>
+      <option value="uast">UAST</option>
+      <option value="guj">ગુજરાતી</option>
+      <option value="odia">ଓଡ଼ିଆ</option>
+      <option value="kn">ಕನ್ನಡ</option>
+      <option value="te">తెలుగు</option>
+      <option value="ml">മലയാളം</option>
+      <option value="ta">𑌗𑍍𑌰𑌨𑍍𑌥</option>
     </select>
   </aside>
 </main>
