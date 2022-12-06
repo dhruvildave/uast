@@ -41,8 +41,6 @@
 
     padding: 0.125rem; /* 2px */
     margin: auto;
-
-    font-family: var(--font-family-mono);
   }
 
   main article textarea,
@@ -68,27 +66,27 @@
     animation: fade 300ms ease-in-out;
   }
 
-  textarea#input,
-  select#from-select {
+  textarea.input,
+  select.from-select {
     background-color: var(--light-primary-light);
     padding: 0.5rem; /* 8px */
   }
 
-  textarea#output,
-  select#to-select {
+  textarea.output,
+  select.to-select {
     background-color: var(--light-primary-medium);
     padding: 0.5rem; /* 8px */
   }
 
-  .sans {
-    font-family: var(--font-family-sans);
+  textarea,
+  select,
+  option {
+    font-family: var(--font-family-mono), 'Noto Sans Devanagari',
+      'Noto Sans Gujarati', 'Noto Sans Oriya', 'Noto Sans Kannada',
+      'Noto Sans Telugu', 'Noto Sans Malayalam', 'Noto Sans Grantha', sans-serif;
   }
 
-  textarea.mono {
-    font-family: var(--font-family-mono);
-  }
-
-  textarea.sans {
+  textarea {
     font-size: 1.5rem; /* 24px */
     line-height: 2rem; /* 32px */
   }
@@ -107,13 +105,13 @@
       background-color: var(--dark-primary-medium);
     }
 
-    textarea#input,
-    select#from-select {
+    textarea.input,
+    select.from-select {
       background-color: var(--dark-primary-dark);
     }
 
-    textarea#output,
-    select#to-select {
+    textarea.output,
+    select.to-select {
       background-color: var(--dark-primary-medium);
     }
   }
@@ -188,12 +186,11 @@
 <main>
   <article>
     <textarea
-      class="{from === 'devanagari' ? 'sans' : 'mono'}"
       label="input"
       autocomplete="off"
       spellcheck="false"
       name="input"
-      id="input"
+      class="input"
       placeholder="{(from === 'slp'
         ? placeholders['slp']
         : from === 'iast'
@@ -215,7 +212,7 @@
           : 'Made with 🫶🏼 in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave')}"
       bind:value="{input}"></textarea>
 
-    <select class="sans" id="from-select" name="from" bind:value="{from}">
+    <select class="from-select" name="from" bind:value="{from}">
       <option selected value="uast">UAST</option>
       <option value="iast">IAST</option>
       <option value="devanagari">देवनागरी</option>
@@ -229,15 +226,12 @@
 
   <aside>
     <textarea
-      class="{['devanagari', 'guj', 'odia', 'kn', 'te', 'ml', 'ta'].includes(to)
-        ? 'sans'
-        : 'mono'}"
       autocomplete="off"
       spellcheck="false"
       disabled
       label="output"
       name="output"
-      id="output"
+      class="output"
       placeholder="{to === 'devanagari'
         ? placeholders['devanagari']
         : to === 'iast'
@@ -257,7 +251,7 @@
         : placeholders['uast']}"
       value="{output}"></textarea>
 
-    <select class="sans" id="to-select" bind:value="{to}" name="to">
+    <select class="to-select" bind:value="{to}" name="to">
       <option selected value="devanagari">देवनागरी</option>
       <option value="iast">IAST</option>
       <option value="uast">UAST</option>

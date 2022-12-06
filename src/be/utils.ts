@@ -1375,7 +1375,7 @@ function createScriptFunction(lang: LangList): (data: string) => string {
 function dataToIAST(data: string): string {
   return data
     .normalize()
-    .replaceAll(/[\[\]^~@#$%&*_;\n\v\t\r\f]/gu, '')
+    .replaceAll(/[\[\]^~@#$%&*_;\n\v\t\r\f\d]/gu, '')
     .split('\\')
     .map(split => {
       if (split === 'ॐ') {

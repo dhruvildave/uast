@@ -14,7 +14,7 @@
 
     user-select: none;
 
-    font-family: var(--font-family-mono);
+    font-family: var(--font-family-mono), monospace;
     background-color: var(--light-primary-light);
   }
 
