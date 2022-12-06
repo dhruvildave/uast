@@ -80,7 +80,7 @@
     padding: 0.5rem; /* 8px */
   }
 
-  textarea.sans {
+  .sans {
     font-family: var(--font-family-sans);
   }
 
@@ -206,7 +206,7 @@
 
   <aside>
     <textarea
-      class="{['devanagari', 'guj', 'odia', 'kn', 'te', 'ml'].includes(to)
+      class="{['devanagari', 'guj', 'odia', 'kn', 'te', 'ml', 'ta'].includes(to)
         ? 'sans'
         : 'mono'}"
       autocomplete="off"
@@ -229,18 +229,28 @@
         ? 'తస్మాద్యొగీ భవార్జున'
         : to === 'ml'
         ? 'തസ്മാദ്യൊഗീ ഭവാര്ജുന'
+        : to === 'ta'
+        ? '𑌤𑌸𑍍𑌮𑌾𑌦𑍍𑌯𑍋𑌗𑍀 𑌭𑌵𑌾𑌰𑍍𑌜𑍁𑌨'
         : 'ts-m/a/d-yog/i/ bhv/a/r-jun'}"
       value="{output}"></textarea>
 
-    <select id="to-select" bind:value="{to}" name="to">
-      <option selected value="devanagari">देवनागरी</option>
-      <option value="iast">IAST</option>
-      <option value="uast">UAST</option>
-      <option value="guj">ગુજરાતી</option>
-      <option value="odia">ଓଡ଼ିଆ</option>
-      <option value="kn">ಕನ್ನಡ</option>
-      <option value="te">తెలుగు</option>
-      <option value="ml">മലയാളം</option>
+    <select
+      class="{['devanagari', 'guj', 'odia', 'kn', 'te', 'ml', 'ta'].includes(to)
+        ? 'sans'
+        : 'mono'}"
+      id="to-select"
+      bind:value="{to}"
+      name="to"
+    >
+      <option class="sans" selected value="devanagari">देवनागरी</option>
+      <option class="mono" value="iast">IAST</option>
+      <option class="mono" value="uast">UAST</option>
+      <option class="sans" value="guj">ગુજરાતી</option>
+      <option class="sans" value="odia">ଓଡ଼ିଆ</option>
+      <option class="sans" value="kn">ಕನ್ನಡ</option>
+      <option class="sans" value="te">తెలుగు</option>
+      <option class="sans" value="ml">മലയാളം</option>
+      <option class="sans" value="ta">𑌗𑍍𑌰𑌨𑍍𑌥</option>
     </select>
   </aside>
 </main>

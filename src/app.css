@@ -1,4 +1,5 @@
 @import '@fontsource/noto-sans-devanagari';
+@import '@fontsource/noto-sans-grantha';
 @import '@fontsource/noto-sans-gujarati';
 @import '@fontsource/noto-sans-kannada';
 @import '@fontsource/noto-sans-malayalam';
@@ -18,7 +19,7 @@
   --font-family-mono: 'Source Code Pro', monospace;
   --font-family-sans: 'Noto Sans Devanagari', 'Noto Sans Gujarati',
     'Noto Sans Oriya', 'Noto Sans Kannada', 'Noto Sans Telugu',
-    'Noto Sans Malayalam', sans-serif;
+    'Noto Sans Malayalam', 'Noto Sans Grantha', sans-serif;
 
   --dark-text-color: rgb(255 255 255);
   --light-text-color: rgb(0 0 0);
