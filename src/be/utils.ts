@@ -2116,11 +2116,11 @@ export const convertor: {
       builderFuncs['sa']['handleUnicode'],
       builderFuncs['sa']['dataFunction'],
     ],
-    guj: [
+    gu: [
       builderFuncs['gu']['handleUnicode'],
       builderFuncs['gu']['dataFunction'],
     ],
-    odia: [
+    or: [
       builderFuncs['or']['handleUnicode'],
       builderFuncs['or']['dataFunction'],
     ],
@@ -2150,13 +2150,13 @@ export const convertor: {
       builderFuncs['sa']['dataFunction'],
     ],
     uast: [builderFuncs['sa']['handleUnicode'], iastToUAST],
-    guj: [
+    gu: [
       builderFuncs['gu']['handleUnicode'],
       iastToUAST,
       builderFuncs['gu']['handleUnicode'],
       builderFuncs['gu']['dataFunction'],
     ],
-    odia: [
+    or: [
       builderFuncs['or']['handleUnicode'],
       iastToUAST,
       builderFuncs['or']['handleUnicode'],
@@ -2196,13 +2196,13 @@ export const convertor: {
       builderFuncs['sa']['handleUnicode'],
       builderFuncs['sa']['dataFunction'],
     ],
-    guj: [
+    gu: [
       slpToIAST,
       iastToUAST,
       builderFuncs['gu']['handleUnicode'],
       builderFuncs['gu']['dataFunction'],
     ],
-    odia: [
+    or: [
       slpToIAST,
       iastToUAST,
       builderFuncs['or']['handleUnicode'],
@@ -2236,12 +2236,12 @@ export const convertor: {
   devanagari: {
     uast: [devanagariToUAST],
     iast: [devanagariToUAST, builderFuncs['sa']['handleUnicode'], dataToIAST],
-    guj: [
+    gu: [
       devanagariToUAST,
       builderFuncs['gu']['handleUnicode'],
       builderFuncs['gu']['dataFunction'],
     ],
-    odia: [
+    or: [
       devanagariToUAST,
       builderFuncs['or']['handleUnicode'],
       builderFuncs['or']['dataFunction'],
@@ -2274,12 +2274,12 @@ export const convertor: {
       builderFuncs['sa']['handleUnicode'],
       builderFuncs['sa']['dataFunction'],
     ],
-    guj: [
+    gu: [
       iastToUAST,
       builderFuncs['gu']['handleUnicode'],
       builderFuncs['gu']['dataFunction'],
     ],
-    odia: [
+    or: [
       iastToUAST,
       builderFuncs['or']['handleUnicode'],
       builderFuncs['or']['dataFunction'],
@@ -2305,7 +2305,7 @@ export const convertor: {
       builderFuncs['ta']['dataFunction'],
     ],
   },
-  guj: {
+  gu: {
     devanagari: [builderFuncs['gu']['scriptToDevanagari']],
     uast: [builderFuncs['gu']['scriptToDevanagari'], devanagariToUAST],
     iast: [
@@ -2314,7 +2314,7 @@ export const convertor: {
       builderFuncs['sa']['handleUnicode'],
       dataToIAST,
     ],
-    odia: [
+    or: [
       builderFuncs['gu']['scriptToDevanagari'],
       devanagariToUAST,
       builderFuncs['or']['handleUnicode'],
@@ -2345,7 +2345,7 @@ export const convertor: {
       builderFuncs['ta']['dataFunction'],
     ],
   },
-  odia: {
+  or: {
     devanagari: [builderFuncs['or']['scriptToDevanagari']],
     uast: [builderFuncs['or']['scriptToDevanagari'], devanagariToUAST],
     iast: [
@@ -2354,7 +2354,7 @@ export const convertor: {
       builderFuncs['sa']['handleUnicode'],
       dataToIAST,
     ],
-    guj: [
+    gu: [
       builderFuncs['or']['scriptToDevanagari'],
       devanagariToUAST,
       builderFuncs['gu']['handleUnicode'],
@@ -2394,7 +2394,7 @@ export const convertor: {
       builderFuncs['sa']['handleUnicode'],
       dataToIAST,
     ],
-    guj: [
+    gu: [
       builderFuncs['kn']['scriptToDevanagari'],
       devanagariToUAST,
       builderFuncs['gu']['handleUnicode'],
@@ -2434,7 +2434,7 @@ export const convertor: {
       builderFuncs['sa']['handleUnicode'],
       dataToIAST,
     ],
-    guj: [
+    gu: [
       builderFuncs['te']['scriptToDevanagari'],
       devanagariToUAST,
       builderFuncs['gu']['handleUnicode'],
@@ -2474,7 +2474,7 @@ export const convertor: {
       builderFuncs['sa']['handleUnicode'],
       dataToIAST,
     ],
-    guj: [
+    gu: [
       builderFuncs['ml']['scriptToDevanagari'],
       devanagariToUAST,
       builderFuncs['gu']['handleUnicode'],
@@ -2514,7 +2514,7 @@ export const convertor: {
       builderFuncs['sa']['handleUnicode'],
       dataToIAST,
     ],
-    guj: [
+    gu: [
       builderFuncs['ta']['scriptToDevanagari'],
       devanagariToUAST,
       builderFuncs['gu']['handleUnicode'],
