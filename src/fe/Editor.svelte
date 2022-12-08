@@ -205,6 +205,8 @@
         ? placeholders['odia']
         : from === 'kn'
         ? placeholders['kn']
+        : from === 'te'
+        ? placeholders['te']
         : placeholders['uast']) +
         '\n\n\n' +
         (from === 'devanagari'
@@ -219,6 +221,7 @@
       <option value="guj">ગુજરાતી</option>
       <option value="odia">ଓଡ଼ିଆ</option>
       <option value="kn">ಕನ್ನಡ</option>
+      <option value="te">తెలుగు</option>
       <option value="raw">Raw</option>
       <option value="slp">SLP1</option>
     </select>

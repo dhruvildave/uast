@@ -17,7 +17,7 @@ specifiers:
   svelte-check: ^2.10.1
   svelte-preprocess: ^4.10.7
   tslib: ^2.4.1
-  typescript: ^4.9.3
+  typescript: ^4.9.4
   vite: ^3.2.5
 
 devDependencies:
@@ -35,9 +35,9 @@ devDependencies:
   prettier-plugin-svelte: 2.8.1_sro2v6ld777payjtkjtiuogcxi
   svelte: 3.54.0
   svelte-check: 2.10.1_svelte@3.54.0
-  svelte-preprocess: 4.10.7_gf4dcx76vtk2o62ixxeqx7chra
+  svelte-preprocess: 4.10.7_vjccw6zkwqrmxudvmy4reaayx4
   tslib: 2.4.1
-  typescript: 4.9.3
+  typescript: 4.9.4
   vite: 3.2.5
 
 packages:
@@ -820,8 +820,8 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 3.54.0
-      svelte-preprocess: 4.10.7_gf4dcx76vtk2o62ixxeqx7chra
-      typescript: 4.9.3
+      svelte-preprocess: 4.10.7_vjccw6zkwqrmxudvmy4reaayx4
+      typescript: 4.9.4
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
@@ -844,7 +844,7 @@ packages:
       svelte: 3.54.0
     dev: true
 
-  /svelte-preprocess/4.10.7_gf4dcx76vtk2o62ixxeqx7chra:
+  /svelte-preprocess/4.10.7_vjccw6zkwqrmxudvmy4reaayx4:
     resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -892,7 +892,7 @@ packages:
       sorcery: 0.10.0
       strip-indent: 3.0.0
       svelte: 3.54.0
-      typescript: 4.9.3
+      typescript: 4.9.4
     dev: true
 
   /svelte/3.54.0:
@@ -911,8 +911,8 @@ packages:
     resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
     dev: true
 
-  /typescript/4.9.3:
-    resolution: {integrity: sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==}
+  /typescript/4.9.4:
+    resolution: {integrity: sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
