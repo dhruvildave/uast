@@ -152,8 +152,8 @@
   const placeholders = {
     uast: 'ts-m/a/d-yog/i/ bhv/a/r-jun',
     iast: 'tasmādyogī bhavārjuna',
-    guj: 'તસ્માદ્યોગી ભવાર્જુન',
-    odia: 'ତସ‍୍ମାଦ‍୍ୟୋଗୀ ଭୱାର‍୍ଜୁନ',
+    gu: 'તસ્માદ્યોગી ભવાર્જુન',
+    or: 'ତସ‍୍ମାଦ‍୍ୟୋଗୀ ଭୱାର‍୍ଜୁନ',
     devanagari: 'तस्माद्योगी भवार्जुन',
     slp: 'tasmAdyogI BavArjuna',
     kn: 'ತಸ್ಮಾದ್ಯೊಗೀ ಭವಾರ್ಜುನ',
@@ -199,14 +199,18 @@
         ? placeholders['raw']
         : from === 'devanagari'
         ? placeholders['devanagari']
-        : from === 'guj'
-        ? placeholders['guj']
-        : from === 'odia'
-        ? placeholders['odia']
+        : from === 'gu'
+        ? placeholders['gu']
+        : from === 'or'
+        ? placeholders['or']
         : from === 'kn'
         ? placeholders['kn']
         : from === 'te'
         ? placeholders['te']
+        : from === 'ml'
+        ? placeholders['ml']
+        : from === 'ta'
+        ? placeholders['ta']
         : placeholders['uast']) +
         '\n\n\n' +
         (from === 'devanagari'
@@ -215,15 +219,9 @@
       bind:value="{input}"></textarea>
 
     <select class="from-select" name="from" bind:value="{from}">
-      <option selected value="uast">UAST</option>
-      <option value="iast">IAST</option>
-      <option value="devanagari">देवनागरी</option>
-      <option value="guj">ગુજરાતી</option>
-      <option value="odia">ଓଡ଼ିଆ</option>
-      <option value="kn">ಕನ್ನಡ</option>
-      <option value="te">తెలుగు</option>
-      <option value="raw">Raw</option>
-      <option value="slp">SLP1</option>
+      {#each [['uast', 'UAST'], ['iast', 'IAST'], ['devanagari', 'देवनागरी'], ['gu', 'ગુજરાતી'], ['or', 'ଓଡ଼ିଆ'], ['kn', 'ಕನ್ನಡ'], ['te', 'తెలుగు'], ['ml', 'മലയാളം'], ['ta', '𑌗𑍍𑌰𑌨𑍍𑌥'], ['raw', 'Raw'], ['slp', 'SLP1']] as i}
+        <option value="{i[0]}">{i[1]}</option>
+      {/each}
     </select>
   </article>
 
@@ -239,10 +237,10 @@
         ? placeholders['devanagari']
         : to === 'iast'
         ? placeholders['iast']
-        : to === 'guj'
-        ? placeholders['guj']
+        : to === 'gu'
+        ? placeholders['gu']
         : to === 'odia'
-        ? placeholders['odia']
+        ? placeholders['or']
         : to === 'kn'
         ? placeholders['kn']
         : to === 'te'
@@ -255,15 +253,9 @@
       value="{output}"></textarea>
 
     <select class="to-select" bind:value="{to}" name="to">
-      <option selected value="devanagari">देवनागरी</option>
-      <option value="iast">IAST</option>
-      <option value="uast">UAST</option>
-      <option value="guj">ગુજરાતી</option>
-      <option value="odia">ଓଡ଼ିଆ</option>
-      <option value="kn">ಕನ್ನಡ</option>
-      <option value="te">తెలుగు</option>
-      <option value="ml">മലയാളം</option>
-      <option value="ta">𑌗𑍍𑌰𑌨𑍍𑌥</option>
+      {#each [['devanagari', 'देवनागरी'], ['uast', 'UAST'], ['iast', 'IAST'], ['gu', 'ગુજરાતી'], ['or', 'ଓଡ଼ିଆ'], ['kn', 'ಕನ್ನಡ'], ['te', 'తెలుగు'], ['ml', 'മലയാളം'], ['ta', '𑌗𑍍𑌰𑌨𑍍𑌥']] as i}
+        <option value="{i[0]}">{i[1]}</option>
+      {/each}
     </select>
   </aside>
 </main>
