@@ -745,8 +745,8 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup/3.7.0:
-    resolution: {integrity: sha512-FIJe0msW9P7L9BTfvaJyvn1U1BVCNTL3w8O+PKIrCyiMLg+rIUGb4MbcgVZ10Lnm1uWXOTOWRNARjfXC1+M12Q==}
+  /rollup/3.7.1:
+    resolution: {integrity: sha512-ek6+FORvI79VQTNlIYtXpIrGEPRlYSNZO+5EcmaozKkRL5L6KLvGDUbM5E+bd6jnHW9fgcK0DKTdWjIsEmNb4g==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -945,7 +945,7 @@ packages:
       esbuild: 0.16.3
       postcss: 8.4.19
       resolve: 1.22.1
-      rollup: 3.7.0
+      rollup: 3.7.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
