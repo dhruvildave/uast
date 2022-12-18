@@ -181,6 +181,52 @@
         .join(' ');
     })
     .join('\n');
+
+  $: ph_from =
+    (from === 'slp'
+      ? placeholders['slp']
+      : from === 'iast'
+      ? placeholders['iast']
+      : from === 'raw'
+      ? placeholders['raw']
+      : from === 'devanagari'
+      ? placeholders['devanagari']
+      : from === 'gu'
+      ? placeholders['gu']
+      : from === 'or'
+      ? placeholders['or']
+      : from === 'kn'
+      ? placeholders['kn']
+      : from === 'te'
+      ? placeholders['te']
+      : from === 'ml'
+      ? placeholders['ml']
+      : from === 'ta'
+      ? placeholders['ta']
+      : placeholders['uast']) +
+    '\n\n\n' +
+    (from === 'devanagari'
+      ? 'भारतवर्षे अनेर्या अनिरुद्धेन च प्रणयात् एव निर्मित।'
+      : 'Made with 🫶🏼 in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave');
+
+  $: ph_to =
+    to === 'devanagari'
+      ? placeholders['devanagari']
+      : to === 'iast'
+      ? placeholders['iast']
+      : to === 'gu'
+      ? placeholders['gu']
+      : to === 'odia'
+      ? placeholders['or']
+      : to === 'kn'
+      ? placeholders['kn']
+      : to === 'te'
+      ? placeholders['te']
+      : to === 'ml'
+      ? placeholders['ml']
+      : to === 'ta'
+      ? placeholders['ta']
+      : placeholders['uast'];
 </script>
 
 <main>
@@ -191,31 +237,7 @@
       spellcheck="false"
       name="input"
       class="input"
-      placeholder="{(from === 'slp'
-        ? placeholders['slp']
-        : from === 'iast'
-        ? placeholders['iast']
-        : from === 'raw'
-        ? placeholders['raw']
-        : from === 'devanagari'
-        ? placeholders['devanagari']
-        : from === 'gu'
-        ? placeholders['gu']
-        : from === 'or'
-        ? placeholders['or']
-        : from === 'kn'
-        ? placeholders['kn']
-        : from === 'te'
-        ? placeholders['te']
-        : from === 'ml'
-        ? placeholders['ml']
-        : from === 'ta'
-        ? placeholders['ta']
-        : placeholders['uast']) +
-        '\n\n\n' +
-        (from === 'devanagari'
-          ? 'भारतवर्षे अनेर्या अनिरुद्धेन च प्रणयात् एव निर्मित।'
-          : 'Made with 🫶🏼 in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave')}"
+      placeholder="{ph_from}"
       bind:value="{input}"></textarea>
 
     <select class="from-select" name="from" bind:value="{from}">
@@ -233,23 +255,7 @@
       label="output"
       name="output"
       class="output"
-      placeholder="{to === 'devanagari'
-        ? placeholders['devanagari']
-        : to === 'iast'
-        ? placeholders['iast']
-        : to === 'gu'
-        ? placeholders['gu']
-        : to === 'odia'
-        ? placeholders['or']
-        : to === 'kn'
-        ? placeholders['kn']
-        : to === 'te'
-        ? placeholders['te']
-        : to === 'ml'
-        ? placeholders['ml']
-        : to === 'ta'
-        ? placeholders['ta']
-        : placeholders['uast']}"
+      placeholder="{ph_to}"
       value="{output}"></textarea>
 
     <select class="to-select" bind:value="{to}" name="to">
