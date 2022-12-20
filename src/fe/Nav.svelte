@@ -76,7 +76,7 @@
 </style>
 
 <script>
-  import Icon from './Icon.svelte';
+  import Icon from "./Icon.svelte";
 </script>
 
 <header>

@@ -1,11 +1,11 @@
-@import '@fontsource/noto-sans-devanagari';
-@import '@fontsource/noto-sans-grantha';
-@import '@fontsource/noto-sans-gujarati';
-@import '@fontsource/noto-sans-kannada';
-@import '@fontsource/noto-sans-malayalam';
-@import '@fontsource/noto-sans-oriya';
-@import '@fontsource/noto-sans-telugu';
-@import '@fontsource/source-code-pro';
+@import "@fontsource/noto-sans-devanagari";
+@import "@fontsource/noto-sans-grantha";
+@import "@fontsource/noto-sans-gujarati";
+@import "@fontsource/noto-sans-kannada";
+@import "@fontsource/noto-sans-malayalam";
+@import "@fontsource/noto-sans-oriya";
+@import "@fontsource/noto-sans-telugu";
+@import "@fontsource/source-code-pro";
 
 :root {
   --dark-primary-dark: rgb(0 0 0);
@@ -16,7 +16,7 @@
   --light-primary-dark: rgb(221 221 221);
   --light-primary-medium: rgb(238 238 238);
 
-  --font-family-mono: 'Source Code Pro';
+  --font-family-mono: "Source Code Pro";
 
   --dark-text-color: rgb(255 255 255);
   --light-text-color: rgb(0 0 0);

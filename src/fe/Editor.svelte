@@ -81,9 +81,9 @@
   textarea,
   select,
   option {
-    font-family: var(--font-family-mono), 'Noto Sans Devanagari',
-      'Noto Sans Gujarati', 'Noto Sans Oriya', 'Noto Sans Kannada',
-      'Noto Sans Telugu', 'Noto Sans Malayalam', 'Noto Sans Grantha', sans-serif;
+    font-family: var(--font-family-mono), "Noto Sans Devanagari",
+      "Noto Sans Gujarati", "Noto Sans Oriya", "Noto Sans Kannada",
+      "Noto Sans Telugu", "Noto Sans Malayalam", "Noto Sans Grantha", sans-serif;
   }
 
   textarea {
@@ -147,86 +147,112 @@
 </style>
 
 <script lang="ts">
-  import * as utils from '../be/utils';
+  import * as utils from "../be/utils";
 
   const placeholders = {
-    uast: 'ts-m/a/d-yog/i/ bhv/a/r-jun',
-    iast: 'tasmādyogī bhavārjuna',
-    gu: 'તસ્માદ્યોગી ભવાર્જુન',
-    or: 'ତସ‍୍ମାଦ‍୍ୟୋଗୀ ଭୱାର‍୍ଜୁନ',
-    devanagari: 'तस्माद्योगी भवार्जुन',
-    slp: 'tasmAdyogI BavArjuna',
-    kn: 'ತಸ್ಮಾದ್ಯೊಗೀ ಭವಾರ್ಜುನ',
-    te: 'తస్మాద్యొగీ భవార్జున',
-    ta: '𑌤𑌸𑍍𑌮𑌾𑌦𑍍𑌯𑍋𑌗𑍀 𑌭𑌵𑌾𑌰𑍍𑌜𑍁𑌨',
-    ml: 'തസ്മാദ്യൊഗീ ഭവാര്ജുന',
-    raw: 'tasm/a/dyog/i/ bhav/a/rjuna',
+    uast: "ts-m/a/d-yog/i/ bhv/a/r-jun",
+    iast: "tasmādyogī bhavārjuna",
+    gu: "તસ્માદ્યોગી ભવાર્જુન",
+    or: "ତସ‍୍ମାଦ‍୍ୟୋଗୀ ଭୱାର‍୍ଜୁନ",
+    devanagari: "तस्माद्योगी भवार्जुन",
+    slp: "tasmAdyogI BavArjuna",
+    kn: "ತಸ್ಮಾದ್ಯೊಗೀ ಭವಾರ್ಜುನ",
+    te: "తస్మాద్యొగీ భవార్జున",
+    ta: "𑌤𑌸𑍍𑌮𑌾𑌦𑍍𑌯𑍋𑌗𑍀 𑌭𑌵𑌾𑌰𑍍𑌜𑍁𑌨",
+    ml: "തസ്മാദ്യൊഗീ ഭവാര്ജുന",
+    raw: "tasm/a/dyog/i/ bhav/a/rjuna",
   } as const;
 
-  let input: string = '';
+  const to_opts = [
+    ["devanagari", "देवनागरी"],
+    ["uast", "UAST"],
+    ["iast", "IAST"],
+    ["gu", "ગુજરાતી"],
+    ["or", "ଓଡ଼ିଆ"],
+    ["kn", "ಕನ್ನಡ"],
+    ["te", "తెలుగు"],
+    ["ml", "മലയാളം"],
+    ["ta", "𑌗𑍍𑌰𑌨𑍍𑌥"],
+  ] as const;
+
+  const from_opts = [
+    ["uast", "UAST"],
+    ["iast", "IAST"],
+    ["devanagari", "देवनागरी"],
+    ["gu", "ગુજરાતી"],
+    ["or", "ଓଡ଼ିଆ"],
+    ["kn", "ಕನ್ನಡ"],
+    ["te", "తెలుగు"],
+    ["ml", "മലയാളം"],
+    ["ta", "𑌗𑍍𑌰𑌨𑍍𑌥"],
+    ["raw", "Raw"],
+    ["slp", "SLP1"],
+  ] as const;
+
+  let input: string = "";
   let from: string;
   let to: string;
 
   $: output = input
-    .split('\n')
+    .split("\n")
     .map(i => {
       return i
-        .split(' ')
+        .split(" ")
         .map(j => {
           for (const f of utils.convertor[from]?.[to] ?? []) {
             j = f(j);
           }
           return j;
         })
-        .join(' ');
+        .join(" ");
     })
-    .join('\n');
+    .join("\n");
 
   $: ph_from =
-    (from === 'slp'
-      ? placeholders['slp']
-      : from === 'iast'
-      ? placeholders['iast']
-      : from === 'raw'
-      ? placeholders['raw']
-      : from === 'devanagari'
-      ? placeholders['devanagari']
-      : from === 'gu'
-      ? placeholders['gu']
-      : from === 'or'
-      ? placeholders['or']
-      : from === 'kn'
-      ? placeholders['kn']
-      : from === 'te'
-      ? placeholders['te']
-      : from === 'ml'
-      ? placeholders['ml']
-      : from === 'ta'
-      ? placeholders['ta']
-      : placeholders['uast']) +
-    '\n\n\n' +
-    (from === 'devanagari'
-      ? 'भारतवर्षे अनेर्या अनिरुद्धेन च प्रणयात् एव निर्मित।'
-      : 'Made with 🫶🏼 in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave');
+    (from === "slp"
+      ? placeholders["slp"]
+      : from === "iast"
+      ? placeholders["iast"]
+      : from === "raw"
+      ? placeholders["raw"]
+      : from === "devanagari"
+      ? placeholders["devanagari"]
+      : from === "gu"
+      ? placeholders["gu"]
+      : from === "or"
+      ? placeholders["or"]
+      : from === "kn"
+      ? placeholders["kn"]
+      : from === "te"
+      ? placeholders["te"]
+      : from === "ml"
+      ? placeholders["ml"]
+      : from === "ta"
+      ? placeholders["ta"]
+      : placeholders["uast"]) +
+    "\n\n\n" +
+    (from === "devanagari"
+      ? "भारतवर्षे अनेर्या अनिरुद्धेन च प्रणयात् एव निर्मित।"
+      : "Made with 🫶🏼 in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave");
 
   $: ph_to =
-    to === 'devanagari'
-      ? placeholders['devanagari']
-      : to === 'iast'
-      ? placeholders['iast']
-      : to === 'gu'
-      ? placeholders['gu']
-      : to === 'odia'
-      ? placeholders['or']
-      : to === 'kn'
-      ? placeholders['kn']
-      : to === 'te'
-      ? placeholders['te']
-      : to === 'ml'
-      ? placeholders['ml']
-      : to === 'ta'
-      ? placeholders['ta']
-      : placeholders['uast'];
+    to === "devanagari"
+      ? placeholders["devanagari"]
+      : to === "iast"
+      ? placeholders["iast"]
+      : to === "gu"
+      ? placeholders["gu"]
+      : to === "odia"
+      ? placeholders["or"]
+      : to === "kn"
+      ? placeholders["kn"]
+      : to === "te"
+      ? placeholders["te"]
+      : to === "ml"
+      ? placeholders["ml"]
+      : to === "ta"
+      ? placeholders["ta"]
+      : placeholders["uast"];
 </script>
 
 <main>
@@ -241,7 +267,7 @@
       bind:value="{input}"></textarea>
 
     <select class="from-select" name="from" bind:value="{from}">
-      {#each [['uast', 'UAST'], ['iast', 'IAST'], ['devanagari', 'देवनागरी'], ['gu', 'ગુજરાતી'], ['or', 'ଓଡ଼ିଆ'], ['kn', 'ಕನ್ನಡ'], ['te', 'తెలుగు'], ['ml', 'മലയാളം'], ['ta', '𑌗𑍍𑌰𑌨𑍍𑌥'], ['raw', 'Raw'], ['slp', 'SLP1']] as i}
+      {#each from_opts as i}
         <option value="{i[0]}">{i[1]}</option>
       {/each}
     </select>
@@ -259,7 +285,7 @@
       value="{output}"></textarea>
 
     <select class="to-select" bind:value="{to}" name="to">
-      {#each [['devanagari', 'देवनागरी'], ['uast', 'UAST'], ['iast', 'IAST'], ['gu', 'ગુજરાતી'], ['or', 'ଓଡ଼ିଆ'], ['kn', 'ಕನ್ನಡ'], ['te', 'తెలుగు'], ['ml', 'മലയാളം'], ['ta', '𑌗𑍍𑌰𑌨𑍍𑌥']] as i}
+      {#each to_opts as i}
         <option value="{i[0]}">{i[1]}</option>
       {/each}
     </select>
