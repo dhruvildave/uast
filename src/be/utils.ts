@@ -1947,7 +1947,7 @@ function iastToUAST(data: string): string {
     curr = curr.replaceAll(/[\\-]/gu, "");
     for (let j of [...devanagariCharDict.misc.values()]
       .filter(i => ["om", ".."].includes(i) === false)
-      .concat([...devanagariCharDict.numbers.values()])) {
+      .concat(...devanagariCharDict.numbers.values())) {
       if (curr === "." && arr[k + 1] === ".") {
         curr = curr.replaceAll(curr, "\\/../\\");
         k++;
