@@ -242,7 +242,7 @@
       ? placeholders["iast"]
       : to === "gu"
       ? placeholders["gu"]
-      : to === "odia"
+      : to === "or"
       ? placeholders["or"]
       : to === "kn"
       ? placeholders["kn"]
