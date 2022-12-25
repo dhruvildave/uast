@@ -258,7 +258,6 @@
 <main>
   <article>
     <textarea
-      label="input"
       autocomplete="off"
       spellcheck="false"
       name="input"
@@ -266,7 +265,7 @@
       placeholder="{ph_from}"
       bind:value="{input}"></textarea>
 
-    <select class="from-select" name="from" bind:value="{from}">
+    <select class="from-select" bind:value="{from}">
       {#each from_opts as i}
         <option value="{i[0]}">{i[1]}</option>
       {/each}
@@ -278,13 +277,12 @@
       autocomplete="off"
       spellcheck="false"
       disabled
-      label="output"
       name="output"
       class="output"
       placeholder="{ph_to}"
       value="{output}"></textarea>
 
-    <select class="to-select" bind:value="{to}" name="to">
+    <select class="to-select" bind:value="{to}">
       {#each to_opts as i}
         <option value="{i[0]}">{i[1]}</option>
       {/each}
