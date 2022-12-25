@@ -1051,7 +1051,7 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
     for (let i = 0; i < str.length; ) {
       let curr = str.at(i) ?? "";
 
-      if (str.at(i) === "/") {
+      if (curr === "/") {
         let char: string[] = [];
 
         for (let j = i + 1; j < str.length; j++) {
