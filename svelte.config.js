@@ -9,7 +9,9 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			precompress: true
+			precompress: true,
+			pages: "public",
+			assets: "public"
 		})
 	}
 };

@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
 /build
+/public
 /logs
 /.svelte-kit
 /package
