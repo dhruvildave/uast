@@ -1,13 +1,8 @@
-import { svelte } from "@sveltejs/vite-plugin-svelte";
-import { defineConfig } from "vite";
+import { sveltekit } from "@sveltejs/kit/vite";
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [svelte()],
-  build: {
-    rollupOptions: {
-      treeshake: true,
-      strictDeprecations: true,
-    },
-  },
-});
+/** @type {import('vite').UserConfig} */
+const config = {
+	plugins: [sveltekit()]
+};
+
+export default config;

@@ -8,46 +8,46 @@
 @import "@fontsource/source-code-pro";
 
 :root {
-  --dark-primary-dark: rgb(0 0 0);
-  --dark-primary-light: rgb(34 34 34);
-  --dark-primary-medium: rgb(17 17 17);
+	--dark-primary-dark: rgb(0 0 0);
+	--dark-primary-light: rgb(34 34 34);
+	--dark-primary-medium: rgb(17 17 17);
 
-  --light-primary-light: rgb(255 255 255);
-  --light-primary-dark: rgb(221 221 221);
-  --light-primary-medium: rgb(238 238 238);
+	--light-primary-light: rgb(255 255 255);
+	--light-primary-dark: rgb(221 221 221);
+	--light-primary-medium: rgb(238 238 238);
 
-  --font-family-mono: "Source Code Pro";
+	--font-family-mono: "Source Code Pro";
 
-  --dark-text-color: rgb(255 255 255);
-  --light-text-color: rgb(0 0 0);
+	--dark-text-color: rgb(255 255 255);
+	--light-text-color: rgb(0 0 0);
 
-  color-scheme: dark light;
+	color-scheme: dark light;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font: inherit;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font: inherit;
 }
 
 body {
-  min-height: 100vh;
+	min-height: 100vh;
 }
 
 img,
 picture,
 svg,
 video {
-  display: block;
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
 }
 
 input,
 textarea,
 button,
 select {
-  font: inherit;
+	font: inherit;
 }

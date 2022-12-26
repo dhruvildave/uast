@@ -1,57 +1,65 @@
 {
-  "name": "uast",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "start": "vite preview",
-    "docker": "docker buildx build --no-cache --pull --compress -t uast . && docker system prune -f",
-    "podman": "podman build --no-cache --pull --compress -t uast . && podman system prune -f",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "format": "prettier --write \"**/*.{html,js,css,ts,svelte,json,md,svg}\""
-  },
-  "devDependencies": {
-    "@fontsource/noto-sans-devanagari": "^4.5.11",
-    "@fontsource/noto-sans-grantha": "^4.5.9",
-    "@fontsource/noto-sans-gujarati": "^4.5.11",
-    "@fontsource/noto-sans-kannada": "^4.5.13",
-    "@fontsource/noto-sans-malayalam": "^4.5.11",
-    "@fontsource/noto-sans-oriya": "^4.5.11",
-    "@fontsource/noto-sans-telugu": "^4.5.13",
-    "@fontsource/source-code-pro": "^4.5.12",
-    "@sveltejs/vite-plugin-svelte": "^2.0.2",
-    "@tsconfig/svelte": "^3.0.0",
-    "prettier": "^2.8.1",
-    "prettier-plugin-svelte": "^2.9.0",
-    "svelte": "^3.55.0",
-    "svelte-check": "^3.0.1",
-    "svelte-preprocess": "^5.0.0",
-    "tslib": "^2.4.1",
-    "typescript": "^4.9.4",
-    "vite": "^4.0.3"
-  },
-  "prettier": {
-    "arrowParens": "avoid",
-    "svelteStrictMode": true,
-    "svelteIndentScriptAndStyle": true,
-    "svelteSortOrder": "options-styles-scripts-markup",
-    "singleQuote": false,
-    "jsxSingleQuote": false,
-    "plugins": [
-      "prettier-plugin-svelte"
-    ],
-    "pluginSearchDirs": [
-      "."
-    ],
-    "overrides": [
-      {
-        "files": "*.svg",
-        "options": {
-          "parser": "html"
-        }
-      }
-    ]
-  }
+	"name": "uast",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev --host",
+		"build": "vite build",
+		"preview": "vite preview --host",
+		"start": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --plugin-search-dir . --check .",
+		"format": "prettier --plugin-search-dir . --write .",
+		"docker": "docker buildx build --no-cache --pull --compress -t uast . && docker system prune -f",
+		"podman": "podman build --no-cache --pull --compress -t uast . && podman system prune -f"
+	},
+	"devDependencies": {
+		"@fontsource/noto-sans-devanagari": "^4.5.11",
+		"@fontsource/noto-sans-grantha": "^4.5.9",
+		"@fontsource/noto-sans-gujarati": "^4.5.11",
+		"@fontsource/noto-sans-kannada": "^4.5.13",
+		"@fontsource/noto-sans-malayalam": "^4.5.11",
+		"@fontsource/noto-sans-oriya": "^4.5.11",
+		"@fontsource/noto-sans-telugu": "^4.5.13",
+		"@fontsource/source-code-pro": "^4.5.12",
+		"@sveltejs/adapter-static": "^1.0.0",
+		"@sveltejs/kit": "^1.0.1",
+		"prettier": "^2.8.1",
+		"prettier-plugin-svelte": "^2.9.0",
+		"svelte": "^3.55.0",
+		"svelte-check": "^3.0.1",
+		"tslib": "^2.4.1",
+		"typescript": "^4.9.4",
+		"vite": "^4.0.3"
+	},
+	"type": "module",
+	"prettier": {
+		"useTabs": true,
+		"svelteStrictMode": true,
+		"singleQuote": false,
+		"trailingComma": "none",
+		"printWidth": 100,
+		"svelteSortOrder": "options-styles-scripts-markup",
+		"plugins": [
+			"prettier-plugin-svelte"
+		],
+		"pluginSearchDirs": [
+			"."
+		],
+		"overrides": [
+			{
+				"files": "*.svelte",
+				"options": {
+					"parser": "svelte"
+				}
+			},
+			{
+				"files": "*.svg",
+				"options": {
+					"parser": "html"
+				}
+			}
+		]
+	}
 }

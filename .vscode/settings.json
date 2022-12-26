@@ -1,10 +1,10 @@
 {
-  "editor.formatOnSave": true,
-  "editor.trimAutoWhitespace": true,
-  "editor.autoClosingBrackets": "always",
-  "editor.autoIndent": "advanced",
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": true
-  }
+	"editor.formatOnSave": true,
+	"editor.trimAutoWhitespace": true,
+	"editor.autoClosingBrackets": "always",
+	"editor.autoIndent": "advanced",
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true,
+		"source.organizeImports": true
+	}
 }
