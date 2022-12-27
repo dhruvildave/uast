@@ -874,6 +874,10 @@ const slpDataDict: CharMap = new Map([
 	["~", "ã"]
 ]);
 
+function checkSwitchExhaustion(x: never): void {
+	throw new Error(`${x} must be of type never`, { cause: x });
+}
+
 function createScriptMap(obj: {
 	readonly [k in "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "om" | "'"]: string;
 }): CharMap {
@@ -1005,7 +1009,11 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
 			});
 			break;
 
+		case "sa":
+			break;
+
 		default:
+			checkSwitchExhaustion(lang);
 			break;
 	}
 
@@ -1648,9 +1656,8 @@ function createScriptFunction(lang: LangList): (data: string) => string {
 			break;
 
 		default:
-			((x: never) => {
-				throw new Error(`${x} must be of type never`, { cause: x });
-			})(lang);
+			checkSwitchExhaustion(lang);
+			break;
 	}
 
 	return function scriptToDevanagari(data: string): string {
@@ -1962,7 +1969,11 @@ function createDataFunction(lang: LangList): (data: string) => string {
 			obj = tamilCharDict;
 			break;
 
+		case "sa":
+			break;
+
 		default:
+			checkSwitchExhaustion(lang);
 			break;
 	}
 
