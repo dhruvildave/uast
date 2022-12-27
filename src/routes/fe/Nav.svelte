@@ -60,15 +60,7 @@
 		}
 	}
 
-	img {
-		filter: invert(100%);
-	}
-
 	@media (prefers-color-scheme: dark) {
-		img {
-			filter: invert(0%);
-		}
-
 		header nav {
 			background-color: var(--dark-primary-dark);
 		}
