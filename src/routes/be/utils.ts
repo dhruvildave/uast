@@ -1648,7 +1648,9 @@ function createScriptFunction(lang: LangList): (data: string) => string {
 			break;
 
 		default:
-			break;
+			((x: never) => {
+				throw new Error(`${x} must be of type never`, { cause: x });
+			})(lang);
 	}
 
 	return function scriptToDevanagari(data: string): string {
