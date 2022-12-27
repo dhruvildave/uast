@@ -9,6 +9,7 @@
 		"start": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"install": "svelte-kit sync",
 		"lint": "prettier --plugin-search-dir . --check .",
 		"format": "prettier --plugin-search-dir . --write .",
 		"docker": "docker buildx build --no-cache --pull --compress -t uast . && docker system prune -f",
