@@ -120,9 +120,7 @@
 		main {
 			flex-direction: row;
 		}
-	}
 
-	@media (min-width: 768px) {
 		textarea,
 		select {
 			font-size: 1.5rem; /* 24px */
@@ -195,10 +193,10 @@
 
 	$: output = input
 		.split("\n")
-		.map((i) => {
+		.map(i => {
 			return i
 				.split(" ")
-				.map((j) => {
+				.map(j => {
 					for (const f of utils.convertor[from]?.[to] ?? []) {
 						j = f(j);
 					}

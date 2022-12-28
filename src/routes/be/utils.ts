@@ -1128,7 +1128,7 @@ function createScriptDict(obj: {
 				| "ळ"
 		  )]: string;
 }): readonly [string, string][] {
-	return Object.entries(obj).map((i) => [i[1], i[0]]);
+	return Object.entries(obj).map(i => [i[1], i[0]]);
 }
 
 function createScriptFunction(lang: LangList): (data: string) => string {
@@ -1662,7 +1662,7 @@ function createScriptFunction(lang: LangList): (data: string) => string {
 
 	return function scriptToDevanagari(data: string): string {
 		return Array.from(data)
-			.map((i) => obj.get(i) ?? "")
+			.map(i => obj.get(i) ?? "")
 			.join("")
 			.normalize();
 	};
@@ -1679,7 +1679,7 @@ function dataToIAST(data: string): string {
 		.normalize()
 		.replaceAll(/[\[\]^~@#$%&*_;\n\v\t\r\f\d]/gu, "")
 		.split("\\")
-		.map((split) => {
+		.map(split => {
 			if (split === "ॐ") {
 				return "oṃ";
 			}
@@ -1906,7 +1906,7 @@ function iastToUAST(data: string): string {
 
 		curr = curr.replaceAll(/[\\-]/gu, "");
 		for (let j of [...devanagariCharDict.misc.values()]
-			.filter((i) => ["om", ".."].includes(i) === false)
+			.filter(i => ["om", ".."].includes(i) === false)
 			.concat(...devanagariCharDict.numbers.values())) {
 			if (curr === "." && arr[k + 1] === ".") {
 				curr = curr.replaceAll(curr, "\\/../\\");
@@ -1930,7 +1930,7 @@ function iastToUAST(data: string): string {
 	}
 
 	return Array.from(ans.join(""))
-		.map((i) => (iastDataDict.has(i) ? `/${iastDataDict.get(i)}/` : i))
+		.map(i => (iastDataDict.has(i) ? `/${iastDataDict.get(i)}/` : i))
 		.join("")
 		.normalize();
 }
@@ -1980,7 +1980,7 @@ function createDataFunction(lang: LangList): (data: string) => string {
 	return function dataToScript(data: string): string {
 		return data
 			.split("\\")
-			.map((split) => {
+			.map(split => {
 				if (obj.misc.has(split) || obj.numbers.has(split)) {
 					return split;
 				}
@@ -2105,7 +2105,7 @@ function devanagariToUAST(data: string): string {
  */
 function slpToIAST(data: string): string {
 	return Array.from(data)
-		.map((i) => slpDataDict.get(i) ?? "")
+		.map(i => slpDataDict.get(i) ?? "")
 		.join("")
 		.normalize();
 }

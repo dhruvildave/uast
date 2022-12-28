@@ -38,6 +38,7 @@
 	"prettier": {
 		"useTabs": true,
 		"svelteStrictMode": true,
+		"arrowParens": "avoid",
 		"singleQuote": false,
 		"trailingComma": "none",
 		"printWidth": 100,
