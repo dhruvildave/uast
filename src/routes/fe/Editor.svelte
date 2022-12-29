@@ -86,11 +86,6 @@
 			"Noto Sans Grantha", sans-serif;
 	}
 
-	textarea {
-		font-size: 1.5rem; /* 24px */
-		line-height: 2rem; /* 32px */
-	}
-
 	@media (prefers-color-scheme: dark) {
 		textarea,
 		select {
