@@ -3,7 +3,6 @@
 		display: flex;
 		flex-direction: column;
 
-		width: 100vw;
 		height: calc(100vh - 3rem);
 	}
 
@@ -46,7 +45,6 @@
 	main article textarea,
 	main aside textarea {
 		height: 100%;
-		width: 100%;
 		resize: none;
 
 		border: none;

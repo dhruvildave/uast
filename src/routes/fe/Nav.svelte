@@ -1,10 +1,5 @@
 <style>
-	header {
-		width: 100vw;
-	}
-
 	header nav {
-		width: 100%;
 		height: 3rem; /* 48px */
 
 		display: flex;
