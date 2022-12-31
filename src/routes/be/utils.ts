@@ -818,6 +818,8 @@ const iastDataDict: CharMap = new Map([
 
 const unAspiratedConsonants: string[] = ["k", "g", "c", "j", "t", "d", "p", "b", "ṭ", "ḍ"];
 
+const allowedSymbols: string[] = [",", "?", "!", '"', "-", ":", "(", ")", "="];
+
 const slpDataDict: CharMap = new Map([
 	["a", "a"],
 	["A", "ā"],
@@ -1662,7 +1664,7 @@ function createScriptFunction(lang: LangList): (data: string) => string {
 
 	return function scriptToDevanagari(data: string): string {
 		return Array.from(data)
-			.map(i => obj.get(i) ?? "")
+			.map(i => (obj.has(i) ? obj.get(i) : allowedSymbols.includes(i) ? i : ""))
 			.join("")
 			.normalize();
 	};
@@ -1677,7 +1679,7 @@ function createScriptFunction(lang: LangList): (data: string) => string {
 function dataToIAST(data: string): string {
 	return data
 		.normalize()
-		.replaceAll(/[\[\]^~@#$%&*_;\n\v\t\r\f\d]/gu, "")
+		.replaceAll(/[\[\]{}^~@#$%&*_;\n\v\t\r\f\d]/gu, "")
 		.split("\\")
 		.map(split => {
 			if (split === "ॐ") {
@@ -1715,7 +1717,7 @@ function dataToIAST(data: string): string {
 					continue;
 				}
 
-				if ([",", "?", "!", '"', "-", ":", "(", ")", "="].includes(curr)) {
+				if (allowedSymbols.includes(curr)) {
 					arr.push(curr);
 					i++;
 					continue;
@@ -1812,7 +1814,7 @@ function dataToIAST(data: string): string {
  * @returns UAST string
  */
 function iastToUAST(data: string): string {
-	const str = Array.from(data.normalize().replaceAll(/[\[\]^~@#$%&*\-_;]/gu, ""));
+	const str = Array.from(data.normalize().replaceAll(/[\[\]{}^~@#$%&*\-_;]/gu, ""));
 	let arr: string[] = [];
 
 	for (let i = 0; i < str.length; ) {
