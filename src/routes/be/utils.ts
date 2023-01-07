@@ -18,7 +18,7 @@ type LangMap = {
 };
 
 const langs = ["gu", "sa", "ml", "or", "te", "kn", "ta"] as const;
-type LangList = typeof langs[number];
+type LangList = (typeof langs)[number];
 
 const gujaratiCharDict: LangMap = {
 	misc: new Map([
