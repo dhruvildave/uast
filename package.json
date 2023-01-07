@@ -4,14 +4,16 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev --host",
+		"d": "vite dev --host",
 		"build": "vite build",
+		"b": "vite build",
 		"preview": "vite preview --host",
 		"start": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"install": "svelte-kit sync",
-		"lint": "prettier --plugin-search-dir . --check .",
-		"format": "prettier --plugin-search-dir . --write .",
+		"lint": "prettier -c .",
+		"format": "prettier -w .",
 		"docker": "docker buildx build --no-cache --pull --compress -t uast . && docker system prune -f",
 		"podman": "podman build --no-cache --pull --compress -t uast . && podman system prune -f"
 	},
