@@ -20,13 +20,19 @@ type LangMap = {
 const langs = ["gu", "sa", "ml", "or", "te", "kn", "ta"] as const;
 type LangList = (typeof langs)[number];
 
+function checkMisc(obj: { readonly [k: string]: "." | ".." | "'" | "om" }) {
+	return Object.entries(obj);
+}
+
 const gujaratiCharDict: LangMap = {
-	misc: new Map([
-		["।", "."],
-		["॥", ".."],
-		["ઽ", "'"],
-		["ॐ", "om"]
-	]),
+	misc: new Map(
+		checkMisc({
+			"।": ".",
+			"॥": "..",
+			ઽ: "'",
+			ॐ: "om"
+		})
+	),
 	numbers: new Map([
 		["૦", "0"],
 		["૧", "1"],
@@ -114,12 +120,14 @@ const gujaratiCharDict: LangMap = {
 };
 
 const tamilCharDict: LangMap = {
-	misc: new Map([
-		["।", "."],
-		["॥", ".."],
-		["𑌽", "'"],
-		["𑍐", "om"]
-	]),
+	misc: new Map(
+		checkMisc({
+			"।": ".",
+			"॥": "..",
+			"𑌽": "'",
+			"𑍐": "om"
+		})
+	),
 	numbers: new Map([
 		["௦", "0"],
 		["௧", "1"],
@@ -207,12 +215,14 @@ const tamilCharDict: LangMap = {
 };
 
 const malayalamCharDict: LangMap = {
-	misc: new Map([
-		["।", "."],
-		["॥", ".."],
-		["ഽ", "'"],
-		["ഓം", "om"]
-	]),
+	misc: new Map(
+		checkMisc({
+			"।": ".",
+			"॥": "..",
+			ഽ: "'",
+			ഓം: "om"
+		})
+	),
 	numbers: new Map([
 		["൦", "0"],
 		["൧", "1"],
@@ -300,12 +310,14 @@ const malayalamCharDict: LangMap = {
 };
 
 const teluguCharDict: LangMap = {
-	misc: new Map([
-		["।", "."],
-		["॥", ".."],
-		["ఽ", "'"],
-		["ఓం", "om"]
-	]),
+	misc: new Map(
+		checkMisc({
+			"।": ".",
+			"॥": "..",
+			ఽ: "'",
+			ఓం: "om"
+		})
+	),
 	numbers: new Map([
 		["౦", "0"],
 		["౧", "1"],
@@ -393,12 +405,14 @@ const teluguCharDict: LangMap = {
 };
 
 const kannadaCharDict: LangMap = {
-	misc: new Map([
-		["।", "."],
-		["॥", ".."],
-		["ಽ", "'"],
-		["ಓಂ", "om"]
-	]),
+	misc: new Map(
+		checkMisc({
+			"।": ".",
+			"॥": "..",
+			ಽ: "'",
+			ಓಂ: "om"
+		})
+	),
 	numbers: new Map([
 		["೦", "0"],
 		["೧", "1"],
@@ -486,12 +500,14 @@ const kannadaCharDict: LangMap = {
 };
 
 const odiaCharDict: LangMap = {
-	misc: new Map([
-		["।", "."],
-		["॥", ".."],
-		["ଽ", "'"],
-		["ଓଁ", "om"]
-	]),
+	misc: new Map(
+		checkMisc({
+			"।": ".",
+			"॥": "..",
+			ଽ: "'",
+			ଓଁ: "om"
+		})
+	),
 	numbers: new Map([
 		["୦", "0"],
 		["୧", "1"],
@@ -579,12 +595,14 @@ const odiaCharDict: LangMap = {
 };
 
 const devanagariCharDict: LangMap = {
-	misc: new Map([
-		["।", "."],
-		["॥", ".."],
-		["ऽ", "'"],
-		["ॐ", "om"]
-	]),
+	misc: new Map(
+		checkMisc({
+			"।": ".",
+			"॥": "..",
+			ऽ: "'",
+			ॐ: "om"
+		})
+	),
 	numbers: new Map([
 		["०", "0"],
 		["१", "1"],
