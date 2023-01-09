@@ -10,11 +10,11 @@ specifiers:
   '@fontsource/noto-sans-telugu': ^4.5.13
   '@fontsource/source-code-pro': ^4.5.12
   '@sveltejs/adapter-static': ^1.0.1
-  '@sveltejs/kit': ^1.0.7
+  '@sveltejs/kit': ^1.0.9
   prettier: ^2.8.2
   prettier-plugin-svelte: ^2.9.0
   svelte: ^3.55.0
-  svelte-check: ^3.0.1
+  svelte-check: ^3.0.2
   tslib: ^2.4.1
   typescript: ^4.9.4
   vite: ^4.0.4
@@ -28,12 +28,12 @@ devDependencies:
   '@fontsource/noto-sans-oriya': 4.5.11
   '@fontsource/noto-sans-telugu': 4.5.13
   '@fontsource/source-code-pro': 4.5.12
-  '@sveltejs/adapter-static': 1.0.1_@sveltejs+kit@1.0.7
-  '@sveltejs/kit': 1.0.7_svelte@3.55.0+vite@4.0.4
+  '@sveltejs/adapter-static': 1.0.1_@sveltejs+kit@1.0.9
+  '@sveltejs/kit': 1.0.9_svelte@3.55.0+vite@4.0.4
   prettier: 2.8.2
   prettier-plugin-svelte: 2.9.0_74vfyr7qjo56zgjcvkwi6gyjxm
   svelte: 3.55.0
-  svelte-check: 3.0.1_svelte@3.55.0
+  svelte-check: 3.0.2_svelte@3.55.0
   tslib: 2.4.1
   typescript: 4.9.4
   vite: 4.0.4
@@ -311,16 +311,16 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@sveltejs/adapter-static/1.0.1_@sveltejs+kit@1.0.7:
+  /@sveltejs/adapter-static/1.0.1_@sveltejs+kit@1.0.9:
     resolution: {integrity: sha512-lusMk8ckXuAK5W04/3P3UqVi+nyOyNRbgSfhzc+Wwy0WLMKQ/qxUAzc7BCFOPz0FrIkGYZmyGHC05SfhrrQleg==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
-      '@sveltejs/kit': 1.0.7_svelte@3.55.0+vite@4.0.4
+      '@sveltejs/kit': 1.0.9_svelte@3.55.0+vite@4.0.4
     dev: true
 
-  /@sveltejs/kit/1.0.7_svelte@3.55.0+vite@4.0.4:
-    resolution: {integrity: sha512-u8JS4aXFWlrnu/tjl+EhJ/FvBEjLYDyMaLe7EAU4sW+PfDqnqyHBAPg/IQi5JuBg6l+Z816F4WrTe+zplUTQDg==}
+  /@sveltejs/kit/1.0.9_svelte@3.55.0+vite@4.0.4:
+    resolution: {integrity: sha512-4u6VkI70v6HBCBI/UUKJ1iAFJ0EfTeOSkKVHZZImTtS/Ozv0Uni4xsOYKgIh22+E78rwISsJaaDgPn5+UU1NrA==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -896,8 +896,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check/3.0.1_svelte@3.55.0:
-    resolution: {integrity: sha512-7YpHYWv6V2qhcvVeAlXixUPAlpLCXB1nZEQK0EItB3PtuYmENhKclbc5uKSJTodTwWR1y+4stKGcbH30k6A3Yw==}
+  /svelte-check/3.0.2_svelte@3.55.0:
+    resolution: {integrity: sha512-DkhKhV0Jt0gh7q9DBB26+J2Vfb9y4/4JWxnbkXBZha7542LOhwvj3edJFjyJ+xjdaXyInZ+YRRYc3V6wytP2ew==}
     hasBin: true
     peerDependencies:
       svelte: ^3.55.0
