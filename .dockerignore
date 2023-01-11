@@ -16,11 +16,13 @@
 **/docker-compose*
 **/compose*
 **/Dockerfile*
+**/Containerfile*
 **/node_modules
 **/npm-debug.log
 **/obj
 **/secrets.dev.yaml
 **/values.dev.yaml
 **/dist
+**/public
 README.md
 uast_poster.png
