@@ -1925,12 +1925,19 @@ function iastToUAST(data: string): string {
 			curr = curr.replaceAll(j, `\\/${j}/\\`);
 		}
 
-		ans.push(
-			curr +
-				(unAspiratedConsonants.includes(curr) && (arr[k + 1] ?? "") === "h" ? "a" : "") +
-				(hasDash ? "-" : "") +
-				(devanagariCharDict.vowels.has(curr) ? "\\" : "")
-		);
+		if (unAspiratedConsonants.includes(curr) && (arr[k + 1] ?? "") === "h") {
+			curr += "a";
+		}
+
+		if (hasDash) {
+			curr += "-";
+		}
+
+		if (devanagariCharDict.vowels.has(curr)) {
+			curr += "\\";
+		}
+
+		ans.push(curr);
 	}
 
 	if (devanagariCharDict.consonants.has(ans.at(-1) ?? "") && (str.at(-1) ?? "") !== "a") {
