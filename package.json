@@ -37,6 +37,7 @@
 		"vite": "^4.0.4"
 	},
 	"type": "module",
+	"engineStrict": true,
 	"prettier": {
 		"useTabs": true,
 		"svelteStrictMode": true,
