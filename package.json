@@ -14,8 +14,8 @@
 		"install": "svelte-kit sync",
 		"lint": "prettier -c .",
 		"format": "prettier -w .",
-		"docker": "docker buildx build --no-cache --pull --compress -f Containerfile -t uast . && docker system prune -f",
-		"podman": "podman build --no-cache --pull --compress -f Containerfile -t uast . && podman system prune -f"
+		"docker": "docker compose build && docker system prune -f",
+		"podman": "podman-compose build && podman system prune -f"
 	},
 	"devDependencies": {
 		"@fontsource/noto-sans-devanagari": "^4.5.11",

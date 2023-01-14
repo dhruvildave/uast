@@ -4,6 +4,7 @@ services:
     pull_policy: build
     build:
       context: .
+      dockerfile: Containerfile
     ports:
       - 9000:80
     tty: true
