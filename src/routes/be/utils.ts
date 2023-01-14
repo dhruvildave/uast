@@ -1685,7 +1685,7 @@ function createScriptFunction(lang: LangList): (data: string) => string {
 function dataToIAST(data: string): string {
 	return data
 		.normalize()
-		.replaceAll(/[\[\]{}^~@#$%&*_;\n\v\t\r\f\d]/gu, "")
+		.replaceAll(/[\[\]{}^~@#$%&*_;.<>\n\v\t\r\f\d]/gu, "")
 		.split("\\")
 		.map(split => {
 			if (split === "ॐ") {
@@ -1820,7 +1820,7 @@ function dataToIAST(data: string): string {
  * @returns UAST string
  */
 function iastToUAST(data: string): string {
-	const str = Array.from(data.normalize().replaceAll(/[\[\]{}^~@#$%&*\-_;]/gu, ""));
+	const str = Array.from(data.normalize().replaceAll(/[\[\]{}^~@#$%&*\-_;<>]/gu, ""));
 	let arr: string[] = [];
 
 	for (let i = 0; i < str.length; ) {
