@@ -2260,12 +2260,36 @@ export const convertor: {
 	devanagari: {
 		uast: [devanagariToUAST],
 		iast: [devanagariToUAST, builderFuncs["sa"]["handleUnicode"], dataToIAST],
-		gu: [devanagariToUAST, builderFuncs["gu"]["handleUnicode"], builderFuncs["gu"]["dataFunction"]],
-		or: [devanagariToUAST, builderFuncs["or"]["handleUnicode"], builderFuncs["or"]["dataFunction"]],
-		kn: [devanagariToUAST, builderFuncs["kn"]["handleUnicode"], builderFuncs["kn"]["dataFunction"]],
-		te: [devanagariToUAST, builderFuncs["te"]["handleUnicode"], builderFuncs["te"]["dataFunction"]],
-		ml: [devanagariToUAST, builderFuncs["ml"]["handleUnicode"], builderFuncs["ml"]["dataFunction"]],
-		ta: [devanagariToUAST, builderFuncs["ta"]["handleUnicode"], builderFuncs["ta"]["dataFunction"]]
+		gu: [
+			devanagariToUAST,
+			builderFuncs["gu"]["handleUnicode"],
+			builderFuncs["gu"]["dataFunction"]
+		],
+		or: [
+			devanagariToUAST,
+			builderFuncs["or"]["handleUnicode"],
+			builderFuncs["or"]["dataFunction"]
+		],
+		kn: [
+			devanagariToUAST,
+			builderFuncs["kn"]["handleUnicode"],
+			builderFuncs["kn"]["dataFunction"]
+		],
+		te: [
+			devanagariToUAST,
+			builderFuncs["te"]["handleUnicode"],
+			builderFuncs["te"]["dataFunction"]
+		],
+		ml: [
+			devanagariToUAST,
+			builderFuncs["ml"]["handleUnicode"],
+			builderFuncs["ml"]["dataFunction"]
+		],
+		ta: [
+			devanagariToUAST,
+			builderFuncs["ta"]["handleUnicode"],
+			builderFuncs["ta"]["dataFunction"]
+		]
 	},
 	iast: {
 		uast: [iastToUAST],
