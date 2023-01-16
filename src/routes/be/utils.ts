@@ -21,20 +21,13 @@ const langs = ["gu", "sa", "ml", "or", "te", "kn", "ta"] as const;
 type LangList = (typeof langs)[number];
 
 type Miscs = "." | ".." | "'" | "om";
-function checkMisc(obj: Readonly<Record<string, Miscs>>): [string, Miscs][] {
-	return Object.entries(obj);
-}
-
 type Numbers = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
-function checkNumbers(obj: Readonly<Record<string, Numbers>>): [string, Numbers][] {
+
+function checkSymbols<T extends Miscs | Numbers>(obj: Readonly<Record<string, T>>): [string, T][] {
 	return Object.entries(obj);
 }
 
 type Vowels = "a" | "ā" | "i" | "ī" | "u" | "ū" | "ṛ" | "ṝ" | "ḷ" | "ḹ" | "e" | "ai" | "o" | "au";
-function checkVowels(obj: Readonly<Record<Vowels, string>>): [Vowels, string][] {
-	return Object.entries(obj) as [Vowels, string][];
-}
-
 type VowelSigns =
 	| "a"
 	| "ā"
@@ -54,10 +47,6 @@ type VowelSigns =
 	| "ḥ"
 	| "ã"
 	| "-";
-function checkVowelSigns(obj: Readonly<Record<VowelSigns, string>>): [VowelSigns, string][] {
-	return Object.entries(obj) as [VowelSigns, string][];
-}
-
 type Consonants =
 	| "k"
 	| "kh"
@@ -93,13 +82,16 @@ type Consonants =
 	| "s"
 	| "h"
 	| "ḻ";
-function checkConsonants(obj: Readonly<Record<Consonants, string>>): [Consonants, string][] {
-	return Object.entries(obj) as [Consonants, string][];
+
+function checkSounds<T extends Vowels | VowelSigns | Consonants>(
+	obj: Readonly<Record<T, string>>
+): [T, string][] {
+	return Object.entries(obj) as [T, string][];
 }
 
 const gujaratiCharDict: LangMap = {
 	misc: new Map(
-		checkMisc({
+		checkSymbols<Miscs>({
 			"।": ".",
 			"॥": "..",
 			ઽ: "'",
@@ -107,7 +99,7 @@ const gujaratiCharDict: LangMap = {
 		})
 	),
 	numbers: new Map(
-		checkNumbers({
+		checkSymbols<Numbers>({
 			"૦": "0",
 			"૧": "1",
 			"૨": "2",
@@ -121,7 +113,7 @@ const gujaratiCharDict: LangMap = {
 		})
 	),
 	vowels: new Map(
-		checkVowels({
+		checkSounds<Vowels>({
 			a: "અ",
 			ā: "આ",
 			i: "ઇ",
@@ -139,7 +131,7 @@ const gujaratiCharDict: LangMap = {
 		})
 	),
 	vowelSigns: new Map(
-		checkVowelSigns({
+		checkSounds<VowelSigns>({
 			a: "",
 			ā: "ા",
 			i: "િ",
@@ -161,7 +153,7 @@ const gujaratiCharDict: LangMap = {
 		})
 	),
 	consonants: new Map(
-		checkConsonants({
+		checkSounds<Consonants>({
 			k: "ક",
 			kh: "ખ",
 			g: "ગ",
@@ -202,7 +194,7 @@ const gujaratiCharDict: LangMap = {
 
 const tamilCharDict: LangMap = {
 	misc: new Map(
-		checkMisc({
+		checkSymbols<Miscs>({
 			"।": ".",
 			"॥": "..",
 			"𑌽": "'",
@@ -210,7 +202,7 @@ const tamilCharDict: LangMap = {
 		})
 	),
 	numbers: new Map(
-		checkNumbers({
+		checkSymbols<Numbers>({
 			"௦": "0",
 			"௧": "1",
 			"௨": "2",
@@ -224,7 +216,7 @@ const tamilCharDict: LangMap = {
 		})
 	),
 	vowels: new Map(
-		checkVowels({
+		checkSounds<Vowels>({
 			a: "𑌅",
 			ā: "𑌆",
 			i: "𑌇",
@@ -242,7 +234,7 @@ const tamilCharDict: LangMap = {
 		})
 	),
 	vowelSigns: new Map(
-		checkVowelSigns({
+		checkSounds<VowelSigns>({
 			a: "",
 			ā: "𑌾",
 			i: "𑌿",
@@ -264,7 +256,7 @@ const tamilCharDict: LangMap = {
 		})
 	),
 	consonants: new Map(
-		checkConsonants({
+		checkSounds<Consonants>({
 			k: "𑌕",
 			kh: "𑌖",
 			g: "𑌗",
@@ -305,7 +297,7 @@ const tamilCharDict: LangMap = {
 
 const malayalamCharDict: LangMap = {
 	misc: new Map(
-		checkMisc({
+		checkSymbols<Miscs>({
 			"।": ".",
 			"॥": "..",
 			ഽ: "'",
@@ -313,7 +305,7 @@ const malayalamCharDict: LangMap = {
 		})
 	),
 	numbers: new Map(
-		checkNumbers({
+		checkSymbols<Numbers>({
 			"൦": "0",
 			"൧": "1",
 			"൨": "2",
@@ -327,7 +319,7 @@ const malayalamCharDict: LangMap = {
 		})
 	),
 	vowels: new Map(
-		checkVowels({
+		checkSounds<Vowels>({
 			a: "അ",
 			ā: "ആ",
 			i: "ഇ",
@@ -345,7 +337,7 @@ const malayalamCharDict: LangMap = {
 		})
 	),
 	vowelSigns: new Map(
-		checkVowelSigns({
+		checkSounds<VowelSigns>({
 			a: "",
 			ā: "ാ",
 			i: "ി",
@@ -367,7 +359,7 @@ const malayalamCharDict: LangMap = {
 		})
 	),
 	consonants: new Map(
-		checkConsonants({
+		checkSounds<Consonants>({
 			k: "ക",
 			kh: "ഖ",
 			g: "ഗ",
@@ -408,7 +400,7 @@ const malayalamCharDict: LangMap = {
 
 const teluguCharDict: LangMap = {
 	misc: new Map(
-		checkMisc({
+		checkSymbols<Miscs>({
 			"।": ".",
 			"॥": "..",
 			ఽ: "'",
@@ -416,7 +408,7 @@ const teluguCharDict: LangMap = {
 		})
 	),
 	numbers: new Map(
-		checkNumbers({
+		checkSymbols<Numbers>({
 			"౦": "0",
 			"౧": "1",
 			"౨": "2",
@@ -430,7 +422,7 @@ const teluguCharDict: LangMap = {
 		})
 	),
 	vowels: new Map(
-		checkVowels({
+		checkSounds<Vowels>({
 			a: "అ",
 			ā: "ఆ",
 			i: "ఇ",
@@ -448,7 +440,7 @@ const teluguCharDict: LangMap = {
 		})
 	),
 	vowelSigns: new Map(
-		checkVowelSigns({
+		checkSounds<VowelSigns>({
 			a: "",
 			ā: "ా",
 			i: "ి",
@@ -470,7 +462,7 @@ const teluguCharDict: LangMap = {
 		})
 	),
 	consonants: new Map(
-		checkConsonants({
+		checkSounds<Consonants>({
 			k: "క",
 			kh: "ఖ",
 			g: "గ",
@@ -511,7 +503,7 @@ const teluguCharDict: LangMap = {
 
 const kannadaCharDict: LangMap = {
 	misc: new Map(
-		checkMisc({
+		checkSymbols<Miscs>({
 			"।": ".",
 			"॥": "..",
 			ಽ: "'",
@@ -519,7 +511,7 @@ const kannadaCharDict: LangMap = {
 		})
 	),
 	numbers: new Map(
-		checkNumbers({
+		checkSymbols<Numbers>({
 			"೦": "0",
 			"೧": "1",
 			"೨": "2",
@@ -533,7 +525,7 @@ const kannadaCharDict: LangMap = {
 		})
 	),
 	vowels: new Map(
-		checkVowels({
+		checkSounds<Vowels>({
 			a: "ಅ",
 			ā: "ಆ",
 			i: "ಇ",
@@ -551,7 +543,7 @@ const kannadaCharDict: LangMap = {
 		})
 	),
 	vowelSigns: new Map(
-		checkVowelSigns({
+		checkSounds<VowelSigns>({
 			a: "",
 			ā: "ಾ",
 			i: "ಿ",
@@ -573,7 +565,7 @@ const kannadaCharDict: LangMap = {
 		})
 	),
 	consonants: new Map(
-		checkConsonants({
+		checkSounds<Consonants>({
 			k: "ಕ",
 			kh: "ಖ",
 			g: "ಗ",
@@ -614,7 +606,7 @@ const kannadaCharDict: LangMap = {
 
 const odiaCharDict: LangMap = {
 	misc: new Map(
-		checkMisc({
+		checkSymbols<Miscs>({
 			"।": ".",
 			"॥": "..",
 			ଽ: "'",
@@ -622,7 +614,7 @@ const odiaCharDict: LangMap = {
 		})
 	),
 	numbers: new Map(
-		checkNumbers({
+		checkSymbols<Numbers>({
 			"୦": "0",
 			"୧": "1",
 			"୨": "2",
@@ -636,7 +628,7 @@ const odiaCharDict: LangMap = {
 		})
 	),
 	vowels: new Map(
-		checkVowels({
+		checkSounds<Vowels>({
 			a: "ଅ",
 			ā: "ଆ",
 			i: "ଇ",
@@ -654,7 +646,7 @@ const odiaCharDict: LangMap = {
 		})
 	),
 	vowelSigns: new Map(
-		checkVowelSigns({
+		checkSounds<VowelSigns>({
 			a: "",
 			ā: "ା",
 			i: "ି",
@@ -676,7 +668,7 @@ const odiaCharDict: LangMap = {
 		})
 	),
 	consonants: new Map(
-		checkConsonants({
+		checkSounds<Consonants>({
 			k: "କ",
 			kh: "ଖ",
 			g: "ଗ",
@@ -717,7 +709,7 @@ const odiaCharDict: LangMap = {
 
 const devanagariCharDict: LangMap = {
 	misc: new Map(
-		checkMisc({
+		checkSymbols<Miscs>({
 			"।": ".",
 			"॥": "..",
 			ऽ: "'",
@@ -725,7 +717,7 @@ const devanagariCharDict: LangMap = {
 		})
 	),
 	numbers: new Map(
-		checkNumbers({
+		checkSymbols<Numbers>({
 			"०": "0",
 			"१": "1",
 			"२": "2",
@@ -739,7 +731,7 @@ const devanagariCharDict: LangMap = {
 		})
 	),
 	vowels: new Map(
-		checkVowels({
+		checkSounds<Vowels>({
 			a: "अ",
 			ā: "आ",
 			i: "इ",
@@ -757,7 +749,7 @@ const devanagariCharDict: LangMap = {
 		})
 	),
 	vowelSigns: new Map(
-		checkVowelSigns({
+		checkSounds<VowelSigns>({
 			a: "",
 			ā: "ा",
 			i: "ि",
@@ -779,7 +771,7 @@ const devanagariCharDict: LangMap = {
 		})
 	),
 	consonants: new Map(
-		checkConsonants({
+		checkSounds<Consonants>({
 			k: "क",
 			kh: "ख",
 			g: "ग",
