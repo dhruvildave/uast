@@ -2258,7 +2258,7 @@ type Builder = {
 	};
 };
 
-function makeBuilder(): Builder {
+const builderFuncs: Builder = (() => {
 	const y: Partial<Builder> = {};
 	for (const l of langs) {
 		y[l] = {
@@ -2269,9 +2269,7 @@ function makeBuilder(): Builder {
 	}
 
 	return y as Required<Builder>;
-}
-
-const builderFuncs = makeBuilder();
+})();
 
 export const convertor: {
 	readonly [from: string]: {
