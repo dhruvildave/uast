@@ -1019,10 +1019,6 @@ function checkSwitchExhaustion(x: never): void {
 	throw new Error(`${x} must be of type never`, { cause: x });
 }
 
-function createScriptMap(obj: Readonly<Record<Numbers | "om" | "'", string>>): CharMap {
-	return new Map(Object.entries(obj));
-}
-
 /**
  * Function to map special characters to Unicode
  *
@@ -1030,6 +1026,10 @@ function createScriptMap(obj: Readonly<Record<Numbers | "om" | "'", string>>): C
  * @returns parsed AnDy output string
  */
 function createHandleUnicode(lang: LangList): (uast: string) => string {
+	function createScriptMap(obj: Readonly<Record<Numbers | "om" | "'", string>>): CharMap {
+		return new Map(Object.entries(obj));
+	}
+
 	let scriptMap: CharMap = createScriptMap({
 		"0": "०",
 		"1": "१",
@@ -1206,75 +1206,96 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
 	};
 }
 
-function createScriptDict(
-	obj: Readonly<
-		Record<
-			string,
-			| ("।" | "॥" | "ऽ" | "ॐ")
-			| ("०" | "१" | "२" | "३" | "४" | "५" | "६" | "७" | "८" | "९")
-			| ("अ" | "आ" | "इ" | "ई" | "उ" | "ऊ" | "ऋ" | "ॠ" | "ऌ" | "ॡ" | "ए" | "ऐ" | "ओ" | "औ")
-			| (
-					| "ा"
-					| "ि"
-					| "ी"
-					| "ु"
-					| "ू"
-					| "ृ"
-					| "ॄ"
-					| "ॢ"
-					| "ॣ"
-					| "े"
-					| "ै"
-					| "ो"
-					| "ौ"
-					| "ं"
-					| "ः"
-					| "ँ"
-					| "्"
-			  )
-			| (
-					| "क"
-					| "ख"
-					| "ग"
-					| "घ"
-					| "ङ"
-					| "च"
-					| "छ"
-					| "ज"
-					| "झ"
-					| "ञ"
-					| "ट"
-					| "ठ"
-					| "ड"
-					| "ढ"
-					| "ण"
-					| "त"
-					| "थ"
-					| "द"
-					| "ध"
-					| "न"
-					| "प"
-					| "फ"
-					| "ब"
-					| "भ"
-					| "म"
-					| "य"
-					| "र"
-					| "ल"
-					| "व"
-					| "श"
-					| "ष"
-					| "स"
-					| "ह"
-					| "ळ"
-			  )
-		>
-	>
-): CharMap {
-	return new Map(Object.entries(obj));
-}
-
 function createScriptFunction(lang: LangList): (data: string) => string {
+	function createScriptDict(
+		obj: Readonly<
+			Record<
+				string,
+				| "।"
+				| "॥"
+				| "ऽ"
+				| "ॐ"
+				| "०"
+				| "१"
+				| "२"
+				| "३"
+				| "४"
+				| "५"
+				| "६"
+				| "७"
+				| "८"
+				| "९"
+				| "अ"
+				| "आ"
+				| "इ"
+				| "ई"
+				| "उ"
+				| "ऊ"
+				| "ऋ"
+				| "ॠ"
+				| "ऌ"
+				| "ॡ"
+				| "ए"
+				| "ऐ"
+				| "ओ"
+				| "औ"
+				| "ा"
+				| "ि"
+				| "ी"
+				| "ु"
+				| "ू"
+				| "ृ"
+				| "ॄ"
+				| "ॢ"
+				| "ॣ"
+				| "े"
+				| "ै"
+				| "ो"
+				| "ौ"
+				| "ं"
+				| "ः"
+				| "ँ"
+				| "्"
+				| "क"
+				| "ख"
+				| "ग"
+				| "घ"
+				| "ङ"
+				| "च"
+				| "छ"
+				| "ज"
+				| "झ"
+				| "ञ"
+				| "ट"
+				| "ठ"
+				| "ड"
+				| "ढ"
+				| "ण"
+				| "त"
+				| "थ"
+				| "द"
+				| "ध"
+				| "न"
+				| "प"
+				| "फ"
+				| "ब"
+				| "भ"
+				| "म"
+				| "य"
+				| "र"
+				| "ल"
+				| "व"
+				| "श"
+				| "ष"
+				| "स"
+				| "ह"
+				| "ळ"
+			>
+		>
+	): CharMap {
+		return new Map(Object.entries(obj));
+	}
+
 	let obj: CharMap;
 
 	switch (lang) {
