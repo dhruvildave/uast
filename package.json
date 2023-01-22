@@ -1,70 +1,70 @@
 {
-	"name": "uast",
-	"version": "0.0.0",
-	"private": true,
-	"scripts": {
-		"dev": "vite dev --host",
-		"d": "vite dev --host",
-		"build": "vite build",
-		"b": "vite build",
-		"preview": "vite preview --host",
-		"start": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"install": "svelte-kit sync",
-		"lint": "prettier -c \"**/*.{html,css,json,svg,ts,svelte,js,md,yaml}\"",
-		"format": "prettier -w \"**/*.{html,css,json,svg,ts,svelte,js,md,yaml}\"",
-		"docker": "docker compose build && docker system prune -f",
-		"podman": "podman-compose build && podman system prune -f"
-	},
-	"devDependencies": {
-		"@fontsource/noto-sans-devanagari": "^4.5.12",
-		"@fontsource/noto-sans-grantha": "^4.5.9",
-		"@fontsource/noto-sans-gujarati": "^4.5.12",
-		"@fontsource/noto-sans-kannada": "^4.5.14",
-		"@fontsource/noto-sans-malayalam": "^4.5.12",
-		"@fontsource/noto-sans-oriya": "^4.5.12",
-		"@fontsource/noto-sans-telugu": "^4.5.14",
-		"@fontsource/source-code-pro": "^4.5.14",
-		"@sveltejs/adapter-static": "^1.0.5",
-		"@sveltejs/kit": "^1.2.2",
-		"prettier": "^2.8.3",
-		"prettier-plugin-svelte": "^2.9.0",
-		"svelte": "^3.55.1",
-		"svelte-check": "^3.0.2",
-		"tslib": "^2.4.1",
-		"typescript": "^4.9.4",
-		"vite": "^4.0.4"
-	},
-	"type": "module",
-	"engineStrict": true,
-	"prettier": {
-		"useTabs": true,
-		"svelteStrictMode": true,
-		"arrowParens": "avoid",
-		"singleQuote": false,
-		"trailingComma": "none",
-		"printWidth": 100,
-		"svelteSortOrder": "options-styles-scripts-markup",
-		"plugins": [
-			"prettier-plugin-svelte"
-		],
-		"pluginSearchDirs": [
-			"."
-		],
-		"overrides": [
-			{
-				"files": "*.svelte",
-				"options": {
-					"parser": "svelte"
-				}
-			},
-			{
-				"files": "*.svg",
-				"options": {
-					"parser": "html"
-				}
-			}
-		]
-	}
+  "name": "uast",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev --host",
+    "d": "vite dev --host",
+    "build": "vite build",
+    "b": "vite build",
+    "preview": "vite preview --host",
+    "start": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "install": "svelte-kit sync",
+    "lint": "prettier -c \"**/*.{html,css,json,svg,ts,svelte,js,md,yaml}\"",
+    "format": "prettier -w \"**/*.{html,css,json,svg,ts,svelte,js,md,yaml}\"",
+    "docker": "docker compose build && docker system prune -f",
+    "podman": "podman-compose build && podman system prune -f"
+  },
+  "devDependencies": {
+    "@fontsource/noto-sans-devanagari": "^4.5.12",
+    "@fontsource/noto-sans-grantha": "^4.5.9",
+    "@fontsource/noto-sans-gujarati": "^4.5.12",
+    "@fontsource/noto-sans-kannada": "^4.5.14",
+    "@fontsource/noto-sans-malayalam": "^4.5.12",
+    "@fontsource/noto-sans-oriya": "^4.5.12",
+    "@fontsource/noto-sans-telugu": "^4.5.14",
+    "@fontsource/source-code-pro": "^4.5.14",
+    "@sveltejs/adapter-static": "^1.0.5",
+    "@sveltejs/kit": "^1.2.2",
+    "prettier": "^2.8.3",
+    "prettier-plugin-svelte": "^2.9.0",
+    "svelte": "^3.55.1",
+    "svelte-check": "^3.0.2",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.4"
+  },
+  "type": "module",
+  "engineStrict": true,
+  "prettier": {
+    "useTabs": false,
+    "svelteStrictMode": true,
+    "arrowParens": "avoid",
+    "singleQuote": false,
+    "trailingComma": "none",
+    "printWidth": 80,
+    "svelteSortOrder": "options-styles-scripts-markup",
+    "plugins": [
+      "prettier-plugin-svelte"
+    ],
+    "pluginSearchDirs": [
+      "."
+    ],
+    "overrides": [
+      {
+        "files": "*.svelte",
+        "options": {
+          "parser": "svelte"
+        }
+      },
+      {
+        "files": "*.svg",
+        "options": {
+          "parser": "html"
+        }
+      }
+    ]
+  }
 }
