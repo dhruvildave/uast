@@ -2082,7 +2082,7 @@ function iastToUAST(data: string): string {
   let ans: string[] = [];
 
   for (let k = 0; k < arr.length; k++) {
-    let curr = arr[k] ?? "";
+    let curr = arr.at(k) ?? "";
 
     const hasDash = curr.includes("-") ? true : false;
 
@@ -2090,7 +2090,7 @@ function iastToUAST(data: string): string {
     for (let j of [...charDict["sa"].misc.values()]
       .filter(i => ["om", ".."].includes(i) === false)
       .concat(...charDict["sa"].numbers.values())) {
-      if (curr === "." && arr[k + 1] === ".") {
+      if (curr === "." && arr.at(k + 1) === ".") {
         curr = curr.replaceAll(curr, "\\/../\\");
         k++;
         continue;
@@ -2099,7 +2099,7 @@ function iastToUAST(data: string): string {
       curr = curr.replaceAll(j, `\\/${j}/\\`);
     }
 
-    if (unAspiratedConsonants.includes(curr) && (arr[k + 1] ?? "") === "h") {
+    if (unAspiratedConsonants.includes(curr) && (arr.at(k + 1) ?? "") === "h") {
       curr += "a";
     }
 
@@ -2186,7 +2186,7 @@ function createDataFunction(lang: LangList): (data: string) => string {
         const str = Array.from(split);
 
         for (let i = 0; i < str.length; ) {
-          const curr = str[i] ?? "";
+          const curr = str.at(i) ?? "";
 
           if (lang === "sa") {
             if (curr === "'") {
@@ -2210,7 +2210,7 @@ function createDataFunction(lang: LangList): (data: string) => string {
 
           if (unAspiratedConsonants.includes(curr)) {
             let consonant: string = "";
-            if (str[i + 1] === "h") {
+            if (str.at(i + 1) === "h") {
               consonant = str.slice(i, i + 2).join("");
               i += 2;
             } else {
@@ -2225,7 +2225,10 @@ function createDataFunction(lang: LangList): (data: string) => string {
           arr.push(obj.consonants.get(curr) ?? "");
 
           let vowel: string = "";
-          if (curr === "a" && (str[i + 1] === "i" || str[i + 1] === "u")) {
+          if (
+            curr === "a" &&
+            (str.at(i + 1) === "i" || str.at(i + 1) === "u")
+          ) {
             vowel = str.slice(i, i + 2).join("");
             i += 2;
           } else {
