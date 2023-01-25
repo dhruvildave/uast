@@ -1861,12 +1861,12 @@ function dataToIAST(data: string): string {
         return "oṃ";
       }
 
-      if (charDict["sa"].numbers.has(split)) {
-        return charDict["sa"].numbers.get(split);
+      if (charDict["sa"]["numbers"].has(split)) {
+        return charDict["sa"]["numbers"].get(split);
       }
 
-      if (charDict["sa"].misc.has(split)) {
-        return charDict["sa"].misc.get(split);
+      if (charDict["sa"]["misc"].has(split)) {
+        return charDict["sa"]["misc"].get(split);
       }
 
       if (split === "ḥ" || split === "ṃ" || split === "ã") {
@@ -1901,7 +1901,7 @@ function dataToIAST(data: string): string {
         const next = str.at(i + 1) ?? "";
 
         if (next === "ḥ" || next === "ṃ" || next === "ã") {
-          if (charDict["sa"].consonants.has(curr)) {
+          if (charDict["sa"]["consonants"].has(curr)) {
             arr.push(`${curr}a${next}`);
           } else {
             arr.push(`${curr}${next}`);
@@ -1911,7 +1911,7 @@ function dataToIAST(data: string): string {
           continue;
         }
 
-        if (charDict["sa"].vowels.has(curr)) {
+        if (charDict["sa"]["vowels"].has(curr)) {
           arr.push(curr);
           i++;
 
@@ -1932,7 +1932,7 @@ function dataToIAST(data: string): string {
 
         if (next === "h" && unAspiratedConsonants.includes(curr)) {
           const last = str.at(i + 2) ?? "";
-          if (charDict["sa"].vowelSigns.has(last) === false) {
+          if (charDict["sa"]["vowelSigns"].has(last) === false) {
             arr.push(`${curr}${next}a`);
             i += 2;
             continue;
@@ -1960,7 +1960,7 @@ function dataToIAST(data: string): string {
           continue;
         }
 
-        if (charDict["sa"].vowelSigns.has(next)) {
+        if (charDict["sa"]["vowelSigns"].has(next)) {
           arr.push(curr);
           i++;
           continue;
@@ -1998,7 +1998,7 @@ function iastToUAST(data: string): string {
     const curr = str.at(i) ?? "";
     const next = str.at(i + 1) ?? "";
 
-    if (charDict["sa"].consonants.has(curr)) {
+    if (charDict["sa"]["consonants"].has(curr)) {
       if (unAspiratedConsonants.includes(curr)) {
         if (next === "a" && (str.at(i + 2) ?? "") === "h") {
           arr.push(`${curr}\\`);
@@ -2008,7 +2008,7 @@ function iastToUAST(data: string): string {
 
         if (next === "h") {
           let last = str.at(i + 2) ?? "";
-          if (charDict["sa"].consonants.has(last)) {
+          if (charDict["sa"]["consonants"].has(last)) {
             arr.push(`${curr}${next}-`);
             i += 2;
             continue;
@@ -2046,7 +2046,7 @@ function iastToUAST(data: string): string {
       }
 
       if (
-        charDict["sa"].consonants.has(next) ||
+        charDict["sa"]["consonants"].has(next) ||
         [".", "..", "'"].includes(next) ||
         i === str.length - 1
       ) {
@@ -2067,8 +2067,8 @@ function iastToUAST(data: string): string {
     }
 
     if (
-      charDict["sa"].vowels.has(curr) &&
-      charDict["sa"].consonants.has(next)
+      charDict["sa"]["vowels"].has(curr) &&
+      charDict["sa"]["consonants"].has(next)
     ) {
       arr.push(`${curr}\\`);
       i++;
@@ -2087,9 +2087,9 @@ function iastToUAST(data: string): string {
     const hasDash = curr.includes("-") ? true : false;
 
     curr = curr.replaceAll(/[\\-]/gu, "");
-    for (let j of [...charDict["sa"].misc.values()]
+    for (let j of [...charDict["sa"]["misc"].values()]
       .filter(i => ["om", ".."].includes(i) === false)
-      .concat(...charDict["sa"].numbers.values())) {
+      .concat(...charDict["sa"]["numbers"].values())) {
       if (curr === "." && arr.at(k + 1) === ".") {
         curr = curr.replaceAll(curr, "\\/../\\");
         k++;
@@ -2107,7 +2107,7 @@ function iastToUAST(data: string): string {
       curr += "-";
     }
 
-    if (charDict["sa"].vowels.has(curr)) {
+    if (charDict["sa"]["vowels"].has(curr)) {
       curr += "\\";
     }
 
@@ -2115,7 +2115,7 @@ function iastToUAST(data: string): string {
   }
 
   if (
-    charDict["sa"].consonants.has(ans.at(-1) ?? "") &&
+    charDict["sa"]["consonants"].has(ans.at(-1) ?? "") &&
     (str.at(-1) ?? "") !== "a"
   ) {
     ans.push("-");
@@ -2173,12 +2173,12 @@ function createDataFunction(lang: LangList): (data: string) => string {
     return data
       .split("\\")
       .map(split => {
-        if (obj.misc.has(split) || obj.numbers.has(split)) {
+        if (obj["misc"].has(split) || obj["numbers"].has(split)) {
           return split;
         }
 
-        if (obj.vowels.has(split)) {
-          return obj.vowels.get(split);
+        if (obj["vowels"].has(split)) {
+          return obj["vowels"].get(split);
         }
 
         let arr: string[] = [];
@@ -2217,12 +2217,12 @@ function createDataFunction(lang: LangList): (data: string) => string {
               consonant = curr;
               i++;
             }
-            arr.push(obj.consonants.get(consonant) ?? "");
+            arr.push(obj["consonants"].get(consonant) ?? "");
 
             continue;
           }
 
-          arr.push(obj.consonants.get(curr) ?? "");
+          arr.push(obj["consonants"].get(curr) ?? "");
 
           let vowel: string = "";
           if (
@@ -2236,7 +2236,7 @@ function createDataFunction(lang: LangList): (data: string) => string {
             i++;
           }
 
-          arr.push(obj.vowelSigns.get(vowel) ?? "");
+          arr.push(obj["vowelSigns"].get(vowel) ?? "");
         }
 
         return arr.join("");
@@ -2274,8 +2274,8 @@ function devanagariToUAST(data: string): string {
     const next_val = devanagariDataDict.get(next) ?? next;
 
     if (
-      [...charDict["sa"].vowels.values()].includes(curr) &&
-      [...charDict["sa"].consonants.values()].includes(next)
+      [...charDict["sa"]["vowels"].values()].includes(curr) &&
+      [...charDict["sa"]["consonants"].values()].includes(next)
     ) {
       arr.push(`${val}\\`);
       continue;
