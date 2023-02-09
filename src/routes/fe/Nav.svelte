@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: space-between;
 
-    user-select: none;
+    user-select: text;
 
     font-family: var(--font-family-mono), monospace;
     background-color: var(--light-primary-light);
