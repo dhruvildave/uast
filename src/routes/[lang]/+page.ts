@@ -59,7 +59,11 @@ export const load: PageLoad = (({
       };
 
     default:
-      goto("/en", { replaceState: true, keepFocus: true, noScroll: true });
+      goto("/en", {
+        replaceState: true,
+        keepFocus: true,
+        noScroll: true
+      });
       return {
         title: "",
         nav: ""

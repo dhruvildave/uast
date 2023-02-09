@@ -45,6 +45,10 @@
     display: none;
   }
 
+  header nav select {
+    display: none;
+  }
+
   @media (min-width: 1024px) {
     header ul li {
       margin: 0 1rem;
@@ -52,6 +56,13 @@
 
     header nav section:nth-child(2) {
       display: block;
+    }
+
+    header nav select {
+      display: inline-block;
+      background-color: transparent;
+      border: none;
+      outline: none;
     }
   }
 
@@ -63,7 +74,26 @@
 </style>
 
 <script lang="ts">
+  import { goto } from "$app/navigation";
   import Icon from "./Icon.svelte";
+
+  const langs = [
+    ["en", "English"],
+    ["sa", "संस्कृत"],
+    ["fr", "Français"],
+    ["gu", "ગુજરાતી"],
+    ["hi", "हिंदी"],
+    ["ja", "日本語"],
+    ["ko", "한국인"],
+    ["es", "Español"]
+  ] as const;
+
+  let locale: string;
+  $: goto(`/${locale}`, {
+    replaceState: true,
+    keepFocus: true,
+    noScroll: true
+  });
 
   export let nav: string;
 </script>
@@ -77,6 +107,11 @@
       <h1>{nav}</h1>
     </section>
     <section>
+      <select bind:value="{locale}">
+        {#each langs as i}
+          <option value="{i[0]}">{i[1]}</option>
+        {/each}
+      </select>
       <ul>
         <li>
           <Icon
