@@ -26,7 +26,7 @@
     "@fontsource/noto-sans-oriya": "^4.5.12",
     "@fontsource/noto-sans-telugu": "^4.5.14",
     "@fontsource/source-code-pro": "^4.5.14",
-    "@sveltejs/adapter-static": "^2.0.1",
+    "@sveltejs/adapter-vercel": "^2.0.2",
     "@sveltejs/kit": "^1.5.3",
     "prettier": "^2.8.4",
     "prettier-plugin-svelte": "^2.9.0",

@@ -1,2 +1,1 @@
-export const prerender: boolean = true;
-export const ssr: boolean = false;
+export let ssr: boolean = false;
