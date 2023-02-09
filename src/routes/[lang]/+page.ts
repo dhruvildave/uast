@@ -37,13 +37,13 @@ export const load: PageLoad = (({
     case "es":
       return {
         title: "Transliteración Sánscrita consciente de Unicode - UAST",
-        nav: "UAST - herramienta todo en uno para transliteración sánscrita"
+        nav: "UAST - Herramienta todo en uno para transliteración sánscrita"
       };
 
     case "fr":
       return {
         title: "Translittération sanskrite compatible Unicode - UAST",
-        nav: "UAST : outil tout-en-un pour la translittération sanskrite"
+        nav: "UAST - Outil tout-en-un pour la translittération sanskrite"
       };
 
     case "ko":
