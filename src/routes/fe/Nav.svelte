@@ -62,8 +62,10 @@
   }
 </style>
 
-<script>
+<script lang="ts">
   import Icon from "./Icon.svelte";
+
+  export let nav: string;
 </script>
 
 <header>
@@ -72,7 +74,7 @@
       <img src="/img/icon.svg" width="48" height="48" alt="uast logo" />
     </section>
     <section>
-      <h1>UAST: All in one tool for Sanskrit transliteration</h1>
+      <h1>{nav}</h1>
     </section>
     <section>
       <ul>
