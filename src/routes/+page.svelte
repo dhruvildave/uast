@@ -1,5 +1,8 @@
 <script lang="ts">
-  import { goto } from "$app/navigation";
-
-  goto("/en", { replaceState: true, keepFocus: true, noScroll: true });
+  import "../app.css";
+  import Editor from "./fe/Editor.svelte";
+  import Nav from "./fe/Nav.svelte";
 </script>
+
+<Nav />
+<Editor />

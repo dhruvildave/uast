@@ -74,7 +74,6 @@
 </style>
 
 <script lang="ts">
-  import { goto } from "$app/navigation";
   import Icon from "./Icon.svelte";
 
   const langs = [
@@ -89,15 +88,45 @@
   ] as const;
 
   let locale: string;
-  $: goto(`/${locale}`, {
-    replaceState: true,
-    keepFocus: true,
-    noScroll: true
-  });
-
-  export let nav: string;
+  $: nav = `UAST - ${
+    locale === "sa"
+      ? "संस्कृतलिप्यन्तराय सर्वक्षमैकोपकरणम्"
+      : locale === "hi"
+      ? "संस्कृत लिप्यंतरण के लिए ऑल-इन-वन टूल"
+      : locale === "gu"
+      ? "સંસ્કૃત લિવ્યંતરણ માટે ઓલ-ઇન-વન ટૂલ"
+      : locale === "es"
+      ? "Herramienta todo en uno para transliteración sánscrita"
+      : locale === "fr"
+      ? "Outil tout-en-un pour la translittération sanskrite"
+      : locale === "ko"
+      ? "산스크리트 음역을 위한 올인원 도구"
+      : locale === "ja"
+      ? "サンスクリット音訳のためのオールインワン ツール"
+      : "All-in-one tool for Sanskrit Transliteration"
+  }`;
+  $: title = `${
+    locale === "sa"
+      ? "यूनिकोडवेदि संस्कृतलिप्यन्तरकर्तृ"
+      : locale === "hi"
+      ? "यूनिकोड जागरूक संस्कृत लिप्यंतरण"
+      : locale === "gu"
+      ? "યુનિકોડ અવેર સંસ્કૃત લિવ્યંતરણ"
+      : locale === "es"
+      ? "Transliteración Sánscrita consciente de Unicode"
+      : locale === "fr"
+      ? "Translittération sanskrite compatible Unicode"
+      : locale === "ko"
+      ? "유니코드 인식 산스크리트 음역"
+      : locale === "ja"
+      ? "Unicode 対応のサンスクリット音訳"
+      : "Unicode Aware Sanskrit Transliteration"
+  } - UAST`;
 </script>
 
+<svelte:head>
+  <title>{title}</title>
+</svelte:head>
 <header>
   <nav>
     <section>

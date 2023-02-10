@@ -9,6 +9,7 @@ specifiers:
   '@fontsource/noto-sans-oriya': ^4.5.12
   '@fontsource/noto-sans-telugu': ^4.5.14
   '@fontsource/source-code-pro': ^4.5.14
+  '@sveltejs/adapter-static': ^2.0.1
   '@sveltejs/adapter-vercel': ^2.0.2
   '@sveltejs/kit': ^1.5.3
   prettier: ^2.8.4
@@ -28,6 +29,7 @@ devDependencies:
   '@fontsource/noto-sans-oriya': 4.5.12
   '@fontsource/noto-sans-telugu': 4.5.14
   '@fontsource/source-code-pro': 4.5.14
+  '@sveltejs/adapter-static': 2.0.1_@sveltejs+kit@1.5.3
   '@sveltejs/adapter-vercel': 2.0.2_@sveltejs+kit@1.5.3
   '@sveltejs/kit': 1.5.3_svelte@3.55.1+vite@4.1.1
   prettier: 2.8.4
@@ -335,6 +337,14 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.1
+    dev: true
+
+  /@sveltejs/adapter-static/2.0.1_@sveltejs+kit@1.5.3:
+    resolution: {integrity: sha512-o5/q3YwD/ErxYCFlK1v3ydvldyNKk1lh3oeyxn4mhz+Pkbx/uuxhzmbOpytTlp5aVqNHDVsb04xadUzOFCDDzw==}
+    peerDependencies:
+      '@sveltejs/kit': ^1.5.0
+    dependencies:
+      '@sveltejs/kit': 1.5.3_svelte@3.55.1+vite@4.1.1
     dev: true
 
   /@sveltejs/adapter-vercel/2.0.2_@sveltejs+kit@1.5.3:
