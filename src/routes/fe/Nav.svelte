@@ -60,9 +60,13 @@
 
     header nav select {
       display: inline-block;
+
       background-color: transparent;
       border: none;
       outline: none;
+
+      font-family: monospace;
+      font-weight: bold;
     }
   }
 
