@@ -1204,7 +1204,7 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
         let char: string[] = [];
 
         for (let j = i + 1; j < str.length; j++) {
-          let curr = str.at(j) ?? "";
+          const curr = str.at(j) ?? "";
 
           if (curr === "/") {
             i = j;
@@ -2084,7 +2084,7 @@ function iastToUAST(data: string): string {
   for (let k = 0; k < arr.length; k++) {
     let curr = arr.at(k) ?? "";
 
-    const hasDash = curr.includes("-") ? true : false;
+    const hasDash: boolean = curr.includes("-") ? true : false;
 
     curr = curr.replaceAll(/[\\-]/gu, "");
     for (let j of [...charDict["sa"]["misc"].values()]
@@ -2103,7 +2103,7 @@ function iastToUAST(data: string): string {
       curr += "a";
     }
 
-    if (hasDash) {
+    if (hasDash === true) {
       curr += "-";
     }
 
