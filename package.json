@@ -12,8 +12,8 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "install": "svelte-kit sync",
-    "lint": "prettier -c \"**/*.{html,css,json,svg,ts,svelte,js,md,yaml}\"",
-    "format": "prettier -w \"**/*.{html,css,json,svg,ts,svelte,js,md,yaml}\"",
+    "lint": "prettier -c \"**/*.{html,css,json,svg,ts,svelte,js,md,yml}\"",
+    "format": "prettier -w \"**/*.{html,css,json,svg,ts,svelte,js,md,yml}\"",
     "docker": "docker compose build && docker system prune -f",
     "podman": "podman-compose build && podman system prune -f"
   },

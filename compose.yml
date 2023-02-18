@@ -1,11 +1,11 @@
 services:
-    uast:
-        image: uast
-        pull_policy: build
-        build:
-            context: .
-            dockerfile: Containerfile
-        ports:
-            - 9000:80
-        tty: true
-        stdin_open: true
+  uast:
+    image: uast
+    pull_policy: build
+    build:
+      context: .
+      dockerfile: Containerfile
+    ports:
+      - 9000:80
+    tty: true
+    stdin_open: true
