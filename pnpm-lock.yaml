@@ -10,7 +10,7 @@ specifiers:
   '@fontsource/noto-sans-telugu': ^4.5.14
   '@fontsource/source-code-pro': ^4.5.14
   '@sveltejs/adapter-static': ^2.0.1
-  '@sveltejs/kit': ^1.9.3
+  '@sveltejs/kit': ^1.10.0
   prettier: ^2.8.4
   prettier-plugin-svelte: ^2.9.0
   svelte: ^3.55.1
@@ -28,8 +28,8 @@ devDependencies:
   '@fontsource/noto-sans-oriya': 4.5.12
   '@fontsource/noto-sans-telugu': 4.5.14
   '@fontsource/source-code-pro': 4.5.14
-  '@sveltejs/adapter-static': 2.0.1_@sveltejs+kit@1.9.3
-  '@sveltejs/kit': 1.9.3_svelte@3.55.1+vite@4.1.4
+  '@sveltejs/adapter-static': 2.0.1_@sveltejs+kit@1.10.0
+  '@sveltejs/kit': 1.10.0_svelte@3.55.1+vite@4.1.4
   prettier: 2.8.4
   prettier-plugin-svelte: 2.9.0_jrsxveqmsx2uadbqiuq74wlc4u
   svelte: 3.55.1
@@ -311,16 +311,16 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@sveltejs/adapter-static/2.0.1_@sveltejs+kit@1.9.3:
+  /@sveltejs/adapter-static/2.0.1_@sveltejs+kit@1.10.0:
     resolution: {integrity: sha512-o5/q3YwD/ErxYCFlK1v3ydvldyNKk1lh3oeyxn4mhz+Pkbx/uuxhzmbOpytTlp5aVqNHDVsb04xadUzOFCDDzw==}
     peerDependencies:
       '@sveltejs/kit': ^1.5.0
     dependencies:
-      '@sveltejs/kit': 1.9.3_svelte@3.55.1+vite@4.1.4
+      '@sveltejs/kit': 1.10.0_svelte@3.55.1+vite@4.1.4
     dev: true
 
-  /@sveltejs/kit/1.9.3_svelte@3.55.1+vite@4.1.4:
-    resolution: {integrity: sha512-rh9FbGfS8w328JZSZmG/ahabBbE50TisHvfz4sVNU3IM3AOhgUAv3EhAJ2dij9R8uARbDHRTY8jOQbIPjcKBZQ==}
+  /@sveltejs/kit/1.10.0_svelte@3.55.1+vite@4.1.4:
+    resolution: {integrity: sha512-0P35zHrByfbF3Ym3RdQL+RvzgsCDSyO3imSwuZ67XAD5HoCQFF3a8Mhh0V3sObz3rc5aJd4Qn82UpAihJqZ6gQ==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
