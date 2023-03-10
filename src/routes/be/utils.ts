@@ -1239,7 +1239,7 @@ function createScriptFunction(lang: LangList): (data: string) => string {
         | "।"
         | "॥"
         | "ऽ"
-        | "ॐ"
+        | "ओम्"
         | "०"
         | "१"
         | "२"
@@ -1329,7 +1329,7 @@ function createScriptFunction(lang: LangList): (data: string) => string {
         "।": "।",
         "॥": "॥",
         ઽ: "ऽ",
-        ॐ: "ॐ",
+        ॐ: "ओम्",
         "૦": "०",
         "૧": "१",
         "૨": "२",
@@ -1413,7 +1413,7 @@ function createScriptFunction(lang: LangList): (data: string) => string {
         "।": "।",
         "॥": "॥",
         ଽ: "ऽ",
-        ଓଁ: "ॐ",
+        ଓଁ: "ओम्",
         "୦": "०",
         "୧": "१",
         "୨": "२",
@@ -1497,7 +1497,7 @@ function createScriptFunction(lang: LangList): (data: string) => string {
         "।": "।",
         "॥": "॥",
         ಽ: "ऽ",
-        ಓಂ: "ॐ",
+        ಓಂ: "ओम्",
         "೦": "०",
         "೧": "१",
         "೨": "२",
@@ -1581,7 +1581,7 @@ function createScriptFunction(lang: LangList): (data: string) => string {
         "।": "।",
         "॥": "॥",
         ఽ: "ऽ",
-        ఓం: "ॐ",
+        ఓం: "ओम्",
         "౦": "०",
         "౧": "१",
         "౨": "२",
@@ -1665,7 +1665,7 @@ function createScriptFunction(lang: LangList): (data: string) => string {
         "।": "।",
         "॥": "॥",
         ഽ: "ऽ",
-        ഓം: "ॐ",
+        ഓം: "ओम्",
         "൦": "०",
         "൧": "१",
         "൨": "२",
@@ -1749,7 +1749,7 @@ function createScriptFunction(lang: LangList): (data: string) => string {
         "।": "।",
         "॥": "॥",
         "𑌽": "ऽ",
-        "𑍐": "ॐ",
+        "𑍐": "ओम्",
         "௦": "०",
         "௧": "१",
         "௨": "२",
