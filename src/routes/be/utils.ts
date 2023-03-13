@@ -980,7 +980,18 @@ const unAspiratedConsonants: string[] = [
   "ḍ"
 ];
 
-const allowedSymbols: string[] = [",", "?", "!", '"', "-", ":", "(", ")", "="];
+const allowedSymbols: string[] = [
+  ",",
+  "?",
+  "!",
+  '"',
+  "-",
+  ":",
+  "(",
+  ")",
+  "=",
+  "|"
+];
 
 const slpDataDict: CharMap = new Map([
   ["a", "a"],
