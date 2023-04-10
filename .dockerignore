@@ -26,5 +26,6 @@
 **/public
 **/.svelte-kit
 **/.vercel
+**/logs
 README.md
 uast_poster.png
