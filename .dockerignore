@@ -27,5 +27,6 @@
 **/.svelte-kit
 **/.vercel
 **/logs
+**/.pnpm-store
 README.md
 uast_poster.png
