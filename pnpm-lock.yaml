@@ -2,29 +2,29 @@ lockfileVersion: '6.0'
 
 devDependencies:
   '@fontsource/noto-sans-devanagari':
-    specifier: ^5.0.0
-    version: 5.0.0
+    specifier: ^5.0.1
+    version: 5.0.1
   '@fontsource/noto-sans-grantha':
-    specifier: ^5.0.0
-    version: 5.0.0
+    specifier: ^5.0.1
+    version: 5.0.1
   '@fontsource/noto-sans-gujarati':
-    specifier: ^5.0.0
-    version: 5.0.0
+    specifier: ^5.0.1
+    version: 5.0.1
   '@fontsource/noto-sans-kannada':
-    specifier: ^5.0.0
-    version: 5.0.0
+    specifier: ^5.0.1
+    version: 5.0.1
   '@fontsource/noto-sans-malayalam':
-    specifier: ^5.0.0
-    version: 5.0.0
+    specifier: ^5.0.1
+    version: 5.0.1
   '@fontsource/noto-sans-oriya':
-    specifier: ^5.0.0
-    version: 5.0.0
+    specifier: ^5.0.1
+    version: 5.0.1
   '@fontsource/noto-sans-telugu':
-    specifier: ^5.0.0
-    version: 5.0.0
+    specifier: ^5.0.1
+    version: 5.0.1
   '@fontsource/source-code-pro':
-    specifier: ^5.0.0
-    version: 5.0.0
+    specifier: ^5.0.1
+    version: 5.0.1
   '@sveltejs/adapter-static':
     specifier: ^2.0.2
     version: 2.0.2(@sveltejs/kit@1.18.0)
@@ -253,36 +253,36 @@ packages:
     dev: true
     optional: true
 
-  /@fontsource/noto-sans-devanagari@5.0.0:
-    resolution: {integrity: sha512-f2jeR+KflHiwypgUnxr1/ILnglckFUgYeuuXXxsF5CWCalTVqU9uW61PCG3tc0DUQciYfLNGuxrzJvaX37O4PQ==}
+  /@fontsource/noto-sans-devanagari@5.0.1:
+    resolution: {integrity: sha512-D5FWflUSNMpAzJMUGUczBvj3fgxgbUeCgEG22PtRslcnzyJVh1OOBetV8puGn5jj7dT2Rc41mA5YqVI/VlrrNA==}
     dev: true
 
-  /@fontsource/noto-sans-grantha@5.0.0:
-    resolution: {integrity: sha512-Dus/xEvlKwrvd6U6lSYwiqQrQuXI58NScmA+NwHtyjMMcNdMVVT7p90WnwgMtb3wpk/RrBM8dX/D5JtiCqF/Tw==}
+  /@fontsource/noto-sans-grantha@5.0.1:
+    resolution: {integrity: sha512-4jNlkGIXPDBl81PBZnyduT9UomujROhdSLhyXWhb512gzjPMErVWzemLIV2+kBbXF8058n+/40eERzrlcLxcnw==}
     dev: true
 
-  /@fontsource/noto-sans-gujarati@5.0.0:
-    resolution: {integrity: sha512-/ZE08aB4oMPM/RgDmq22pXopUtW/d9hgyRJetChFAJdtmd62FiS1sY1QohFoqZxoGTURwlmH0gdq+CeGLMgqhw==}
+  /@fontsource/noto-sans-gujarati@5.0.1:
+    resolution: {integrity: sha512-2MlJkvLv3ZCO49ztT8oi9nkcpOyzv+r3nP/PgcP9a8M/RowU2UqEblsc+qP64eUXm8b/quvqv+EltrX978DNrw==}
     dev: true
 
-  /@fontsource/noto-sans-kannada@5.0.0:
-    resolution: {integrity: sha512-IvSAvQgh3egmS/6AibvV4k/TMSQXz1NmY0JIrT2NGbsoeOkfyu/03LhwnoAosnHG2RudjbAr7ctxy0oI5B9z3g==}
+  /@fontsource/noto-sans-kannada@5.0.1:
+    resolution: {integrity: sha512-6ehTFHze6mKLvLmoE/VOXrmv4iD5pLOCHCRajD+Uei5XtVlSjPpb3jShRTDk9ZV3XgY2wyJ/r1LFxCD9p7s1Lw==}
     dev: true
 
-  /@fontsource/noto-sans-malayalam@5.0.0:
-    resolution: {integrity: sha512-nPYluHARo12r2noFVID55rNx+mRgtzDfgDA75zhXX02ZwU5RLvtdNrWED+JAG67aQQps9l2N8nQAy0PQFjAvsw==}
+  /@fontsource/noto-sans-malayalam@5.0.1:
+    resolution: {integrity: sha512-WZY1uTtrm7aXUGMHalEFOwrK16vsiKULKrullYQkwjN6/09yfu+xJgUGEq0XIXXMu+r5Zm+mGtZ/FcO6YY+fIA==}
     dev: true
 
-  /@fontsource/noto-sans-oriya@5.0.0:
-    resolution: {integrity: sha512-XrFM9EI/DkBTsRILQRn2bi1mR9qtWM7eWiURhntYhYFFzWVmtOGiHQycfGvja/uRT5kvIteWYaAnMCxGr3MaHA==}
+  /@fontsource/noto-sans-oriya@5.0.1:
+    resolution: {integrity: sha512-aqqT9mVrkKadStH3v66g9jQZxyt/6jWxl7o+KQtDjWnwZgj7tOWMv9PA4Edaku+/FPbRRJgL1kBAfImuJ5zUTQ==}
     dev: true
 
-  /@fontsource/noto-sans-telugu@5.0.0:
-    resolution: {integrity: sha512-w2GGSOpFAED8Wt01eVCGbbH2bRUX4sxMbTcC8udtcu60RgRtyMa3eA/wSqTpb6efsBBSs01Anf9UbA1rclVc1Q==}
+  /@fontsource/noto-sans-telugu@5.0.1:
+    resolution: {integrity: sha512-s00Vn0DdfmDUjn/FHcvIHfLqOUvPGsMdAK8kTwfefOKk6mPvgvVO3xDk3Mn5xsHdr/5ozl+eVs8uIuAd6M/VDA==}
     dev: true
 
-  /@fontsource/source-code-pro@5.0.0:
-    resolution: {integrity: sha512-2EqSMEfE3tt5x8RscAhiV3Ub8ObdzlOJS+6oRcecF1+PHIrk4nYK97f6+gKEBvVxZyMDSMyWweYVj2Yqngx2TQ==}
+  /@fontsource/source-code-pro@5.0.1:
+    resolution: {integrity: sha512-SItUWzo8ibNnz6INEqNka/yjBJibdjk5uLVz8C2XRUZHHQKR3HU2Fkgt8nwLy2pipQWzzh8VrC3Zncdv4mGGYw==}
     dev: true
 
   /@jridgewell/resolve-uri@3.1.0:
@@ -347,7 +347,7 @@ packages:
       svelte: ^3.54.0
       vite: ^4.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 2.2.0(svelte@3.59.1)(vite@4.3.8)
+      '@sveltejs/vite-plugin-svelte': 2.3.0(svelte@3.59.1)(vite@4.3.8)
       '@types/cookie': 0.5.1
       cookie: 0.5.0
       devalue: 4.3.2
@@ -366,13 +366,30 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte@2.2.0(svelte@3.59.1)(vite@4.3.8):
-    resolution: {integrity: sha512-KDtdva+FZrZlyug15KlbXuubntAPKcBau0K7QhAIqC5SAy0uDbjZwoexDRx0L0J2T4niEfC6FnA9GuQQJKg+Aw==}
+  /@sveltejs/vite-plugin-svelte-inspector@1.0.1(@sveltejs/vite-plugin-svelte@2.3.0)(svelte@3.59.1)(vite@4.3.8):
+    resolution: {integrity: sha512-8ZXgDbAL1b2o7WHxnPsbkxTzZiZhMwOsCI/GFti3zFlh8unqJtUsgwRQV/XSULFcqkbZXz5v6MqMLSUpl3VKaA==}
+    engines: {node: ^14.18.0 || >= 16}
+    peerDependencies:
+      '@sveltejs/vite-plugin-svelte': ^2.2.0
+      svelte: ^3.54.0
+      vite: ^4.0.0
+    dependencies:
+      '@sveltejs/vite-plugin-svelte': 2.3.0(svelte@3.59.1)(vite@4.3.8)
+      debug: 4.3.4
+      svelte: 3.59.1
+      vite: 4.3.8
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@sveltejs/vite-plugin-svelte@2.3.0(svelte@3.59.1)(vite@4.3.8):
+    resolution: {integrity: sha512-NbgDn5/auWfGYFip7DheDj49/JLE6VugdtdLJjnQASYxXqrQjl81xaZzQsoSAxWk+j2mOkmPFy56gV2i63FUnA==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
       svelte: ^3.54.0
       vite: ^4.0.0
     dependencies:
+      '@sveltejs/vite-plugin-svelte-inspector': 1.0.1(@sveltejs/vite-plugin-svelte@2.3.0)(svelte@3.59.1)(vite@4.3.8)
       debug: 4.3.4
       deepmerge: 4.3.1
       kleur: 4.1.5
@@ -802,8 +819,8 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup@3.22.1:
-    resolution: {integrity: sha512-ZI+GSAqOkCyTtJPlwyPOaYKa0RqvztN4miRVusVJseMj6BIBT2f6pFeK90IdJsQ86FLMYkxju2whuck3yKPE4Q==}
+  /rollup@3.23.0:
+    resolution: {integrity: sha512-h31UlwEi7FHihLe1zbk+3Q7z1k/84rb9BSwmBSr/XjOCEaBJ2YyedQDuM0t/kfOS0IxM+vk1/zI9XxYj9V+NJQ==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -1023,7 +1040,7 @@ packages:
     dependencies:
       esbuild: 0.17.19
       postcss: 8.4.23
-      rollup: 3.22.1
+      rollup: 3.23.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
