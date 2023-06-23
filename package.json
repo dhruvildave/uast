@@ -27,7 +27,7 @@
     "@fontsource/noto-sans-telugu": "^5.0.3",
     "@fontsource/source-code-pro": "^5.0.3",
     "@sveltejs/adapter-static": "^2.0.2",
-    "@sveltejs/kit": "^1.20.4",
+    "@sveltejs/kit": "^1.20.5",
     "prettier": "^2.8.8",
     "prettier-plugin-svelte": "^2.10.1",
     "svelte": "^4.0.0",
