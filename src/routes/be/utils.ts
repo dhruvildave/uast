@@ -1060,11 +1060,9 @@ function checkSwitchExhaustion(x: never): void {
  * @returns parsed AnDy output string
  */
 function createHandleUnicode(lang: LangList): (uast: string) => string {
-  function createScriptMap(
+  const createScriptMap = (
     obj: Readonly<Record<Numbers | "om" | "'", string>>
-  ): CharMap {
-    return new Map(Object.entries(obj));
-  }
+  ): CharMap => new Map(Object.entries(obj));
 
   let scriptMap: CharMap = createScriptMap({
     "0": "०",
@@ -1243,7 +1241,7 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
 }
 
 function createScriptFunction(lang: LangList): (data: string) => string {
-  function createScriptDict(
+  const createScriptDict = (
     obj: Readonly<
       Record<
         string,
@@ -1328,9 +1326,7 @@ function createScriptFunction(lang: LangList): (data: string) => string {
         | "ळ"
       >
     >
-  ): CharMap {
-    return new Map(Object.entries(obj));
-  }
+  ): CharMap => new Map(Object.entries(obj));
 
   let obj: CharMap;
 
@@ -1849,8 +1845,9 @@ function createScriptFunction(lang: LangList): (data: string) => string {
   }
 
   return function scriptToDevanagari(data: string): string {
-    return Array.from(data.normalize())
-      .map(i => (obj.has(i) ? obj.get(i) : allowedSymbols.includes(i) ? i : ""))
+    return Array.from(data.normalize(), i =>
+      obj.has(i) ? obj.get(i) : allowedSymbols.includes(i) ? i : ""
+    )
       .join("")
       .normalize();
   };
@@ -2095,7 +2092,7 @@ function iastToUAST(data: string): string {
   for (let k = 0; k < arr.length; k++) {
     let curr = arr.at(k) ?? "";
 
-    const hasDash: boolean = curr.includes("-") ? true : false;
+    const hasDash: boolean = curr.includes("-");
 
     curr = curr.replaceAll(/[\\-]/gu, "");
     for (let j of [...charDict["sa"]["misc"].values()]
@@ -2132,8 +2129,9 @@ function iastToUAST(data: string): string {
     ans.push("-");
   }
 
-  return Array.from(ans.join(""))
-    .map(i => (iastDataDict.has(i) ? `/${iastDataDict.get(i)}/` : i))
+  return Array.from(ans.join(""), i =>
+    iastDataDict.has(i) ? `/${iastDataDict.get(i)}/` : i
+  )
     .join("")
     .normalize();
 }
@@ -2310,8 +2308,7 @@ function devanagariToUAST(data: string): string {
  * @returns IAST string
  */
 function slpToIAST(data: string): string {
-  return Array.from(data)
-    .map(i => slpDataDict.get(i) ?? "")
+  return Array.from(data, i => slpDataDict.get(i) ?? "")
     .join("")
     .normalize();
 }
