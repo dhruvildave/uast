@@ -22,6 +22,6 @@
   export let title: string;
 </script>
 
-<a target="_blank" title="{title}" rel="noreferrer" href="{href}">
-  <img src="{src}" alt="{alt}" width="28" height="28" />
+<a target="_blank" {title} rel="noreferrer" {href}>
+  <img {src} {alt} width="28" height="28" />
 </a>

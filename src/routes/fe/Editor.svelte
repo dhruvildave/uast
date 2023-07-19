@@ -254,7 +254,8 @@
       name="input"
       class="input"
       placeholder="{ph_from}"
-      bind:value="{input}"></textarea>
+      bind:value="{input}"
+    ></textarea>
 
     <select class="from-select" bind:value="{from}">
       {#each from_opts as i}
@@ -271,7 +272,8 @@
       name="output"
       class="output"
       placeholder="{ph_to}"
-      value="{output}"></textarea>
+      value="{output}"
+    ></textarea>
 
     <select class="to-select" bind:value="{to}">
       {#each to_opts as i}
