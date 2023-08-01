@@ -157,7 +157,7 @@
         <li>
           <Icon
             alt="go icon"
-            title="Link to CLI GitHub repository"
+            title="Link to Go CLI GitHub repository"
             href="https://github.com/aneri0x4f/uast-cli"
             src="https://unpkg.com/simple-icons@latest/icons/go.svg"
           />
@@ -168,6 +168,14 @@
             title="Link to web GitHub repository"
             href="https://github.com/dhruvildave/uast"
             src="https://unpkg.com/simple-icons@latest/icons/typescript.svg"
+          />
+        </li>
+        <li>
+          <Icon
+            alt="java icon"
+            title="Link to Java CLI GitHub repository"
+            href="https://github.com/dhruvildave/uast4j"
+            src="https://unpkg.com/simple-icons@latest/icons/openjdk.svg"
           />
         </li>
         <li>
