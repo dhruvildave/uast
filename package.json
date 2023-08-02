@@ -25,7 +25,7 @@
     "@fontsource/noto-sans-malayalam": "^5.0.6",
     "@fontsource/noto-sans-oriya": "^5.0.6",
     "@fontsource/noto-sans-telugu": "^5.0.6",
-    "@fontsource/source-code-pro": "^5.0.5",
+    "@fontsource/source-code-pro": "^5.0.6",
     "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.22.4",
     "prettier": "^3.0.0",
