@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -6,29 +6,29 @@ settings:
 
 devDependencies:
   '@fontsource/noto-sans-devanagari':
-    specifier: ^5.0.6
-    version: 5.0.6
+    specifier: ^5.0.7
+    version: 5.0.7
   '@fontsource/noto-sans-grantha':
-    specifier: ^5.0.6
-    version: 5.0.6
+    specifier: ^5.0.7
+    version: 5.0.7
   '@fontsource/noto-sans-gujarati':
-    specifier: ^5.0.6
-    version: 5.0.6
+    specifier: ^5.0.7
+    version: 5.0.7
   '@fontsource/noto-sans-kannada':
-    specifier: ^5.0.6
-    version: 5.0.6
+    specifier: ^5.0.7
+    version: 5.0.7
   '@fontsource/noto-sans-malayalam':
-    specifier: ^5.0.6
-    version: 5.0.6
+    specifier: ^5.0.7
+    version: 5.0.7
   '@fontsource/noto-sans-oriya':
-    specifier: ^5.0.6
-    version: 5.0.6
+    specifier: ^5.0.7
+    version: 5.0.7
   '@fontsource/noto-sans-telugu':
-    specifier: ^5.0.6
-    version: 5.0.6
+    specifier: ^5.0.7
+    version: 5.0.7
   '@fontsource/source-code-pro':
-    specifier: ^5.0.6
-    version: 5.0.6
+    specifier: ^5.0.7
+    version: 5.0.7
   '@sveltejs/adapter-static':
     specifier: ^2.0.3
     version: 2.0.3(@sveltejs/kit@1.22.4)
@@ -265,36 +265,36 @@ packages:
     dev: true
     optional: true
 
-  /@fontsource/noto-sans-devanagari@5.0.6:
-    resolution: {integrity: sha512-snvwUI0cxgw+lf+4dAjxKEu2bvWG28R+TWiSSDoSINuOEtsEGDRnOEGqUEe1nbZnjiV/hkDF+rwjMFOGr71SHw==}
+  /@fontsource/noto-sans-devanagari@5.0.7:
+    resolution: {integrity: sha512-ZomPSIqeo4l/2MYel3wjWmzFDk67Bl6wowQwAvshwAEzk8l3+w58b6aB6hfMjetXdVi4L/ZL+JT36kPmvrqHXQ==}
     dev: true
 
-  /@fontsource/noto-sans-grantha@5.0.6:
-    resolution: {integrity: sha512-fbpwGSFOen62pLAb4JZ4F2EF2Y/S8OfXO0qAnAbYi6gtn0IqH5gnCj+DxXlo7M5vCyAMco1HvOSnqeroy78yOA==}
+  /@fontsource/noto-sans-grantha@5.0.7:
+    resolution: {integrity: sha512-t0A08ufePzgA0UpryGIn4ZStcFimcpZfa5J98061BnO2r/zyOOTem5pEPk6rmMQzT6UZubVP7U4ZsrRsXc5jdg==}
     dev: true
 
-  /@fontsource/noto-sans-gujarati@5.0.6:
-    resolution: {integrity: sha512-Iwso/b9Dl25NUVa1XKu76JFyMOke3dIjPACbstDweH7k2je6XLOiYXMy74E2QUCi80f512QeO3JeFRhzvzqbNw==}
+  /@fontsource/noto-sans-gujarati@5.0.7:
+    resolution: {integrity: sha512-8K4/TkHmg0dnqUTJ0hFlpcjJCeo4Y8Kwl/p29uVT1pzqseVy/sgTICnVCTtpg9eFTPdKbv9LJsty5I7ynerIrw==}
     dev: true
 
-  /@fontsource/noto-sans-kannada@5.0.6:
-    resolution: {integrity: sha512-M6Tfe73z4JijDBbLpk7XfqWOI7lUgOobv8Hgzi8Jh31fPQx2GR9d/+l3EkCLNcPVxqIm58TYYmidGpSeo3fkKQ==}
+  /@fontsource/noto-sans-kannada@5.0.7:
+    resolution: {integrity: sha512-W7cp8GNIgA3jyuROc4DZAJGgRqm0iVol6raiX3KDJ7AS+JbS3REk74TccAkQKwE5/qKPSltDqdCvE06hStT+aA==}
     dev: true
 
-  /@fontsource/noto-sans-malayalam@5.0.6:
-    resolution: {integrity: sha512-lOSz9lT5aV0NvR/eLcvb2vbceQQCeRUkCtVpqcGRcfBU6520OY+34VQlHB5ow8IuDZ6qPP7PmHZoLKuzmlnsQg==}
+  /@fontsource/noto-sans-malayalam@5.0.7:
+    resolution: {integrity: sha512-7EcsgSCJ8Q47vf+v/FnKh5hDZi7LNhFeFgKZuBlKzbBomUs7wvG3snGpHXB0XQlDmuCVEz0WbBvtrUrS1w1EQQ==}
     dev: true
 
-  /@fontsource/noto-sans-oriya@5.0.6:
-    resolution: {integrity: sha512-LjLr9Tai48X7yqUGg6vaOd2nu3B3Y3yyqf8I0jp64R7tNNIsl2Uhk96Rl62/y4E9aIUml3bcHMnBZBhF+0f4Nw==}
+  /@fontsource/noto-sans-oriya@5.0.7:
+    resolution: {integrity: sha512-ydi9oW6I2eG74FSup+tEYWtdEz+dg8AwJIpFpT/fJQC4yPVyYgdNJw2nf0/Nhyo9+G71t49esim0kt/GCAci7Q==}
     dev: true
 
-  /@fontsource/noto-sans-telugu@5.0.6:
-    resolution: {integrity: sha512-G0e+aRnzsM+zOnYU6HOJmifsf6bc5P0TDShobR0VbEgRH1D213RsBKUhdEXM5hQXrvQoShM5h+Mhyt6IBKdCmg==}
+  /@fontsource/noto-sans-telugu@5.0.7:
+    resolution: {integrity: sha512-ITg6Drg/ADE1+iXV59YdF55OxyX31InqtALXRA/DvK3OKXiQB2Gxnl3GX0HGQMN56l1/2IrLpFhfyTE7AOI9ZA==}
     dev: true
 
-  /@fontsource/source-code-pro@5.0.6:
-    resolution: {integrity: sha512-o268yqy6gQPCDn8+ZECNrCR77Mqf5UnaNtPJ5vO8YtKVuGyU0SHA1cJbmDQwsjm2jCO0c8cgsQ62gOPThQX/2Q==}
+  /@fontsource/source-code-pro@5.0.7:
+    resolution: {integrity: sha512-U26iWcbH2Iaunn5xfQGH2a592Nb5wXQkU8EbBW86P3bP/pa2hQoqhrw1EzXcAmPA+kywdw2iS6+0llVc+z/yVQ==}
     dev: true
 
   /@jridgewell/gen-mapping@0.3.3:
@@ -909,8 +909,8 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup@3.27.0:
-    resolution: {integrity: sha512-aOltLCrYZ0FhJDm7fCqwTjIUEVjWjcydKBV/Zeid6Mn8BWgDCUBBWT5beM5ieForYNo/1ZHuGJdka26kvQ3Gzg==}
+  /rollup@3.27.1:
+    resolution: {integrity: sha512-tXNDFwOkN6C2w5Blj1g6ForKeFw6c1mDu5jxoeDO3/pmYjgt+8yvIFjKzH5FQUq70OKZBkOt0zzv0THXL7vwzQ==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -1140,7 +1140,7 @@ packages:
     dependencies:
       esbuild: 0.18.17
       postcss: 8.4.27
-      rollup: 3.27.0
+      rollup: 3.27.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
