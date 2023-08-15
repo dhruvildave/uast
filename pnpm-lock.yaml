@@ -21,8 +21,8 @@ devDependencies:
     specifier: ^5.0.8
     version: 5.0.8
   '@fontsource/noto-sans-oriya':
-    specifier: ^5.0.8
-    version: 5.0.8
+    specifier: ^5.0.9
+    version: 5.0.9
   '@fontsource/noto-sans-telugu':
     specifier: ^5.0.8
     version: 5.0.8
@@ -285,8 +285,8 @@ packages:
     resolution: {integrity: sha512-vGwnxfj2NHYKVOZw/QkB8mpTiWnm6OYL0MOY9m/BRt7+vhc4PeSj8d59vrcFsyo+3KahKAD/Be7WRA/dIBI73w==}
     dev: true
 
-  /@fontsource/noto-sans-oriya@5.0.8:
-    resolution: {integrity: sha512-NyWIvLzJ4i/S0z3E9F60ZL827Q1T54vZumca6us6rXfznPvk4J/hIyJVxlxM3Td9mpT27GPWDskKi1vYA/HPOA==}
+  /@fontsource/noto-sans-oriya@5.0.9:
+    resolution: {integrity: sha512-HAv9mcuGBb6QkuUpgtkwz7azdg4Mtv3urDlERainZffw6Gl4RqgaXe4F+3F/Rskn7d8sDRM0bTlALRjz+bk1fg==}
     dev: true
 
   /@fontsource/noto-sans-telugu@5.0.8:
