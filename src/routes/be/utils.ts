@@ -1049,6 +1049,89 @@ const slpDataDict: CharMap = new Map([
   ["~", "ã"]
 ]);
 
+const iastAllowed: string[] = [
+  "।",
+  "॥",
+  "ऽ",
+  "ॐ",
+  "०",
+  "१",
+  "२",
+  "३",
+  "४",
+  "५",
+  "६",
+  "७",
+  "८",
+  "९",
+  "a",
+  "ā",
+  "i",
+  "ī",
+  "u",
+  "ū",
+  "ṛ",
+  "ṝ",
+  "ḷ",
+  "ḹ",
+  "e",
+  "ai",
+  "o",
+  "au",
+  "a",
+  "ā",
+  "i",
+  "ī",
+  "u",
+  "ū",
+  "ṛ",
+  "ṝ",
+  "ḷ",
+  "ḹ",
+  "e",
+  "ai",
+  "o",
+  "au",
+  "ṃ",
+  "ḥ",
+  "ã",
+  "-",
+  "k",
+  "kh",
+  "g",
+  "gh",
+  "ṅ",
+  "c",
+  "ch",
+  "j",
+  "jh",
+  "ñ",
+  "ṭ",
+  "ṭh",
+  "ḍ",
+  "ḍh",
+  "ṇ",
+  "t",
+  "th",
+  "d",
+  "dh",
+  "n",
+  "p",
+  "ph",
+  "b",
+  "bh",
+  "m",
+  "y",
+  "r",
+  "l",
+  "v",
+  "ś",
+  "ṣ",
+  "s",
+  "h",
+  "ḻ"
+];
+
 function checkSwitchExhaustion(x: never): void {
   throw new Error(`${x} must be of type never`, { cause: x });
 }
@@ -1976,6 +2059,11 @@ function dataToIAST(data: string): string {
 
         if (curr === "ḥ" || curr === "ṃ" || curr === "ã") {
           arr.push(curr);
+          i++;
+          continue;
+        }
+
+        if (!iastAllowed.includes(curr)) {
           i++;
           continue;
         }
