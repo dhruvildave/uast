@@ -145,7 +145,7 @@
     iast: "tasmādyogī bhavārjuna",
     gu: "તસ્માદ્યોગી ભવાર્જુન",
     or: "ତସ‍୍ମାଦ‍୍ୟୋଗୀ ଭୱାର‍୍ଜୁନ",
-    devanagari: "तस्माद्योगी भवार्जुन",
+    devanāgarī: "तस्माद्योगी भवार्जुन",
     slp: "tasmAdyogI BavArjuna",
     kn: "ತಸ್ಮಾದ್ಯೊಗೀ ಭವಾರ್ಜುನ",
     te: "తస్మాద్యొగీ భవార్జున",
@@ -155,7 +155,7 @@
   } as const;
 
   const to_opts = [
-    ["devanagari", "देवनागरी"],
+    ["devanāgarī", "देवनागरी"],
     ["uast", "UAST"],
     ["iast", "IAST"],
     ["gu", "ગુજરાતી"],
@@ -169,7 +169,7 @@
   const from_opts = [
     ["uast", "UAST"],
     ["iast", "IAST"],
-    ["devanagari", "देवनागरी"],
+    ["devanāgarī", "देवनागरी"],
     ["gu", "ગુજરાતી"],
     ["or", "ଓଡ଼ିଆ"],
     ["kn", "ಕನ್ನಡ"],
@@ -207,7 +207,7 @@
       : from === "raw"
       ? placeholders["raw"]
       : from === "devanagari"
-      ? placeholders["devanagari"]
+      ? placeholders["devanāgarī"]
       : from === "gu"
       ? placeholders["gu"]
       : from === "or"
@@ -228,7 +228,7 @@
 
   $: ph_to =
     to === "devanagari"
-      ? placeholders["devanagari"]
+      ? placeholders["devanāgarī"]
       : to === "iast"
       ? placeholders["iast"]
       : to === "gu"

@@ -845,7 +845,7 @@ const unicodeMap: CharMap = new Map([
   ["au", "ã"]
 ]);
 
-const devanagariDataDict: CharMap = new Map([
+const devanāgarīDataDict: CharMap = new Map([
   ["क", "k"],
   ["ख", "kh"],
   ["ग", "g"],
@@ -1913,7 +1913,7 @@ function createScriptFunction(lang: LangList): (data: string) => string {
       break;
   }
 
-  return function scriptToDevanagari(data: string): string {
+  return function scriptToDevanāgarī(data: string): string {
     return Array.from(data.normalize(), i =>
       obj.has(i) ? obj.get(i) : allowedSymbols.includes(i) ? i : ""
     )
@@ -2335,7 +2335,7 @@ function createDataFunction(lang: LangList): (data: string) => string {
  * @param data देवनागरी string
  * @returns UAST string
  */
-function devanagariToUAST(data: string): string {
+function devanāgarīToUAST(data: string): string {
   const str = Array.from(data.normalize());
   let arr: string[] = [];
 
@@ -2353,8 +2353,8 @@ function devanagariToUAST(data: string): string {
       continue;
     }
 
-    const val = devanagariDataDict.get(curr) ?? curr;
-    const next_val = devanagariDataDict.get(next) ?? next;
+    const val = devanāgarīDataDict.get(curr) ?? curr;
+    const next_val = devanāgarīDataDict.get(next) ?? next;
 
     if (
       [...charDict["sa"]["vowels"].values()].includes(curr) &&
@@ -2387,7 +2387,7 @@ function slpToIAST(data: string): string {
     .normalize();
 }
 
-type FuncList = "handleUnicode" | "dataFunction" | "scriptToDevanagari";
+type FuncList = "handleUnicode" | "dataFunction" | "scriptToDevanāgarī";
 
 type Builder = {
   [k in LangList]: {
@@ -2405,7 +2405,7 @@ const builderFuncs: Builder = (() => {
     y[l] = {
       dataFunction: createDataFunction(l),
       handleUnicode: createHandleUnicode(l),
-      scriptToDevanagari: createScriptFunction(l)
+      scriptToDevanāgarī: createScriptFunction(l)
     };
   }
 
@@ -2419,7 +2419,7 @@ export const convertor: {
 } = {
   uast: {
     iast: [builderFuncs["sa"]["handleUnicode"], dataToIAST],
-    devanagari: [
+    devanāgarī: [
       builderFuncs["sa"]["handleUnicode"],
       builderFuncs["sa"]["dataFunction"]
     ],
@@ -2450,7 +2450,7 @@ export const convertor: {
   },
   raw: {
     iast: [builderFuncs["sa"]["handleUnicode"]],
-    devanagari: [
+    devanāgarī: [
       builderFuncs["sa"]["handleUnicode"],
       iastToUAST,
       builderFuncs["sa"]["handleUnicode"],
@@ -2497,7 +2497,7 @@ export const convertor: {
   slp: {
     iast: [slpToIAST],
     uast: [slpToIAST, iastToUAST],
-    devanagari: [
+    devanāgarī: [
       slpToIAST,
       iastToUAST,
       builderFuncs["sa"]["handleUnicode"],
@@ -2540,43 +2540,43 @@ export const convertor: {
       builderFuncs["ta"]["dataFunction"]
     ]
   },
-  devanagari: {
-    uast: [devanagariToUAST],
-    iast: [devanagariToUAST, builderFuncs["sa"]["handleUnicode"], dataToIAST],
+  devanāgarī: {
+    uast: [devanāgarīToUAST],
+    iast: [devanāgarīToUAST, builderFuncs["sa"]["handleUnicode"], dataToIAST],
     gu: [
-      devanagariToUAST,
+      devanāgarīToUAST,
       builderFuncs["gu"]["handleUnicode"],
       builderFuncs["gu"]["dataFunction"]
     ],
     or: [
-      devanagariToUAST,
+      devanāgarīToUAST,
       builderFuncs["or"]["handleUnicode"],
       builderFuncs["or"]["dataFunction"]
     ],
     kn: [
-      devanagariToUAST,
+      devanāgarīToUAST,
       builderFuncs["kn"]["handleUnicode"],
       builderFuncs["kn"]["dataFunction"]
     ],
     te: [
-      devanagariToUAST,
+      devanāgarīToUAST,
       builderFuncs["te"]["handleUnicode"],
       builderFuncs["te"]["dataFunction"]
     ],
     ml: [
-      devanagariToUAST,
+      devanāgarīToUAST,
       builderFuncs["ml"]["handleUnicode"],
       builderFuncs["ml"]["dataFunction"]
     ],
     ta: [
-      devanagariToUAST,
+      devanāgarīToUAST,
       builderFuncs["ta"]["handleUnicode"],
       builderFuncs["ta"]["dataFunction"]
     ]
   },
   iast: {
     uast: [iastToUAST],
-    devanagari: [
+    devanāgarī: [
       iastToUAST,
       builderFuncs["sa"]["handleUnicode"],
       builderFuncs["sa"]["dataFunction"]
@@ -2613,241 +2613,241 @@ export const convertor: {
     ]
   },
   gu: {
-    devanagari: [builderFuncs["gu"]["scriptToDevanagari"]],
-    uast: [builderFuncs["gu"]["scriptToDevanagari"], devanagariToUAST],
+    devanāgarī: [builderFuncs["gu"]["scriptToDevanāgarī"]],
+    uast: [builderFuncs["gu"]["scriptToDevanāgarī"], devanāgarīToUAST],
     iast: [
-      builderFuncs["gu"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["gu"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["sa"]["handleUnicode"],
       dataToIAST
     ],
     or: [
-      builderFuncs["gu"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["gu"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["or"]["handleUnicode"],
       builderFuncs["or"]["dataFunction"]
     ],
     kn: [
-      builderFuncs["gu"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["gu"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["kn"]["handleUnicode"],
       builderFuncs["kn"]["dataFunction"]
     ],
     te: [
-      builderFuncs["gu"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["gu"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["te"]["handleUnicode"],
       builderFuncs["te"]["dataFunction"]
     ],
     ml: [
-      builderFuncs["gu"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["gu"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["ml"]["handleUnicode"],
       builderFuncs["ml"]["dataFunction"]
     ],
     ta: [
-      builderFuncs["gu"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["gu"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["ta"]["handleUnicode"],
       builderFuncs["ta"]["dataFunction"]
     ]
   },
   or: {
-    devanagari: [builderFuncs["or"]["scriptToDevanagari"]],
-    uast: [builderFuncs["or"]["scriptToDevanagari"], devanagariToUAST],
+    devanāgarī: [builderFuncs["or"]["scriptToDevanāgarī"]],
+    uast: [builderFuncs["or"]["scriptToDevanāgarī"], devanāgarīToUAST],
     iast: [
-      builderFuncs["or"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["or"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["sa"]["handleUnicode"],
       dataToIAST
     ],
     gu: [
-      builderFuncs["or"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["or"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["gu"]["handleUnicode"],
       builderFuncs["gu"]["dataFunction"]
     ],
     kn: [
-      builderFuncs["or"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["or"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["kn"]["handleUnicode"],
       builderFuncs["kn"]["dataFunction"]
     ],
     te: [
-      builderFuncs["or"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["or"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["te"]["handleUnicode"],
       builderFuncs["te"]["dataFunction"]
     ],
     ml: [
-      builderFuncs["or"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["or"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["ml"]["handleUnicode"],
       builderFuncs["ml"]["dataFunction"]
     ],
     ta: [
-      builderFuncs["or"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["or"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["ta"]["handleUnicode"],
       builderFuncs["ta"]["dataFunction"]
     ]
   },
   kn: {
-    devanagari: [builderFuncs["kn"]["scriptToDevanagari"]],
-    uast: [builderFuncs["kn"]["scriptToDevanagari"], devanagariToUAST],
+    devanāgarī: [builderFuncs["kn"]["scriptToDevanāgarī"]],
+    uast: [builderFuncs["kn"]["scriptToDevanāgarī"], devanāgarīToUAST],
     iast: [
-      builderFuncs["kn"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["kn"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["sa"]["handleUnicode"],
       dataToIAST
     ],
     gu: [
-      builderFuncs["kn"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["kn"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["gu"]["handleUnicode"],
       builderFuncs["gu"]["dataFunction"]
     ],
     or: [
-      builderFuncs["kn"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["kn"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["or"]["handleUnicode"],
       builderFuncs["or"]["dataFunction"]
     ],
     te: [
-      builderFuncs["kn"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["kn"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["te"]["handleUnicode"],
       builderFuncs["te"]["dataFunction"]
     ],
     ml: [
-      builderFuncs["kn"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["kn"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["ml"]["handleUnicode"],
       builderFuncs["ml"]["dataFunction"]
     ],
     ta: [
-      builderFuncs["kn"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["kn"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["ta"]["handleUnicode"],
       builderFuncs["ta"]["dataFunction"]
     ]
   },
   te: {
-    devanagari: [builderFuncs["te"]["scriptToDevanagari"]],
-    uast: [builderFuncs["te"]["scriptToDevanagari"], devanagariToUAST],
+    devanāgarī: [builderFuncs["te"]["scriptToDevanāgarī"]],
+    uast: [builderFuncs["te"]["scriptToDevanāgarī"], devanāgarīToUAST],
     iast: [
-      builderFuncs["te"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["te"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["sa"]["handleUnicode"],
       dataToIAST
     ],
     gu: [
-      builderFuncs["te"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["te"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["gu"]["handleUnicode"],
       builderFuncs["gu"]["dataFunction"]
     ],
     or: [
-      builderFuncs["te"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["te"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["or"]["handleUnicode"],
       builderFuncs["or"]["dataFunction"]
     ],
     kn: [
-      builderFuncs["te"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["te"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["kn"]["handleUnicode"],
       builderFuncs["kn"]["dataFunction"]
     ],
     ml: [
-      builderFuncs["te"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["te"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["ml"]["handleUnicode"],
       builderFuncs["ml"]["dataFunction"]
     ],
     ta: [
-      builderFuncs["te"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["te"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["ta"]["handleUnicode"],
       builderFuncs["ta"]["dataFunction"]
     ]
   },
   ml: {
-    devanagari: [builderFuncs["ml"]["scriptToDevanagari"]],
-    uast: [builderFuncs["ml"]["scriptToDevanagari"], devanagariToUAST],
+    devanāgarī: [builderFuncs["ml"]["scriptToDevanāgarī"]],
+    uast: [builderFuncs["ml"]["scriptToDevanāgarī"], devanāgarīToUAST],
     iast: [
-      builderFuncs["ml"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["ml"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["sa"]["handleUnicode"],
       dataToIAST
     ],
     gu: [
-      builderFuncs["ml"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["ml"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["gu"]["handleUnicode"],
       builderFuncs["gu"]["dataFunction"]
     ],
     or: [
-      builderFuncs["ml"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["ml"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["or"]["handleUnicode"],
       builderFuncs["or"]["dataFunction"]
     ],
     kn: [
-      builderFuncs["ml"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["ml"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["kn"]["handleUnicode"],
       builderFuncs["kn"]["dataFunction"]
     ],
     te: [
-      builderFuncs["ml"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["ml"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["te"]["handleUnicode"],
       builderFuncs["te"]["dataFunction"]
     ],
     ta: [
-      builderFuncs["ml"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["ml"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["ta"]["handleUnicode"],
       builderFuncs["ta"]["dataFunction"]
     ]
   },
   ta: {
-    devanagari: [builderFuncs["ta"]["scriptToDevanagari"]],
-    uast: [builderFuncs["ta"]["scriptToDevanagari"], devanagariToUAST],
+    devanāgarī: [builderFuncs["ta"]["scriptToDevanāgarī"]],
+    uast: [builderFuncs["ta"]["scriptToDevanāgarī"], devanāgarīToUAST],
     iast: [
-      builderFuncs["ta"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["ta"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["sa"]["handleUnicode"],
       dataToIAST
     ],
     gu: [
-      builderFuncs["ta"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["ta"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["gu"]["handleUnicode"],
       builderFuncs["gu"]["dataFunction"]
     ],
     or: [
-      builderFuncs["ta"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["ta"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["or"]["handleUnicode"],
       builderFuncs["or"]["dataFunction"]
     ],
     kn: [
-      builderFuncs["ta"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["ta"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["kn"]["handleUnicode"],
       builderFuncs["kn"]["dataFunction"]
     ],
     te: [
-      builderFuncs["ta"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["ta"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["te"]["handleUnicode"],
       builderFuncs["te"]["dataFunction"]
     ],
     ml: [
-      builderFuncs["ta"]["scriptToDevanagari"],
-      devanagariToUAST,
+      builderFuncs["ta"]["scriptToDevanāgarī"],
+      devanāgarīToUAST,
       builderFuncs["ml"]["handleUnicode"],
       builderFuncs["ml"]["dataFunction"]
     ]
