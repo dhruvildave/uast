@@ -23,9 +23,9 @@
     "@fontsource/noto-sans-gujarati": "^5.0.8",
     "@fontsource/noto-sans-kannada": "^5.0.8",
     "@fontsource/noto-sans-malayalam": "^5.0.8",
-    "@fontsource/noto-sans-oriya": "^5.0.13",
+    "@fontsource/noto-sans-oriya": "^5.0.14",
     "@fontsource/noto-sans-telugu": "^5.0.8",
-    "@fontsource/source-code-pro": "^5.0.8",
+    "@fontsource/source-code-pro": "^5.0.12",
     "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.25.1",
     "prettier": "^3.0.3",
@@ -34,7 +34,7 @@
     "svelte-check": "^3.5.2",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
-    "vite": "^4.4.9"
+    "vite": "^4.4.10"
   },
   "type": "module",
   "engineStrict": true,
