@@ -7,5 +7,3 @@ services:
       dockerfile: Containerfile
     ports:
       - 9000:80
-    tty: true
-    stdin_open: true
