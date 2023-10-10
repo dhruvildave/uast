@@ -1,7 +1,7 @@
 FROM node:alpine AS builder
 COPY . .
 RUN npm i -g pnpm
-RUN pnpm i
+RUN pnpm i -P
 RUN pnpm build
 
 FROM nginx:alpine AS deploy
