@@ -257,7 +257,7 @@
       bind:value="{input}"
     ></textarea>
 
-    <select class="from-select" bind:value="{from}">
+    <select class="from-select" name="from-select" bind:value="{from}">
       {#each from_opts as i}
         <option value="{i[0]}">{i[1]}</option>
       {/each}
@@ -275,7 +275,7 @@
       value="{output}"
     ></textarea>
 
-    <select class="to-select" bind:value="{to}">
+    <select class="to-select" name="to-select" bind:value="{to}">
       {#each to_opts as i}
         <option value="{i[0]}">{i[1]}</option>
       {/each}

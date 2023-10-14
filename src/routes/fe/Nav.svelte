@@ -140,7 +140,7 @@
       <h1>{nav}</h1>
     </section>
     <section>
-      <select bind:value="{locale}">
+      <select name="locale" bind:value="{locale}">
         {#each langs as i}
           <option value="{i[0]}">{i[1]}</option>
         {/each}
