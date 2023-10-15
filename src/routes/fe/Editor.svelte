@@ -206,7 +206,7 @@
       ? placeholders["iast"]
       : from === "raw"
       ? placeholders["raw"]
-      : from === "devanagari"
+      : from === "devanāgarī"
       ? placeholders["devanāgarī"]
       : from === "gu"
       ? placeholders["gu"]
@@ -227,7 +227,7 @@
       : "Made in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave");
 
   $: ph_to =
-    to === "devanagari"
+    to === "devanāgarī"
       ? placeholders["devanāgarī"]
       : to === "iast"
       ? placeholders["iast"]
