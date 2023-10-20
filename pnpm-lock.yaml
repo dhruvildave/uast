@@ -21,14 +21,14 @@ dependencies:
     specifier: ^5.0.8
     version: 5.0.8
   '@fontsource/noto-sans-oriya':
-    specifier: ^5.0.15
-    version: 5.0.15
+    specifier: ^5.0.16
+    version: 5.0.16
   '@fontsource/noto-sans-telugu':
     specifier: ^5.0.8
     version: 5.0.8
   '@fontsource/source-code-pro':
-    specifier: ^5.0.13
-    version: 5.0.13
+    specifier: ^5.0.14
+    version: 5.0.14
   '@sveltejs/adapter-static':
     specifier: ^2.0.3
     version: 2.0.3(@sveltejs/kit@1.26.0)
@@ -291,16 +291,16 @@ packages:
     resolution: {integrity: sha512-vGwnxfj2NHYKVOZw/QkB8mpTiWnm6OYL0MOY9m/BRt7+vhc4PeSj8d59vrcFsyo+3KahKAD/Be7WRA/dIBI73w==}
     dev: false
 
-  /@fontsource/noto-sans-oriya@5.0.15:
-    resolution: {integrity: sha512-q3GzFnsAk4I6OBaiKec4egBdIGQo9BXODByLp0YHAzaYtrgNoXU7al9Rh99WDREq37tu5UlHytog01qKs2fLkg==}
+  /@fontsource/noto-sans-oriya@5.0.16:
+    resolution: {integrity: sha512-C0V8cB6QQlb+5DvAXdjbAmoNqVTrjTXPjwRRirnXobnGV56fGTE2U+PTYL4lGLkax6rr4ssu0yLVgyhsPsGubw==}
     dev: false
 
   /@fontsource/noto-sans-telugu@5.0.8:
     resolution: {integrity: sha512-x4AjxT12QYUDHfDBqpEEegls4UYQhxSsI1g7+k78eemMPU4blyL2zkTlL6fcpphX7fiF7krjikIbLG7BrDpPVw==}
     dev: false
 
-  /@fontsource/source-code-pro@5.0.13:
-    resolution: {integrity: sha512-fGKE9YC1mjvp0XjW4dVdqOjU+oROgPoT7MavORcJB+v1tzcqPJFJ0dbxZoa9KEMghf3HzfAYwfdgYvWPn/yTFA==}
+  /@fontsource/source-code-pro@5.0.14:
+    resolution: {integrity: sha512-sHRYwzsmog5Ly32zAJyeg8d4xta3jhymeZzmI389vu0h0AODZit6pd5ROuvYI3+ceTtBr4fbtldc39wCuwUcFw==}
     dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
