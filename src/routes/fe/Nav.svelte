@@ -1,82 +1,3 @@
-<style>
-  header nav {
-    height: 3rem; /* 48px */
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
-    user-select: text;
-
-    font-family: var(--font-family-mono), monospace;
-    background-color: var(--light-primary-light);
-  }
-
-  header nav h1 {
-    font-size: 1rem; /* 16px */
-    font-weight: bold;
-  }
-
-  header nav section {
-    margin: 0 1rem;
-
-    display: flex;
-    align-items: center;
-  }
-
-  header nav section:last-child ul {
-    display: flex;
-    flex-direction: row;
-  }
-
-  header ul {
-    list-style: none;
-  }
-
-  header ul li {
-    margin: 0 0.5rem;
-
-    display: flex;
-    align-items: center;
-  }
-
-  header nav section:nth-child(2) {
-    display: none;
-  }
-
-  header nav select {
-    display: none;
-  }
-
-  @media (min-width: 1024px) {
-    header ul li {
-      margin: 0 1rem;
-    }
-
-    header nav section:nth-child(2) {
-      display: block;
-    }
-
-    header nav select {
-      display: inline-block;
-
-      background-color: transparent;
-      border: none;
-      outline: none;
-
-      font-family: monospace;
-      font-weight: bold;
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    header nav {
-      background-color: var(--dark-primary-dark);
-    }
-  }
-</style>
-
 <script lang="ts">
   import Icon from "./Icon.svelte";
 
@@ -190,3 +111,82 @@
     </section>
   </nav>
 </header>
+
+<style>
+  header nav {
+    height: 3rem; /* 48px */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    user-select: text;
+
+    font-family: var(--font-family-mono), monospace;
+    background-color: var(--light-primary-light);
+  }
+
+  header nav h1 {
+    font-size: 1rem; /* 16px */
+    font-weight: bold;
+  }
+
+  header nav section {
+    margin: 0 1rem;
+
+    display: flex;
+    align-items: center;
+  }
+
+  header nav section:last-child ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  header ul {
+    list-style: none;
+  }
+
+  header ul li {
+    margin: 0 0.5rem;
+
+    display: flex;
+    align-items: center;
+  }
+
+  header nav section:nth-child(2) {
+    display: none;
+  }
+
+  header nav select {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    header ul li {
+      margin: 0 1rem;
+    }
+
+    header nav section:nth-child(2) {
+      display: block;
+    }
+
+    header nav select {
+      display: inline-block;
+
+      background-color: transparent;
+      border: none;
+      outline: none;
+
+      font-family: monospace;
+      font-weight: bold;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    header nav {
+      background-color: var(--dark-primary-dark);
+    }
+  }
+</style>

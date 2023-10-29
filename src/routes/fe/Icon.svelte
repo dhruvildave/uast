@@ -1,3 +1,14 @@
+<script lang="ts">
+  export let href: string;
+  export let src: string;
+  export let alt: string;
+  export let title: string;
+</script>
+
+<a target="_blank" {title} rel="noreferrer" {href}>
+  <img {src} {alt} width="28" height="28" />
+</a>
+
 <style>
   a {
     display: flex;
@@ -14,14 +25,3 @@
     }
   }
 </style>
-
-<script lang="ts">
-  export let href: string;
-  export let src: string;
-  export let alt: string;
-  export let title: string;
-</script>
-
-<a target="_blank" {title} rel="noreferrer" {href}>
-  <img {src} {alt} width="28" height="28" />
-</a>

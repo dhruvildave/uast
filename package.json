@@ -47,7 +47,7 @@
     "singleQuote": false,
     "trailingComma": "none",
     "printWidth": 80,
-    "svelteSortOrder": "options-styles-scripts-markup",
+    "svelteSortOrder": "scripts-markup-styles-options",
     "plugins": [
       "prettier-plugin-svelte"
     ],

@@ -1,142 +1,3 @@
-<style>
-  main {
-    display: flex;
-    flex-direction: column;
-
-    height: calc(100vh - 3rem);
-  }
-
-  main article,
-  main aside {
-    flex: 1;
-
-    display: flex;
-    flex-direction: column;
-  }
-
-  main article {
-    background-color: var(--light-primary-light);
-  }
-
-  main aside {
-    background-color: var(--light-primary-medium);
-  }
-
-  main article select,
-  main aside select {
-    height: 3rem; /* 48px */
-    width: 40%;
-    min-width: max-content;
-
-    appearance: none;
-    outline: none;
-
-    border: none;
-
-    cursor: pointer;
-    text-decoration-line: underline;
-
-    text-align: center;
-
-    padding: 0.125rem; /* 2px */
-    margin: auto;
-  }
-
-  main article textarea,
-  main aside textarea {
-    height: 100%;
-    resize: none;
-
-    border: none;
-
-    user-select: auto;
-
-    padding: 0.25rem; /* 4px */
-  }
-
-  textarea,
-  select {
-    color: var(--light-text-color);
-
-    font-size: 1rem; /* 16px */
-    line-height: 1.5rem; /* 24px */
-
-    animation: fade 300ms ease-in-out;
-  }
-
-  textarea.input,
-  select.from-select {
-    background-color: var(--light-primary-light);
-    padding: 0.5rem; /* 8px */
-  }
-
-  textarea.output,
-  select.to-select {
-    background-color: var(--light-primary-medium);
-    padding: 0.5rem; /* 8px */
-  }
-
-  textarea,
-  select,
-  option {
-    font-family: var(--font-family-mono), "Noto Sans Devanagari",
-      "Noto Sans Gujarati", "Noto Sans Oriya", "Noto Sans Kannada",
-      "Noto Sans Telugu", "Noto Sans Malayalam", "Noto Sans Grantha", sans-serif;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    textarea,
-    select {
-      color: var(--dark-text-color);
-    }
-
-    main article {
-      background-color: var(--dark-primary-dark);
-    }
-
-    main aside {
-      background-color: var(--dark-primary-medium);
-    }
-
-    textarea.input,
-    select.from-select {
-      background-color: var(--dark-primary-dark);
-    }
-
-    textarea.output,
-    select.to-select {
-      background-color: var(--dark-primary-medium);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    main {
-      flex-direction: row;
-    }
-
-    textarea,
-    select {
-      font-size: 1.5rem; /* 24px */
-      line-height: 2rem; /* 32px */
-    }
-  }
-
-  @keyframes fade {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  main article textarea:focus,
-  main aside textarea:focus {
-    outline: none;
-  }
-</style>
-
 <script lang="ts">
   import * as utils from "../be/utils";
 
@@ -282,3 +143,142 @@
     </select>
   </aside>
 </main>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+
+    height: calc(100vh - 3rem);
+  }
+
+  main article,
+  main aside {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  main article {
+    background-color: var(--light-primary-light);
+  }
+
+  main aside {
+    background-color: var(--light-primary-medium);
+  }
+
+  main article select,
+  main aside select {
+    height: 3rem; /* 48px */
+    width: 40%;
+    min-width: max-content;
+
+    appearance: none;
+    outline: none;
+
+    border: none;
+
+    cursor: pointer;
+    text-decoration-line: underline;
+
+    text-align: center;
+
+    padding: 0.125rem; /* 2px */
+    margin: auto;
+  }
+
+  main article textarea,
+  main aside textarea {
+    height: 100%;
+    resize: none;
+
+    border: none;
+
+    user-select: auto;
+
+    padding: 0.25rem; /* 4px */
+  }
+
+  textarea,
+  select {
+    color: var(--light-text-color);
+
+    font-size: 1rem; /* 16px */
+    line-height: 1.5rem; /* 24px */
+
+    animation: fade 300ms ease-in-out;
+  }
+
+  textarea.input,
+  select.from-select {
+    background-color: var(--light-primary-light);
+    padding: 0.5rem; /* 8px */
+  }
+
+  textarea.output,
+  select.to-select {
+    background-color: var(--light-primary-medium);
+    padding: 0.5rem; /* 8px */
+  }
+
+  textarea,
+  select,
+  option {
+    font-family: var(--font-family-mono), "Noto Sans Devanagari",
+      "Noto Sans Gujarati", "Noto Sans Oriya", "Noto Sans Kannada",
+      "Noto Sans Telugu", "Noto Sans Malayalam", "Noto Sans Grantha", sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    textarea,
+    select {
+      color: var(--dark-text-color);
+    }
+
+    main article {
+      background-color: var(--dark-primary-dark);
+    }
+
+    main aside {
+      background-color: var(--dark-primary-medium);
+    }
+
+    textarea.input,
+    select.from-select {
+      background-color: var(--dark-primary-dark);
+    }
+
+    textarea.output,
+    select.to-select {
+      background-color: var(--dark-primary-medium);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    main {
+      flex-direction: row;
+    }
+
+    textarea,
+    select {
+      font-size: 1.5rem; /* 24px */
+      line-height: 2rem; /* 32px */
+    }
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  main article textarea:focus,
+  main aside textarea:focus {
+    outline: none;
+  }
+</style>
