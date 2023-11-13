@@ -240,24 +240,24 @@ ka/m/ ka/h/ k '`
     (from === "slp"
       ? placeholders["slp"]
       : from === "iast"
-      ? placeholders["iast"]
-      : from === "raw"
-      ? placeholders["raw"]
-      : from === "devanāgarī"
-      ? placeholders["devanāgarī"]
-      : from === "gu"
-      ? placeholders["gu"]
-      : from === "or"
-      ? placeholders["or"]
-      : from === "kn"
-      ? placeholders["kn"]
-      : from === "te"
-      ? placeholders["te"]
-      : from === "ml"
-      ? placeholders["ml"]
-      : from === "ta"
-      ? placeholders["ta"]
-      : placeholders["uast"]) +
+        ? placeholders["iast"]
+        : from === "raw"
+          ? placeholders["raw"]
+          : from === "devanāgarī"
+            ? placeholders["devanāgarī"]
+            : from === "gu"
+              ? placeholders["gu"]
+              : from === "or"
+                ? placeholders["or"]
+                : from === "kn"
+                  ? placeholders["kn"]
+                  : from === "te"
+                    ? placeholders["te"]
+                    : from === "ml"
+                      ? placeholders["ml"]
+                      : from === "ta"
+                        ? placeholders["ta"]
+                        : placeholders["uast"]) +
     "\n\n\n" +
     (from === "devanāgarī"
       ? "भारतवर्षे अनेर्या अनिरुद्धेन च निर्मितम्।"
@@ -267,20 +267,20 @@ ka/m/ ka/h/ k '`
     to === "devanāgarī"
       ? placeholders["devanāgarī"]
       : to === "iast"
-      ? placeholders["iast"]
-      : to === "gu"
-      ? placeholders["gu"]
-      : to === "or"
-      ? placeholders["or"]
-      : to === "kn"
-      ? placeholders["kn"]
-      : to === "te"
-      ? placeholders["te"]
-      : to === "ml"
-      ? placeholders["ml"]
-      : to === "ta"
-      ? placeholders["ta"]
-      : placeholders["uast"];
+        ? placeholders["iast"]
+        : to === "gu"
+          ? placeholders["gu"]
+          : to === "or"
+            ? placeholders["or"]
+            : to === "kn"
+              ? placeholders["kn"]
+              : to === "te"
+                ? placeholders["te"]
+                : to === "ml"
+                  ? placeholders["ml"]
+                  : to === "ta"
+                    ? placeholders["ta"]
+                    : placeholders["uast"];
 </script>
 
 <main>
