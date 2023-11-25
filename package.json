@@ -18,14 +18,6 @@
     "podman": "podman-compose build && podman system prune -f"
   },
   "dependencies": {
-    "@fontsource/noto-sans-devanagari": "^5.0.8",
-    "@fontsource/noto-sans-grantha": "^5.0.8",
-    "@fontsource/noto-sans-gujarati": "^5.0.8",
-    "@fontsource/noto-sans-kannada": "^5.0.8",
-    "@fontsource/noto-sans-malayalam": "^5.0.8",
-    "@fontsource/noto-sans-oriya": "^5.0.17",
-    "@fontsource/noto-sans-telugu": "^5.0.8",
-    "@fontsource/source-code-pro": "^5.0.15",
     "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.27.6",
     "svelte": "^4.2.7",

@@ -5,30 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@fontsource/noto-sans-devanagari':
-    specifier: ^5.0.8
-    version: 5.0.8
-  '@fontsource/noto-sans-grantha':
-    specifier: ^5.0.8
-    version: 5.0.8
-  '@fontsource/noto-sans-gujarati':
-    specifier: ^5.0.8
-    version: 5.0.8
-  '@fontsource/noto-sans-kannada':
-    specifier: ^5.0.8
-    version: 5.0.8
-  '@fontsource/noto-sans-malayalam':
-    specifier: ^5.0.8
-    version: 5.0.8
-  '@fontsource/noto-sans-oriya':
-    specifier: ^5.0.17
-    version: 5.0.17
-  '@fontsource/noto-sans-telugu':
-    specifier: ^5.0.8
-    version: 5.0.8
-  '@fontsource/source-code-pro':
-    specifier: ^5.0.15
-    version: 5.0.15
   '@sveltejs/adapter-static':
     specifier: ^2.0.3
     version: 2.0.3(@sveltejs/kit@1.27.6)
@@ -269,38 +245,6 @@ packages:
   /@fastify/busboy@2.1.0:
     resolution: {integrity: sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==}
     engines: {node: '>=14'}
-    dev: false
-
-  /@fontsource/noto-sans-devanagari@5.0.8:
-    resolution: {integrity: sha512-3LCtQNBfsLbL0xOstx+Tg/MlQV9f/3Hd3NaxWpq46WAbdn1+nphagFyNcxk08rU47drjIEw0+IZwD3TaZL+dhQ==}
-    dev: false
-
-  /@fontsource/noto-sans-grantha@5.0.8:
-    resolution: {integrity: sha512-8wiELSb+TU049ho1eMB2BarDaf+/5hrpdtN8ojq8QYE21kIKL3aevOZmjVzohSwhVLu/28B2cAI5wd5PiXrVPA==}
-    dev: false
-
-  /@fontsource/noto-sans-gujarati@5.0.8:
-    resolution: {integrity: sha512-UR23TFJJDf/viVKJVMYem3ckHxdS7+BV4qIe7x7CGTX/jpY0AZjDsM3xDLHMtcmNHGmimgz/UTctl1DANcYOeg==}
-    dev: false
-
-  /@fontsource/noto-sans-kannada@5.0.8:
-    resolution: {integrity: sha512-L/IizPeTe/k19Tzi9HdKhO+Ck7kEelq91se48sUSFWI0bkg+lTQx30qkt6+IqJ/+CoX94gEgEZ/sBS6P5wDMNQ==}
-    dev: false
-
-  /@fontsource/noto-sans-malayalam@5.0.8:
-    resolution: {integrity: sha512-vGwnxfj2NHYKVOZw/QkB8mpTiWnm6OYL0MOY9m/BRt7+vhc4PeSj8d59vrcFsyo+3KahKAD/Be7WRA/dIBI73w==}
-    dev: false
-
-  /@fontsource/noto-sans-oriya@5.0.17:
-    resolution: {integrity: sha512-EJW5Ettm7+kannLH8D/By6udirwHHzmviGp/c9m+HDvDe+cVR35EEuhNSb3WTm62Bc5YjTPlZ661ogwf3VFHoQ==}
-    dev: false
-
-  /@fontsource/noto-sans-telugu@5.0.8:
-    resolution: {integrity: sha512-x4AjxT12QYUDHfDBqpEEegls4UYQhxSsI1g7+k78eemMPU4blyL2zkTlL6fcpphX7fiF7krjikIbLG7BrDpPVw==}
-    dev: false
-
-  /@fontsource/source-code-pro@5.0.15:
-    resolution: {integrity: sha512-G+kD+5Ba2mgqsOpwZQetQi5aAOaMw0SiY73VpmycSeL17WKl2GmyTP6mIc95d+r+HJJazmg9yYYBp3qeHNNG1w==}
     dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
