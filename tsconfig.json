@@ -21,7 +21,6 @@
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "importsNotUsedAsValues": "error",
     "noFallthroughCasesInSwitch": true
   }
   // Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
