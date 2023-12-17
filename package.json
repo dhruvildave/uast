@@ -15,7 +15,7 @@
     "lint": "prettier -c \"**/*.{html,css,json,svg,ts,svelte,js,md,yml}\"",
     "format": "prettier -w \"**/*.{html,css,json,svg,ts,svelte,js,md,yml}\"",
     "docker": "docker compose build && docker system prune -f",
-    "podman": "podman-compose build && podman system prune -f"
+    "podman": "podman compose build && podman system prune -f"
   },
   "dependencies": {
     "@fontsource/noto-sans-devanagari": "^5.0.8",
