@@ -214,7 +214,7 @@ const charDict: Readonly<Record<LangList, LangMap>> = {
         "।": ".",
         "॥": "..",
         ઽ: "'",
-        ॐ: "om"
+        ૐ: "om"
       })
     ),
     numbers: new Map(
@@ -1161,7 +1161,7 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
         "7": "૭",
         "8": "૮",
         "9": "૯",
-        om: "ॐ",
+        om: "ૐ",
         "'": "ઽ"
       });
       break;
@@ -1405,7 +1405,7 @@ function createScriptFunction(lang: LangList): (data: string) => string {
         "।": "।",
         "॥": "॥",
         ઽ: "ऽ",
-        ॐ: "ओम्",
+        ૐ: "ओम्",
         "૦": "०",
         "૧": "१",
         "૨": "२",
