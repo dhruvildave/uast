@@ -237,50 +237,14 @@ ka/m/ ka/h/ k '`
     .join("\n");
 
   $: ph_from =
-    (from === "slp"
-      ? placeholders["slp"]
-      : from === "iast"
-        ? placeholders["iast"]
-        : from === "raw"
-          ? placeholders["raw"]
-          : from === "devanāgarī"
-            ? placeholders["devanāgarī"]
-            : from === "gu"
-              ? placeholders["gu"]
-              : from === "or"
-                ? placeholders["or"]
-                : from === "kn"
-                  ? placeholders["kn"]
-                  : from === "te"
-                    ? placeholders["te"]
-                    : from === "ml"
-                      ? placeholders["ml"]
-                      : from === "ta"
-                        ? placeholders["ta"]
-                        : placeholders["uast"]) +
+    (placeholders[from as keyof typeof placeholders] ?? placeholders["uast"]) +
     "\n\n\n" +
     (from === "devanāgarī"
       ? "भारतवर्षे अनेर्या अनिरुद्धेन च निर्मितम्।"
       : "Made in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave");
 
   $: ph_to =
-    to === "devanāgarī"
-      ? placeholders["devanāgarī"]
-      : to === "iast"
-        ? placeholders["iast"]
-        : to === "gu"
-          ? placeholders["gu"]
-          : to === "or"
-            ? placeholders["or"]
-            : to === "kn"
-              ? placeholders["kn"]
-              : to === "te"
-                ? placeholders["te"]
-                : to === "ml"
-                  ? placeholders["ml"]
-                  : to === "ta"
-                    ? placeholders["ta"]
-                    : placeholders["uast"];
+    placeholders[to as keyof typeof placeholders] ?? placeholders["uast"];
 </script>
 
 <main>
