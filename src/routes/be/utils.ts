@@ -2217,40 +2217,7 @@ function iastToUAST(data: string): string {
  * @returns Function that can parse the `lang`
  */
 function createDataFunction(lang: LangList): (data: string) => string {
-  let obj: LangMap = charDict["sa"];
-
-  switch (lang) {
-    case "gu":
-      obj = charDict["gu"];
-      break;
-
-    case "or":
-      obj = charDict["or"];
-      break;
-
-    case "kn":
-      obj = charDict["kn"];
-      break;
-
-    case "te":
-      obj = charDict["te"];
-      break;
-
-    case "ml":
-      obj = charDict["ml"];
-      break;
-
-    case "ta":
-      obj = charDict["ta"];
-      break;
-
-    case "sa":
-      break;
-
-    default:
-      checkSwitchExhaustion(lang);
-      break;
-  }
+  const obj = charDict[lang] ?? new Error(`Unknown: ${lang}`, { cause: lang });
 
   return function dataToScript(data: string): string {
     return data
