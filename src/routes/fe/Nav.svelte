@@ -93,14 +93,6 @@
         </li>
         <li>
           <Icon
-            alt="java icon"
-            title="Link to Kotlin CLI GitHub repository"
-            href="https://github.com/dhruvildave/uast4j"
-            src="https://unpkg.com/simple-icons@latest/icons/kotlin.svg"
-          />
-        </li>
-        <li>
-          <Icon
             alt="help icon"
             title="Help"
             href="https://github.com/aneri0x4f/uast-cli/wiki"
