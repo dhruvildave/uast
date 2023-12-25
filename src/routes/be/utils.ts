@@ -23,7 +23,7 @@ type LangList = (typeof langs)[number];
 type Miscs = "." | ".." | "'" | "om";
 type Numbers = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
 
-function checkSymbols<T extends Miscs | Numbers>(
+function checkSymbols<T extends Miscs>(
   obj: Readonly<Record<string, T>>
 ): [string, T][] {
   return Object.entries(obj);
@@ -99,7 +99,7 @@ type Consonants =
   | "h"
   | "ḻ";
 
-function checkSounds<T extends Vowels | VowelSigns | Consonants>(
+function checkSounds<T extends Vowels | VowelSigns | Consonants | Numbers>(
   obj: Readonly<Record<T, string>>
 ): [T, string][] {
   return Object.entries(obj) as [T, string][];
@@ -116,17 +116,17 @@ const charDict: Readonly<Record<LangList, LangMap>> = {
       })
     ),
     numbers: new Map(
-      checkSymbols<Numbers>({
-        "०": "0",
-        "१": "1",
-        "२": "2",
-        "३": "3",
-        "४": "4",
-        "५": "5",
-        "६": "6",
-        "७": "7",
-        "८": "8",
-        "९": "9"
+      checkSounds<Numbers>({
+        "0": "०",
+        "1": "१",
+        "2": "२",
+        "3": "३",
+        "4": "४",
+        "5": "५",
+        "6": "६",
+        "7": "७",
+        "8": "८",
+        "9": "९"
       })
     ),
     vowels: new Map(
@@ -218,17 +218,17 @@ const charDict: Readonly<Record<LangList, LangMap>> = {
       })
     ),
     numbers: new Map(
-      checkSymbols<Numbers>({
-        "૦": "0",
-        "૧": "1",
-        "૨": "2",
-        "૩": "3",
-        "૪": "4",
-        "૫": "5",
-        "૬": "6",
-        "૭": "7",
-        "૮": "8",
-        "૯": "9"
+      checkSounds<Numbers>({
+        "0": "૦",
+        "1": "૧",
+        "2": "૨",
+        "3": "૩",
+        "4": "૪",
+        "5": "૫",
+        "6": "૬",
+        "7": "૭",
+        "8": "૮",
+        "9": "૯"
       })
     ),
     vowels: new Map(
@@ -320,17 +320,17 @@ const charDict: Readonly<Record<LangList, LangMap>> = {
       })
     ),
     numbers: new Map(
-      checkSymbols<Numbers>({
-        "೦": "0",
-        "೧": "1",
-        "೨": "2",
-        "೩": "3",
-        "೪": "4",
-        "೫": "5",
-        "೬": "6",
-        "೭": "7",
-        "೮": "8",
-        "೯": "9"
+      checkSounds<Numbers>({
+        "0": "೦",
+        "1": "೧",
+        "2": "೨",
+        "3": "೩",
+        "4": "೪",
+        "5": "೫",
+        "6": "೬",
+        "7": "೭",
+        "8": "೮",
+        "9": "೯"
       })
     ),
     vowels: new Map(
@@ -422,17 +422,17 @@ const charDict: Readonly<Record<LangList, LangMap>> = {
       })
     ),
     numbers: new Map(
-      checkSymbols<Numbers>({
-        "൦": "0",
-        "൧": "1",
-        "൨": "2",
-        "൩": "3",
-        "൪": "4",
-        "൫": "5",
-        "൬": "6",
-        "൭": "7",
-        "൮": "8",
-        "൯": "9"
+      checkSounds<Numbers>({
+        "0": "൦",
+        "1": "൧",
+        "2": "൨",
+        "3": "൩",
+        "4": "൪",
+        "5": "൫",
+        "6": "൬",
+        "7": "൭",
+        "8": "൮",
+        "9": "൯"
       })
     ),
     vowels: new Map(
@@ -524,17 +524,17 @@ const charDict: Readonly<Record<LangList, LangMap>> = {
       })
     ),
     numbers: new Map(
-      checkSymbols<Numbers>({
-        "୦": "0",
-        "୧": "1",
-        "୨": "2",
-        "୩": "3",
-        "୪": "4",
-        "୫": "5",
-        "୬": "6",
-        "୭": "7",
-        "୮": "8",
-        "୯": "9"
+      checkSounds<Numbers>({
+        "0": "୦",
+        "1": "୧",
+        "2": "୨",
+        "3": "୩",
+        "4": "୪",
+        "5": "୫",
+        "6": "୬",
+        "7": "୭",
+        "8": "୮",
+        "9": "୯"
       })
     ),
     vowels: new Map(
@@ -626,17 +626,17 @@ const charDict: Readonly<Record<LangList, LangMap>> = {
       })
     ),
     numbers: new Map(
-      checkSymbols<Numbers>({
-        "௦": "0",
-        "௧": "1",
-        "௨": "2",
-        "௩": "3",
-        "௪": "4",
-        "௫": "5",
-        "௬": "6",
-        "௭": "7",
-        "௮": "8",
-        "௯": "9"
+      checkSounds<Numbers>({
+        "0": "௦",
+        "1": "௧",
+        "2": "௨",
+        "3": "௩",
+        "4": "௪",
+        "5": "௫",
+        "6": "௬",
+        "7": "௭",
+        "8": "௮",
+        "9": "௯"
       })
     ),
     vowels: new Map(
@@ -728,17 +728,17 @@ const charDict: Readonly<Record<LangList, LangMap>> = {
       })
     ),
     numbers: new Map(
-      checkSymbols<Numbers>({
-        "౦": "0",
-        "౧": "1",
-        "౨": "2",
-        "౩": "3",
-        "౪": "4",
-        "౫": "5",
-        "౬": "6",
-        "౭": "7",
-        "౮": "8",
-        "౯": "9"
+      checkSounds<Numbers>({
+        "0": "౦",
+        "1": "౧",
+        "2": "౨",
+        "3": "౩",
+        "4": "౪",
+        "5": "౫",
+        "6": "౬",
+        "7": "౭",
+        "8": "౮",
+        "9": "౯"
       })
     ),
     vowels: new Map(
@@ -920,16 +920,16 @@ const devanāgarīDataDict: CharMap = new Map([
   ["॥", "\\/../\\"],
   ["ॐ", "\\/om/\\"],
 
-  ["०", "\\/0/\\"],
-  ["१", "\\/1/\\"],
-  ["२", "\\/2/\\"],
-  ["३", "\\/3/\\"],
-  ["४", "\\/4/\\"],
-  ["५", "\\/5/\\"],
-  ["६", "\\/6/\\"],
-  ["७", "\\/7/\\"],
-  ["८", "\\/8/\\"],
-  ["९", "\\/9/\\"]
+  ["०", "\\0\\"],
+  ["१", "\\1\\"],
+  ["२", "\\2\\"],
+  ["३", "\\3\\"],
+  ["४", "\\4\\"],
+  ["५", "\\5\\"],
+  ["६", "\\6\\"],
+  ["७", "\\7\\"],
+  ["८", "\\8\\"],
+  ["९", "\\9\\"]
 ]);
 
 const iastDataDict: CharMap = new Map([
@@ -1118,10 +1118,6 @@ const iastAllowed: string[] = [
   "ḻ"
 ];
 
-function checkSwitchExhaustion(x: never): void {
-  throw new Error(`${x} must be of type never`, { cause: x });
-}
-
 /**
  * Function to map special characters to Unicode
  *
@@ -1130,20 +1126,10 @@ function checkSwitchExhaustion(x: never): void {
  */
 function createHandleUnicode(lang: LangList): (uast: string) => string {
   const createScriptMap = (
-    obj: Readonly<Record<Numbers | "om" | "'", string>>
+    obj: Readonly<Record<"om" | "'", string>>
   ): CharMap => new Map(Object.entries(obj));
 
   let scriptMap: CharMap = createScriptMap({
-    "0": "०",
-    "1": "१",
-    "2": "२",
-    "3": "३",
-    "4": "४",
-    "5": "५",
-    "6": "६",
-    "7": "७",
-    "8": "८",
-    "9": "९",
     om: "ॐ",
     "'": "ऽ"
   });
@@ -1151,16 +1137,6 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
   switch (lang) {
     case "gu":
       scriptMap = createScriptMap({
-        "0": "૦",
-        "1": "૧",
-        "2": "૨",
-        "3": "૩",
-        "4": "૪",
-        "5": "૫",
-        "6": "૬",
-        "7": "૭",
-        "8": "૮",
-        "9": "૯",
         om: "ૐ",
         "'": "ઽ"
       });
@@ -1168,16 +1144,6 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
 
     case "or":
       scriptMap = createScriptMap({
-        "0": "୦",
-        "1": "୧",
-        "2": "୨",
-        "3": "୩",
-        "4": "୪",
-        "5": "୫",
-        "6": "୬",
-        "7": "୭",
-        "8": "୮",
-        "9": "୯",
         om: "ଓଁ",
         "'": "ଽ"
       });
@@ -1185,16 +1151,6 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
 
     case "kn":
       scriptMap = createScriptMap({
-        "0": "೦",
-        "1": "೧",
-        "2": "೨",
-        "3": "೩",
-        "4": "೪",
-        "5": "೫",
-        "6": "೬",
-        "7": "೭",
-        "8": "೮",
-        "9": "೯",
         om: "ಓಂ",
         "'": "ಽ"
       });
@@ -1202,16 +1158,6 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
 
     case "te":
       scriptMap = createScriptMap({
-        "0": "౦",
-        "1": "౧",
-        "2": "౨",
-        "3": "౩",
-        "4": "౪",
-        "5": "౫",
-        "6": "౬",
-        "7": "౭",
-        "8": "౮",
-        "9": "౯",
         "'": "ఽ",
         om: "ఓం"
       });
@@ -1219,16 +1165,6 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
 
     case "ml":
       scriptMap = createScriptMap({
-        "0": "൦",
-        "1": "൧",
-        "2": "൨",
-        "3": "൩",
-        "4": "൪",
-        "5": "൫",
-        "6": "൬",
-        "7": "൭",
-        "8": "൮",
-        "9": "൯",
         "'": "ഽ",
         om: "ഓം"
       });
@@ -1236,16 +1172,6 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
 
     case "ta":
       scriptMap = createScriptMap({
-        "0": "௦",
-        "1": "௧",
-        "2": "௨",
-        "3": "௩",
-        "4": "௪",
-        "5": "௫",
-        "6": "௬",
-        "7": "௭",
-        "8": "௮",
-        "9": "௯",
         "'": "𑌽",
         om: "𑍐"
       });
@@ -1255,8 +1181,7 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
       break;
 
     default:
-      checkSwitchExhaustion(lang);
-      break;
+      throw new Error(`Unknown ${lang}`, { cause: lang });
   }
 
   const scriptDict: CharMap = new Map([...unicodeMap, ...scriptMap]);
@@ -1909,8 +1834,7 @@ function createScriptFunction(lang: LangList): (data: string) => string {
       break;
 
     default:
-      checkSwitchExhaustion(lang);
-      break;
+      throw new Error(`Unknown ${lang}`, { cause: lang });
   }
 
   return function scriptToDevanāgarī(data: string): string {
@@ -1931,15 +1855,11 @@ function createScriptFunction(lang: LangList): (data: string) => string {
 function dataToIAST(data: string): string {
   return data
     .normalize()
-    .replaceAll(/[\[\]{}^~@#$%&*_;.<>\n\v\t\r\f\d]/gu, "")
+    .replaceAll(/[\[\]{}^~@#$%&*_;.<>\n\v\t\r\f]/gu, "")
     .split("\\")
     .map(split => {
-      if (split === "ॐ") {
-        return "oṃ";
-      }
-
       if (charDict["sa"]["numbers"].has(split)) {
-        return charDict["sa"]["numbers"].get(split);
+        return split;
       }
 
       if (charDict["sa"]["misc"].has(split)) {
@@ -1952,7 +1872,7 @@ function dataToIAST(data: string): string {
 
       const str = Array.from(split);
 
-      let arr: string[] = [];
+      const arr: string[] = [];
 
       for (let i = 0; i < str.length; ) {
         const curr = str.at(i) ?? "";
@@ -2074,7 +1994,7 @@ function iastToUAST(data: string): string {
   const str = Array.from(
     data.normalize().replaceAll(/[\[\]{}^~@#$%&*\-_;<>]/gu, "")
   );
-  let arr: string[] = [];
+  const arr: string[] = [];
 
   for (let i = 0; i < str.length; ) {
     const curr = str.at(i) ?? "";
@@ -2223,15 +2143,19 @@ function createDataFunction(lang: LangList): (data: string) => string {
     return data
       .split("\\")
       .map(split => {
-        if (obj["misc"].has(split) || obj["numbers"].has(split)) {
+        if (obj["misc"].has(split)) {
           return split;
+        }
+
+        if (obj["numbers"].has(split)) {
+          return obj["numbers"].get(split);
         }
 
         if (obj["vowels"].has(split)) {
           return obj["vowels"].get(split);
         }
 
-        let arr: string[] = [];
+        const arr: string[] = [];
 
         const str = Array.from(split);
 
@@ -2304,7 +2228,7 @@ function createDataFunction(lang: LangList): (data: string) => string {
  */
 function devanāgarīToUAST(data: string): string {
   const str = Array.from(data.normalize());
-  let arr: string[] = [];
+  const arr: string[] = [];
 
   for (let i = 0; i < str.length; i++) {
     const curr = str.at(i) ?? "";
