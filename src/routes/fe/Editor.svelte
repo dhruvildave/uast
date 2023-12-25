@@ -92,8 +92,7 @@ k kaṃ kaḥ kaã`,
 क का कि की कु कू कृ
 कॄ कॢ कॣ के कै को कौ
 क् कं कः कँ`,
-    slp: `
-ka Ka ga Ga Na
+    slp: `ka Ka ga Ga Na
 ca Ca ja Ja Ya
 wa Wa qa Qa Ra
 ta Ta da Da na

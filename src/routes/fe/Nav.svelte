@@ -72,7 +72,7 @@
             alt="arxiv icon"
             title="Link to paper on arXiv"
             href="https://arxiv.org/abs/2203.14277"
-            src="https://unpkg.com/simple-icons@latest/icons/arxiv.svg"
+            src="/img/paper.svg"
           />
         </li>
         <li>
@@ -80,7 +80,7 @@
             alt="go icon"
             title="Link to Go CLI GitHub repository"
             href="https://github.com/aneri0x4f/uast-cli"
-            src="https://unpkg.com/simple-icons@latest/icons/go.svg"
+            src="/img/cli.svg"
           />
         </li>
         <li>
@@ -88,7 +88,7 @@
             alt="typescript icon"
             title="Link to web GitHub repository"
             href="https://github.com/dhruvildave/uast"
-            src="https://unpkg.com/simple-icons@latest/icons/typescript.svg"
+            src="/img/web.svg"
           />
         </li>
         <li>
