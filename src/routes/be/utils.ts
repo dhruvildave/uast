@@ -2339,7 +2339,7 @@ export const convertor: {
       builderFuncs["ta"]["dataFunction"]
     ]
   },
-  raw: {
+  "uast-io": {
     iast: [builderFuncs["sa"]["handleUnicode"]],
     devanāgarī: [
       builderFuncs["sa"]["handleUnicode"],

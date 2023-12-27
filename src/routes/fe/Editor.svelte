@@ -215,7 +215,7 @@ k ka/m/ ka/h/ ka/au/`
   ] as const;
 
   const from_opts = [
-    ["raw", "UAST-IO"],
+    ["uast-io", "UAST-IO"],
     ["uast", "UAST"],
     ["iast", "IAST"],
     ["devanāgarī", "देवनागरी"],
