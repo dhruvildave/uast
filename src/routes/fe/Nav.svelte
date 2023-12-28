@@ -45,7 +45,7 @@
                 ? "유니코드 인식 산스크리트 음역"
                 : locale === "ja"
                   ? "Unicode 対応のサンスクリット音訳"
-                  : "Unicode Aware Sanskrit Transliteration"
+                  : "Unicode Aware Saṃskṛta Transliteration"
   } - UAST`;
 </script>
 
