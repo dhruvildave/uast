@@ -2086,12 +2086,10 @@ function iastToUAST(data: string): string {
   for (let k = 0; k < arr.length; k++) {
     let curr = arr.at(k) ?? "";
 
-    const hasDash: boolean = curr.includes("-");
+    const hasDash = curr.includes("-");
 
     curr = curr.replaceAll(/[\\-]/gu, "");
-    for (let j of [...charDict["sa"]["misc"].values()]
-      .filter(i => ["om", ".."].includes(i) === false)
-      .concat(...charDict["sa"]["numbers"].values())) {
+    for (const j of [".", "'"]) {
       if (curr === "." && arr.at(k + 1) === ".") {
         curr = curr.replaceAll(curr, "\\/../\\");
         k++;
@@ -2101,11 +2099,15 @@ function iastToUAST(data: string): string {
       curr = curr.replaceAll(j, `\\/${j}/\\`);
     }
 
+    for (const j of charDict["sa"]["numbers"].keys()) {
+      curr = curr.replaceAll(j, `\\${j}\\`);
+    }
+
     if (unAspiratedConsonants.includes(curr) && (arr.at(k + 1) ?? "") === "h") {
       curr += "a";
     }
 
-    if (hasDash === true) {
+    if (hasDash) {
       curr += "-";
     }
 
