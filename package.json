@@ -52,6 +52,7 @@
     "plugins": [
       "prettier-plugin-svelte"
     ],
+    "experimentalTernaries": true,
     "overrides": [
       {
         "files": "*.svelte",

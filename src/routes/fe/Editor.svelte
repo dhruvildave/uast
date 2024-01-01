@@ -250,9 +250,9 @@ k ka/m/ ka/h/ ka/au/`
   $: ph_from =
     (placeholders[from as keyof typeof placeholders] ?? placeholders["uast"]) +
     "\n\n\n" +
-    (from === "devanāgarī"
-      ? "भारतवर्षे अनेर्या अनिरुद्धेन च निर्मितम्।"
-      : "Made in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave");
+    (from === "devanāgarī" ?
+      "भारतवर्षे अनेर्या अनिरुद्धेन च निर्मितम्।"
+    : "Made in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave");
 
   $: ph_to =
     placeholders[to as keyof typeof placeholders] ?? placeholders["uast"];

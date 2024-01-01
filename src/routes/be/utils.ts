@@ -1839,7 +1839,9 @@ function createScriptFunction(lang: LangList): (data: string) => string {
 
   return function scriptToDevanāgarī(data: string): string {
     return Array.from(data.normalize(), i =>
-      obj.has(i) ? obj.get(i) : allowedSymbols.includes(i) ? i : ""
+      obj.has(i) ? obj.get(i)
+      : allowedSymbols.includes(i) ? i
+      : ""
     )
       .join("")
       .normalize();
