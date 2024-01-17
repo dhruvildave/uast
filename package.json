@@ -29,14 +29,14 @@
     "@sveltejs/adapter-static": "^3.0.1",
     "@sveltejs/kit": "^2.3.3",
     "@sveltejs/vite-plugin-svelte": "^3.0.1",
-    "svelte": "^4.2.8",
+    "svelte": "^4.2.9",
     "svelte-check": "^3.6.3",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3",
     "vite": "^5.0.11"
   },
   "devDependencies": {
-    "prettier": "^3.2.3",
+    "prettier": "^3.2.4",
     "prettier-plugin-svelte": "^3.1.2"
   },
   "type": "module",
