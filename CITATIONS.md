@@ -1,7 +1,7 @@
 We have invested a lot of time and effort in creating UAST,
 please cite it when using it.
 
-A BibTeX entry for LaTeX users is
+A BibTeX entry for $\LaTeX$ users is
 
 ```bibtex
 @misc{uast_2022,

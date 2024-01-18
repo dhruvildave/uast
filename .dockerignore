@@ -29,5 +29,7 @@
 **/.vercel
 **/logs
 **/.pnpm-store
-README.md
-uast_poster.png
+**/README.md
+**/uast_poster.png
+**/CITATIONS.md
+**/CODEOWNERS
