@@ -18,7 +18,7 @@ If you use this repository, please cite the following paper:
 }
 ```
 
-![poster](/static/uast_poster.png)
+![poster](/uast_poster.png)
 
 Devanagari (IAST: _devanāgarī_) is the writing system that is adapted by various languages
 like Sanskrit (IAST: _saṃskṛta_). International Alphabet of Sanskrit Transliteration (IAST) is
