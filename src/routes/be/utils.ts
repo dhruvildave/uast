@@ -2005,7 +2005,7 @@ function iastToUAST(data: string): string {
     if (charDict["sa"]["consonants"].has(curr)) {
       if (unAspiratedConsonants.includes(curr)) {
         if (next === "a" && (str.at(i + 2) ?? "") === "h") {
-          arr.push(`${curr}\\`);
+          arr.push(`${curr}a\\`);
           i += 2;
           continue;
         }
