@@ -28,7 +28,7 @@
     "@fontsource/source-code-pro": "^5.0.17",
     "@sveltejs/adapter-static": "^3.0.1",
     "@sveltejs/kit": "^2.5.5",
-    "@sveltejs/vite-plugin-svelte": "^3.0.2",
+    "@sveltejs/vite-plugin-svelte": "^3.1.0",
     "svelte": "^4.2.13",
     "svelte-check": "^3.6.9",
     "tslib": "^2.6.2",
