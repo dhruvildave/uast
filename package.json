@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "prettier": "^3.2.5",
-    "prettier-plugin-svelte": "^3.2.2"
+    "prettier-plugin-svelte": "^3.2.3"
   },
   "type": "module",
   "engineStrict": true,
