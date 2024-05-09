@@ -57,7 +57,7 @@
           <Icon
             alt="arxiv icon"
             title="Link to paper on arXiv"
-            href="https://arxiv.org/abs/2203.14277"
+            href="https://arxiv.org/html/2203.14277"
             src="/img/paper.svg"
           />
         </li>
