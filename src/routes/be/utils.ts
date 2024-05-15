@@ -2055,6 +2055,12 @@ function iastToUAST(data: string): string {
         continue;
       }
 
+      if (next == "ã") {
+        arr.push(`${curr}-`, "ã");
+        i += 2;
+        continue;
+      }
+
       arr.push(curr);
       i++;
       continue;
