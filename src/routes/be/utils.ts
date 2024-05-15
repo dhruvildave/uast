@@ -2055,7 +2055,7 @@ function iastToUAST(data: string): string {
         continue;
       }
 
-      if (next == "ã") {
+      if (next === "ã") {
         arr.push(`${curr}-`, "ã");
         i += 2;
         continue;
