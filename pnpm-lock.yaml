@@ -12,8 +12,8 @@ importers:
         specifier: ^5.0.13
         version: 5.0.13
       '@fontsource/noto-sans-grantha':
-        specifier: ^5.0.13
-        version: 5.0.13
+        specifier: ^5.0.14
+        version: 5.0.14
       '@fontsource/noto-sans-gujarati':
         specifier: ^5.0.14
         version: 5.0.14
@@ -211,8 +211,8 @@ packages:
   '@fontsource/noto-sans-devanagari@5.0.13':
     resolution: {integrity: sha512-AVlDxHA/zf24c3YvF/wVRdXMEUUualdcmQrDAEGdGyqYM7+Lv8fsLY7KQFp5TWkktHF9K5qzIDB4304xs/tNSg==}
 
-  '@fontsource/noto-sans-grantha@5.0.13':
-    resolution: {integrity: sha512-fY2lfGSkSrgg4JwWxOhDKDCt2GTJgOSioYqLSPQaVPESSO9H8ZwdN8UeRp60uYmnfVCVQWZBBPrafaunEIItGQ==}
+  '@fontsource/noto-sans-grantha@5.0.14':
+    resolution: {integrity: sha512-Lz4zAkKz0pKe8F988RsLdF4fXb6tdHsTAp+fs6fMixyVUWTgEGTRCcg9hkcp3Fe8/HTt9NhWENKfaTxne9ILmA==}
 
   '@fontsource/noto-sans-gujarati@5.0.14':
     resolution: {integrity: sha512-Y6JU4tIsaE6vBVij9U/6FLXmvdETGR2N+80GAPJ/mTkESyG3WLlnIrxwo0vSnj8U7rhKjQ0VrYjV52VDwby5sw==}
@@ -879,7 +879,7 @@ snapshots:
 
   '@fontsource/noto-sans-devanagari@5.0.13': {}
 
-  '@fontsource/noto-sans-grantha@5.0.13': {}
+  '@fontsource/noto-sans-grantha@5.0.14': {}
 
   '@fontsource/noto-sans-gujarati@5.0.14': {}
 

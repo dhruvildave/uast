@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@fontsource/noto-sans-devanagari": "^5.0.13",
-    "@fontsource/noto-sans-grantha": "^5.0.13",
+    "@fontsource/noto-sans-grantha": "^5.0.14",
     "@fontsource/noto-sans-gujarati": "^5.0.14",
     "@fontsource/noto-sans-kannada": "^5.0.14",
     "@fontsource/noto-sans-malayalam": "^5.0.13",
