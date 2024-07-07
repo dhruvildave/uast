@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@fontsource/noto-sans-devanagari':
-        specifier: ^5.0.13
-        version: 5.0.13
+        specifier: ^5.0.14
+        version: 5.0.14
       '@fontsource/noto-sans-grantha':
         specifier: ^5.0.14
         version: 5.0.14
@@ -208,8 +208,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fontsource/noto-sans-devanagari@5.0.13':
-    resolution: {integrity: sha512-AVlDxHA/zf24c3YvF/wVRdXMEUUualdcmQrDAEGdGyqYM7+Lv8fsLY7KQFp5TWkktHF9K5qzIDB4304xs/tNSg==}
+  '@fontsource/noto-sans-devanagari@5.0.14':
+    resolution: {integrity: sha512-4UJsa++1Omlt+P8idk3H8NB4uNVSRmE2a4kJcqjn3+9WYHx2tBi/DyGuKMYYd/cT3gB2DQPWFHkPRy2f/Us3+A==}
 
   '@fontsource/noto-sans-grantha@5.0.14':
     resolution: {integrity: sha512-Lz4zAkKz0pKe8F988RsLdF4fXb6tdHsTAp+fs6fMixyVUWTgEGTRCcg9hkcp3Fe8/HTt9NhWENKfaTxne9ILmA==}
@@ -824,7 +824,7 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@fontsource/noto-sans-devanagari@5.0.13': {}
+  '@fontsource/noto-sans-devanagari@5.0.14': {}
 
   '@fontsource/noto-sans-grantha@5.0.14': {}
 
