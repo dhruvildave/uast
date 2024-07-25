@@ -248,7 +248,7 @@ k ka/m/ ka/h/ ka/au/`
     .join("\n");
 
   $: ph_from =
-    (placeholders[from as keyof typeof placeholders] ?? placeholders["uast"]) +
+    (placeholders[from as keyof typeof placeholders] ?? placeholders["raw"]) +
     "\n\n\n" +
     (from === "devanāgarī" ?
       "भारतवर्षे अनेर्या अनिरुद्धेन च निर्मितम्।"
