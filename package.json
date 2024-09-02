@@ -36,7 +36,6 @@
     "vite": "^5.4.2"
   },
   "devDependencies": {
-    "@vercel/speed-insights": "^1.0.12",
     "prettier": "^3.3.3",
     "prettier-plugin-svelte": "^3.2.6"
   },
