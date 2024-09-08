@@ -30,8 +30,8 @@ importers:
         specifier: ^5.0.14
         version: 5.0.14
       '@fontsource/source-code-pro':
-        specifier: ^5.0.19
-        version: 5.0.19
+        specifier: ^5.0.20
+        version: 5.0.20
       '@sveltejs/adapter-static':
         specifier: ^3.0.4
         version: 3.0.4(@sveltejs/kit@2.5.26(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.3))(svelte@4.2.19)(vite@5.4.3))
@@ -229,8 +229,8 @@ packages:
   '@fontsource/noto-sans-telugu@5.0.14':
     resolution: {integrity: sha512-5soMf4SH5M7AGFTO9zh5ijA3BHc/sYr4SkQT8RlvGzlsp5M//ZjykwG2+XNbvKKX+sQLdZdSVqe7ttXcXR0Tww==}
 
-  '@fontsource/source-code-pro@5.0.19':
-    resolution: {integrity: sha512-0KZEkcqOfHPBfz9cbyx1eObJxa5Z6gyWk3Bs8Clgg5b/cYlvc08mRmL1eD9Rzdz+sLRfC5rxAPZUTbeD25BomA==}
+  '@fontsource/source-code-pro@5.0.20':
+    resolution: {integrity: sha512-NR5bxLZ+bNOZcSMqMQrDOuCrejVmBW12fWtFyETL6DXunhrvDSVKb4EN3nM1QuOgCgQGw+X5fUGz5z+PPG+JSQ==}
 
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
@@ -735,7 +735,7 @@ snapshots:
 
   '@fontsource/noto-sans-telugu@5.0.14': {}
 
-  '@fontsource/source-code-pro@5.0.19': {}
+  '@fontsource/source-code-pro@5.0.20': {}
 
   '@jridgewell/gen-mapping@0.3.5':
     dependencies:
