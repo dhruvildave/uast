@@ -21,7 +21,7 @@
     : locale === "fr" ? "Outil tout-en-un pour la translittération sanskrite"
     : locale === "ko" ? "산스크리트 음역을 위한 올인원 도구"
     : locale === "ja" ? "サンスクリット音訳のためのオールインワン ツール"
-    : "All-in-one tool for Sanskrit Transliteration"
+    : "All-in-one tool for Saṃskṛta Transliteration"
   }`;
   $: title = `${
     locale === "sa" ? "यूनिकोडवेदि संस्कृतलिप्यन्तरकर्तृ"
@@ -63,15 +63,15 @@
         </li>
         <li>
           <Icon
-            alt="go icon"
-            title="Link to Go CLI GitHub repository"
-            href="https://github.com/aneri0x4f/uast-cli"
+            alt="cli icon"
+            title="Link to Rust CLI GitHub repository"
+            href="https://github.com/dhruvildave/uast.rs"
             src="/img/cli.svg"
           />
         </li>
         <li>
           <Icon
-            alt="typescript icon"
+            alt="web icon"
             title="Link to web GitHub repository"
             href="https://github.com/dhruvildave/uast"
             src="/img/web.svg"
@@ -81,7 +81,7 @@
           <Icon
             alt="help icon"
             title="Help"
-            href="https://github.com/aneri0x4f/uast-cli/wiki"
+            href="https://github.com/aneri0x4f/uast-cli"
             src="/img/help.svg"
           />
         </li>
