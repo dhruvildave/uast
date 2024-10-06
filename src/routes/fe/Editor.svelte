@@ -228,34 +228,38 @@ k ka/m/ ka/h/ ka/au/`
     ["slp", "SLP1"]
   ] as const;
 
-  let input: string = "";
-  let from: string;
-  let to: string;
+  let input: string = $state("");
+  let from: string = $state(from_opts[0][0]);
+  let to: string = $state(to_opts[0][0]);
 
-  $: output = input
-    .split("\n")
-    .map(i => {
-      return i
-        .split(" ")
-        .map(j => {
-          for (const f of utils.convertor[from]?.[to] ?? []) {
-            j = f(j);
-          }
-          return j;
-        })
-        .join(" ");
-    })
-    .join("\n");
+  const output = $derived(
+    input
+      .split("\n")
+      .map(i => {
+        return i
+          .split(" ")
+          .map(j => {
+            for (const f of utils.convertor[from]?.[to] ?? []) {
+              j = f(j);
+            }
+            return j;
+          })
+          .join(" ");
+      })
+      .join("\n")
+  );
 
-  $: ph_from =
+  const ph_from = $derived(
     (placeholders[from as keyof typeof placeholders] ?? placeholders["raw"]) +
-    "\n\n\n" +
-    (from === "devanāgarī" ?
-      "भारतवर्षे अनेर्या अनिरुद्धेन च निर्मितम्।"
-    : "Made in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave");
+      "\n\n\n" +
+      (from === "devanāgarī" ?
+        "भारतवर्षे अनेर्या अनिरुद्धेन च निर्मितम्।"
+      : "Made in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave")
+  );
 
-  $: ph_to =
-    placeholders[to as keyof typeof placeholders] ?? placeholders["uast"];
+  const ph_to = $derived(
+    placeholders[to as keyof typeof placeholders] ?? placeholders["uast"]
+  );
 </script>
 
 <main>
@@ -265,13 +269,13 @@ k ka/m/ ka/h/ ka/au/`
       spellcheck="false"
       name="input"
       class="input"
-      placeholder="{ph_from}"
-      bind:value="{input}"
+      placeholder={ph_from}
+      bind:value={input}
     ></textarea>
 
-    <select class="from-select" name="from-select" bind:value="{from}">
+    <select class="from-select" name="from-select" bind:value={from}>
       {#each from_opts as i}
-        <option value="{i[0]}">{i[1]}</option>
+        <option value={i[0]}>{i[1]}</option>
       {/each}
     </select>
   </article>
@@ -283,13 +287,13 @@ k ka/m/ ka/h/ ka/au/`
       disabled
       name="output"
       class="output"
-      placeholder="{ph_to}"
-      value="{output}"
+      placeholder={ph_to}
+      value={output}
     ></textarea>
 
-    <select class="to-select" name="to-select" bind:value="{to}">
+    <select class="to-select" name="to-select" bind:value={to}>
       {#each to_opts as i}
-        <option value="{i[0]}">{i[1]}</option>
+        <option value={i[0]}>{i[1]}</option>
       {/each}
     </select>
   </aside>
