@@ -423,8 +423,8 @@ packages:
   estree-walker@3.0.3:
     resolution: {integrity: sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g==}
 
-  fdir@6.4.1:
-    resolution: {integrity: sha512-upAYvbFc8GU44qWv+r6YnWp3h13/hPFOnpCsuahbxFGmOCm7sc5UT1SytkHLS7Go/UwvhVD9k4dF6PJxpIjqAA==}
+  fdir@6.4.2:
+    resolution: {integrity: sha512-KnhMXsKSPZlAhp7+IjUkRZKPb4fUyccpDrdFXbi4QL1qkmFh9kVY09Yox+n4MaOb3lHZ1Tv829C3oaaXoMYPDQ==}
     peerDependencies:
       picomatch: ^3 || ^4
     peerDependenciesMeta:
@@ -867,7 +867,7 @@ snapshots:
     dependencies:
       '@types/estree': 1.0.6
 
-  fdir@6.4.1: {}
+  fdir@6.4.2: {}
 
   fsevents@2.3.3:
     optional: true
@@ -963,7 +963,7 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       chokidar: 4.0.1
-      fdir: 6.4.1
+      fdir: 6.4.2
       picocolors: 1.1.1
       sade: 1.8.1
       svelte: 4.2.19
