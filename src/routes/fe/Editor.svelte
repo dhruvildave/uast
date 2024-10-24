@@ -305,54 +305,56 @@ k ka/m/ ka/h/ ka/au/`
     flex-direction: column;
 
     height: calc(100vh - 3rem);
-  }
 
-  main article,
-  main aside {
-    flex: 1;
+    article,
+    aside {
+      flex: 1;
 
-    display: flex;
-    flex-direction: column;
-  }
+      display: flex;
+      flex-direction: column;
 
-  main article {
-    background-color: var(--light-primary-light);
-  }
+      select {
+        height: 3rem; /* 48px */
+        width: 40%;
+        min-width: max-content;
 
-  main aside {
-    background-color: var(--light-primary-medium);
-  }
+        appearance: none;
+        outline: none;
 
-  main article select,
-  main aside select {
-    height: 3rem; /* 48px */
-    width: 40%;
-    min-width: max-content;
+        border: none;
 
-    appearance: none;
-    outline: none;
+        cursor: pointer;
+        text-decoration-line: underline;
 
-    border: none;
+        text-align: center;
 
-    cursor: pointer;
-    text-decoration-line: underline;
+        padding: 0.125rem; /* 2px */
+        margin: auto;
+      }
 
-    text-align: center;
+      textarea {
+        height: 100%;
+        resize: none;
 
-    padding: 0.125rem; /* 2px */
-    margin: auto;
-  }
+        border: none;
 
-  main article textarea,
-  main aside textarea {
-    height: 100%;
-    resize: none;
+        user-select: auto;
 
-    border: none;
+        padding: 0.25rem; /* 4px */
 
-    user-select: auto;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
 
-    padding: 0.25rem; /* 4px */
+    article {
+      background-color: var(--light-primary-light);
+    }
+
+    aside {
+      background-color: var(--light-primary-medium);
+    }
   }
 
   textarea,
@@ -365,16 +367,28 @@ k ka/m/ ka/h/ ka/au/`
     animation: fade 300ms ease-in-out;
   }
 
-  textarea.input,
-  select.from-select {
-    background-color: var(--light-primary-light);
-    padding: 0.5rem; /* 8px */
+  textarea {
+    &.input {
+      background-color: var(--light-primary-light);
+      padding: 0.5rem; /* 8px */
+    }
+
+    &.output {
+      background-color: var(--light-primary-medium);
+      padding: 0.5rem; /* 8px */
+    }
   }
 
-  textarea.output,
-  select.to-select {
-    background-color: var(--light-primary-medium);
-    padding: 0.5rem; /* 8px */
+  select {
+    &.from-select {
+      background-color: var(--light-primary-light);
+      padding: 0.5rem; /* 8px */
+    }
+
+    &.to-select {
+      background-color: var(--light-primary-medium);
+      padding: 0.5rem; /* 8px */
+    }
   }
 
   textarea,
@@ -395,19 +409,13 @@ k ka/m/ ka/h/ ka/au/`
       color: var(--dark-text-color);
     }
 
-    main article {
-      background-color: var(--dark-primary-dark);
-    }
-
-    main aside {
-      background-color: var(--dark-primary-medium);
-    }
-
+    main article,
     textarea.input,
     select.from-select {
       background-color: var(--dark-primary-dark);
     }
 
+    main aside,
     textarea.output,
     select.to-select {
       background-color: var(--dark-primary-medium);
@@ -434,10 +442,5 @@ k ka/m/ ka/h/ ka/au/`
     100% {
       opacity: 1;
     }
-  }
-
-  main article textarea:focus,
-  main aside textarea:focus {
-    outline: none;
   }
 </style>
