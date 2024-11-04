@@ -11,7 +11,8 @@ const config = {
     adapter: adapter({
       precompress: true,
       assets: "public",
-      pages: "public"
+      pages: "public",
+      strict: true
     })
   }
 };

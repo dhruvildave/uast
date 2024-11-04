@@ -21,7 +21,8 @@
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "verbatimModuleSyntax": true
   }
   // Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
   //
