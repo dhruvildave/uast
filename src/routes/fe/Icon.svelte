@@ -1,8 +1,10 @@
 <script lang="ts">
-  export let href: string;
-  export let src: string;
-  export let alt: string;
-  export let title: string;
+  let {
+    href,
+    src,
+    alt,
+    title
+  }: { href: string; src: string; alt: string; title: string } = $props();
 </script>
 
 <a target="_blank" {title} rel="noreferrer" {href}>

@@ -2,9 +2,6 @@ import adapter from "@sveltejs/adapter-static";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  // Consult https://kit.svelte.dev/docs/integrations#preprocessors
-  // for more information about preprocessors
-
   kit: {
     adapter: adapter({
       precompress: true,
@@ -12,6 +9,9 @@ const config = {
       pages: "public",
       strict: true
     })
+  },
+  compilerOptions: {
+    runes: true
   }
 };
 
