@@ -12,7 +12,7 @@
     ["es", "Español"]
   ] as const;
 
-  let locale: string = $state("");
+  let locale: string = $state("en");
   const nav = $derived(
     `UAST - ${
       locale === "sa" ? "संस्कृतलिप्यन्तराय सर्वक्षमैकोपकरणम्"
