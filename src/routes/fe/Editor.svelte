@@ -273,7 +273,12 @@ k ka/m/ ka/h/ ka/au/`
       bind:value={input}
     ></textarea>
 
-    <select class="from-select" name="from-select" bind:value={from}>
+    <select
+      class="from-select"
+      aria-label="from-select"
+      name="from-select"
+      bind:value={from}
+    >
       {#each from_opts as i}
         <option value={i[0]}>{i[1]}</option>
       {/each}
@@ -291,7 +296,12 @@ k ka/m/ ka/h/ ka/au/`
       value={output}
     ></textarea>
 
-    <select class="to-select" name="to-select" bind:value={to}>
+    <select
+      class="to-select"
+      aria-label="to-select"
+      name="to-select"
+      bind:value={to}
+    >
       {#each to_opts as i}
         <option value={i[0]}>{i[1]}</option>
       {/each}
