@@ -404,9 +404,10 @@ k ka/m/ ka/h/ ka/au/`
   textarea,
   select,
   option {
-    font-family: var(--font-family-mono), "Noto Sans Devanagari",
-      "Noto Sans Gujarati", "Noto Sans Oriya", "Noto Sans Kannada",
-      "Noto Sans Telugu", "Noto Sans Malayalam", "Noto Sans Grantha", sans-serif;
+    font-family:
+      var(--font-family-mono), "Noto Sans Devanagari", "Noto Sans Gujarati",
+      "Noto Sans Oriya", "Noto Sans Kannada", "Noto Sans Telugu",
+      "Noto Sans Malayalam", "Noto Sans Grantha", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
