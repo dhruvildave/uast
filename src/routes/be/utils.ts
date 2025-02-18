@@ -1853,7 +1853,7 @@ function createScriptFunction(lang: LangList): (data: string) => string {
 function dataToIAST(data: string): string {
   return data
     .normalize()
-    .replaceAll(/[\[\]{}^~@#$%&*_;.<>\n\v\t\r\f]/gu, "")
+    .replaceAll(/[\[\]\{\}^~@#$%\&*_.<>\n\v\t\r\f]/gv, "")
     .split("\\")
     .map(split => {
       if (charDict["sa"]["numbers"].has(split)) {
@@ -1990,7 +1990,7 @@ function dataToIAST(data: string): string {
  */
 function iastToUAST(data: string): string {
   const str = Array.from(
-    data.normalize().replaceAll(/[\[\]{}^~@#$%&*\-_;<>]/gu, "")
+    data.normalize().replaceAll(/[\[\]\{\}^~@#$%\&*\-_<>]/gv, "")
   );
   const arr: string[] = [];
 
@@ -2182,7 +2182,7 @@ function createDataFunction(lang: LangList): (data: string) => string {
             }
           }
 
-          if ([",", "?", "!", '"', ":", "(", ")", "="].includes(curr)) {
+          if ([",", ";", "?", "!", '"', ":", "(", ")", "="].includes(curr)) {
             arr.push(curr);
             i++;
             continue;
