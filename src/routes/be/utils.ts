@@ -3,6 +3,8 @@
 // यच्चावहासार्थमसत्कृतोऽसि विहारशय्यासनभोजनेषु।
 // एकोऽथवाप्यच्युत तत्समक्षं तत्क्षामये त्वामहमप्रमेयम्॥
 
+import * as UASTToDevanāgarīFastPath from "./fastpaths/devanāgarī";
+
 type CharMap = Map<string, string>;
 
 type LangMap = {
@@ -1194,13 +1196,13 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
     }
 
     const str = Array.from(uast);
-    let arr: string[] = [];
+    const arr: string[] = [];
 
     for (let i = 0; i < str.length; ) {
-      let curr = str.at(i) ?? "";
+      const curr = str.at(i) ?? "";
 
       if (curr === "/") {
-        let char: string[] = [];
+        const char: string[] = [];
 
         for (let j = i + 1; j < str.length; j++) {
           const curr = str.at(j) ?? "";
@@ -2347,12 +2349,7 @@ export const convertor: {
   },
   "uast-io": {
     iast: [builderFuncs["sa"]["handleUnicode"]],
-    devanāgarī: [
-      builderFuncs["sa"]["handleUnicode"],
-      iastToUAST,
-      builderFuncs["sa"]["handleUnicode"],
-      builderFuncs["sa"]["dataFunction"]
-    ],
+    devanāgarī: [UASTToDevanāgarīFastPath.convertor],
     uast: [builderFuncs["sa"]["handleUnicode"], iastToUAST],
     gu: [
       builderFuncs["gu"]["handleUnicode"],
@@ -2473,11 +2470,7 @@ export const convertor: {
   },
   iast: {
     uast: [iastToUAST],
-    devanāgarī: [
-      iastToUAST,
-      builderFuncs["sa"]["handleUnicode"],
-      builderFuncs["sa"]["dataFunction"]
-    ],
+    devanāgarī: [UASTToDevanāgarīFastPath.convertor],
     gu: [
       iastToUAST,
       builderFuncs["gu"]["handleUnicode"],
