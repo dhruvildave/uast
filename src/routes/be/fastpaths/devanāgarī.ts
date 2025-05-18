@@ -1,11 +1,13 @@
+import { binary_search, contains, type T } from "./commons";
+
 type ScriptSpecials = {
   om: string;
   halanta: string;
+  saṃkṣipta: string;
 };
 
-type T = [string, string];
-
 const UNICODE_MAP: T[] = [
+  [".", "॰"],
   ["a", "ā"],
   ["au", "ã"],
   ["d", "ḍ"],
@@ -27,28 +29,6 @@ const UNICODE_MAP: T[] = [
   ["u", "ū"]
 ];
 
-const unicode_map_binary_search = (c: string): string | null => {
-  let i = 0;
-  let j = UNICODE_MAP.length - 1;
-
-  while (i <= j) {
-    const mid = Math.floor((i + j) / 2);
-    const v = UNICODE_MAP[mid] as T;
-
-    if (v[0] === c) {
-      return v[1];
-    }
-
-    if (c > v[0]) {
-      i = mid + 1;
-    } else {
-      j = mid - 1;
-    }
-  }
-
-  return null;
-};
-
 const CHAR_DICT = new (class {
   #misc: T[];
   #numbers: T[];
@@ -64,6 +44,7 @@ const CHAR_DICT = new (class {
   constructor() {
     this.#misc = [
       ["'", "ऽ"],
+      ["-", "ॱ"],
       [".", "।"],
       ["..", "॥"],
       ["ã", "ँ"],
@@ -151,84 +132,41 @@ const CHAR_DICT = new (class {
     ];
     this.#specials = {
       om: "ॐ",
-      halanta: "्"
+      halanta: "्",
+      saṃkṣipta: "॰"
     };
   }
 
-  private binary_search(arr: T[], c: string): string | null {
-    let i = 0;
-    let j = arr.length - 1;
-
-    while (i <= j) {
-      let m = Math.floor((i + j) / 2);
-      let v = arr[m] as T;
-
-      if (v[0] === c) {
-        return v[1];
-      }
-
-      if (c > v[0]) {
-        i = m + 1;
-      } else {
-        j = m - 1;
-      }
-    }
-
-    return null;
-  }
-
   get_vowel(c: string): string | null {
-    return this.binary_search(this.#vowels, c);
+    return binary_search(this.#vowels, c);
   }
 
   get_vowel_sign(c: string): string | null {
-    return this.binary_search(this.#vowel_signs, c);
+    return binary_search(this.#vowel_signs, c);
   }
 
   get_consonant(c: string): string | null {
-    return this.binary_search(this.#consonants, c);
+    return binary_search(this.#consonants, c);
   }
 
   get_misc(c: string): string | null {
-    return this.binary_search(this.#misc, c);
+    return binary_search(this.#misc, c);
   }
 
   get_number(c: string): string | null {
-    return this.binary_search(this.#numbers, c);
-  }
-
-  private contains(arr: T[], c: string): boolean {
-    let i = 0;
-    let j = arr.length - 1;
-
-    while (i <= j) {
-      let m = Math.floor((i + j) / 2);
-      let v = arr[m] as T;
-
-      if (v[0] === c) {
-        return true;
-      }
-
-      if (c > v[0]) {
-        i = m + 1;
-      } else {
-        j = m - 1;
-      }
-    }
-
-    return false;
+    return binary_search(this.#numbers, c);
   }
 
   contains_vowel(c: string): boolean {
-    return this.contains(this.#vowels, c);
+    return contains(this.#vowels, c);
   }
 
   contains_vowelsign(c: string): boolean {
-    return this.contains(this.#vowel_signs, c);
+    return contains(this.#vowel_signs, c);
   }
 
   contains_consonant(c: string): boolean {
-    return this.contains(this.#consonants, c);
+    return contains(this.#consonants, c);
   }
 })();
 
@@ -312,7 +250,7 @@ function handle_unicode(uast: string): string[] {
       c.push(curr);
     }
 
-    const v = unicode_map_binary_search(c.join(""));
+    const v = binary_search(UNICODE_MAP, c.join(""));
     if (v !== null) {
       arr.push(v);
     }
@@ -348,6 +286,12 @@ function iast_to_devanāgarī(data: string[]): string {
 
     if (c === CHAR_DICT.specials.om) {
       arr.push(CHAR_DICT.specials.om);
+      i++;
+      continue;
+    }
+
+    if (c === CHAR_DICT.specials.saṃkṣipta) {
+      arr.push(CHAR_DICT.specials.saṃkṣipta);
       i++;
       continue;
     }
