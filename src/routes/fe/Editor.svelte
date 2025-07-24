@@ -254,7 +254,7 @@ k ka/m/ ka/h/ ka/au/`
       "\n\n\n" +
       (from === "devanāgarī" ?
         "भारतवर्षे अनेर्या अनिरुद्धेन च निर्मितम्।"
-      : "Made in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave")
+      : "Made in Bhāratavarṣa by Dhruvil Dave and Aneri Dalwadi")
   );
 
   const ph_to = $derived(
