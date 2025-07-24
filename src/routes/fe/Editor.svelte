@@ -252,9 +252,7 @@ k ka/m/ ka/h/ ka/au/`
   const ph_from = $derived(
     (placeholders[from as keyof typeof placeholders] ?? placeholders["raw"]) +
       "\n\n\n" +
-      (from === "devanāgarī" ?
-        "भारतवर्षे अनेर्या अनिरुद्धेन च निर्मितम्।"
-      : "Made in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave")
+      "Made in Bhāratavarṣa by Aneri Dalwadi and Dhruvil Dave"
   );
 
   const ph_to = $derived(

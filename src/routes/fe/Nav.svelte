@@ -1,43 +1,45 @@
 <script lang="ts">
   import Icon from "./Icon.svelte";
 
-  const langs = [
-    ["en", "English"],
-    ["sa", "संस्कृत"],
-    ["fr", "Français"],
-    ["gu", "ગુજરાતી"],
-    ["hi", "हिंदी"],
-    ["ja", "日本語"],
-    ["ko", "한국인"],
-    ["es", "Español"]
-  ] as const;
+  // const langs = [
+  //   ["en", "English"],
+  //   ["sa", "संस्कृत"],
+  //   ["fr", "Français"],
+  //   ["gu", "ગુજરાતી"],
+  //   ["hi", "हिंदी"],
+  //   ["ja", "日本語"],
+  //   ["ko", "한국인"],
+  //   ["es", "Español"]
+  // ] as const;
 
-  let locale: string = $state("en");
-  const nav = $derived(
-    `UAST - ${
-      locale === "sa" ? "संस्कृतलिप्यन्तराय सर्वक्षमैकोपकरणम्"
-      : locale === "hi" ? "संस्कृत लिप्यंतरण के लिए ऑल-इन-वन टूल"
-      : locale === "gu" ? "સંસ્કૃત લિવ્યંતરણ માટે ઓલ-ઇન-વન ટૂલ"
-      : locale === "es" ?
-        "Herramienta todo en uno para transliteración sánscrita"
-      : locale === "fr" ? "Outil tout-en-un pour la translittération sanskrite"
-      : locale === "ko" ? "산스크리트 음역을 위한 올인원 도구"
-      : locale === "ja" ? "サンスクリット音訳のためのオールインワン ツール"
-      : "All-in-one tool for Saṃskṛta Transliteration"
-    }`
-  );
-  const title = $derived(
-    `${
-      locale === "sa" ? "यूनिकोडवेदि संस्कृतलिप्यन्तरकर्तृ"
-      : locale === "hi" ? "यूनिकोड जागरूक संस्कृत लिप्यंतरण"
-      : locale === "gu" ? "યુનિકોડ અવેર સંસ્કૃત લિવ્યંતરણ"
-      : locale === "es" ? "Transliteración Sánscrita consciente de Unicode"
-      : locale === "fr" ? "Translittération sanskrite compatible Unicode"
-      : locale === "ko" ? "유니코드 인식 산스크리트 음역"
-      : locale === "ja" ? "Unicode 対応のサンスクリット音訳"
-      : "Unicode Aware Saṃskṛta Transliteration"
-    } - UAST`
-  );
+  // let locale: string = $state("en");
+  // const nav = $derived(
+  //   `UAST - ${
+  //     locale === "sa" ? "संस्कृतलिप्यन्तराय सर्वक्षमैकोपकरणम्"
+  //     : locale === "hi" ? "संस्कृत लिप्यंतरण के लिए ऑल-इन-वन टूल"
+  //     : locale === "gu" ? "સંસ્કૃત લિવ્યંતરણ માટે ઓલ-ઇન-વન ટૂલ"
+  //     : locale === "es" ?
+  //       "Herramienta todo en uno para transliteración sánscrita"
+  //     : locale === "fr" ? "Outil tout-en-un pour la translittération sanskrite"
+  //     : locale === "ko" ? "산스크리트 음역을 위한 올인원 도구"
+  //     : locale === "ja" ? "サンスクリット音訳のためのオールインワン ツール"
+  //     : "All-in-one tool for Saṃskṛta Transliteration"
+  //   }`
+  // );
+  // const title = $derived(
+  //   `${
+  //     locale === "sa" ? "यूनिकोडवेदि संस्कृतलिप्यन्तरकर्तृ"
+  //     : locale === "hi" ? "यूनिकोड जागरूक संस्कृत लिप्यंतरण"
+  //     : locale === "gu" ? "યુનિકોડ અવેર સંસ્કૃત લિવ્યંતરણ"
+  //     : locale === "es" ? "Transliteración Sánscrita consciente de Unicode"
+  //     : locale === "fr" ? "Translittération sanskrite compatible Unicode"
+  //     : locale === "ko" ? "유니코드 인식 산스크리트 음역"
+  //     : locale === "ja" ? "Unicode 対応のサンスクリット音訳"
+  //     : "Unicode Aware Saṃskṛta Transliteration"
+  //   } - UAST`
+  // );
+  const title = "Unicode Aware Saṃskṛta Transliteration - UAST";
+  const nav = "All-in-one tool for Saṃskṛta Transliteration";
 </script>
 
 <svelte:head>
@@ -52,11 +54,11 @@
       <h1>{nav}</h1>
     </section>
     <section>
-      <select name="locale" aria-label="locale" bind:value={locale}>
+      <!-- <select name="locale" aria-label="locale" bind:value={locale}>
         {#each langs as i}
           <option value={i[0]}>{i[1]}</option>
         {/each}
-      </select>
+      </select> -->
       <ul>
         <li>
           <Icon
@@ -66,7 +68,7 @@
             src="/img/paper.svg"
           />
         </li>
-        <li>
+        <!-- <li>
           <Icon
             alt="cli icon"
             title="Link to Rust CLI GitHub repository"
@@ -81,12 +83,12 @@
             href="https://github.com/dhruvildave/uast"
             src="/img/web.svg"
           />
-        </li>
+        </li> -->
         <li>
           <Icon
             alt="help icon"
             title="Help"
-            href="https://github.com/aneri0x4f/uast-cli"
+            href="https://github.com/dhruvildave/uast.rs/wiki"
             src="/img/help.svg"
           />
         </li>
@@ -143,9 +145,9 @@
       }
     }
 
-    select {
+    /* select {
       display: none;
-    }
+    } */
   }
 
   @media (min-width: 1024px) {
@@ -159,7 +161,7 @@
           display: block;
         }
 
-        select {
+        /* select {
           display: inline-block;
 
           background-color: transparent;
@@ -168,7 +170,7 @@
 
           font-family: monospace;
           font-weight: bold;
-        }
+        } */
       }
     }
   }

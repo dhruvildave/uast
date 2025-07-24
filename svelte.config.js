@@ -1,7 +1,7 @@
 import adapter from "@sveltejs/adapter-static";
-import type { Config } from "@sveltejs/kit";
 
-const config: Config = {
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
   kit: {
     adapter: adapter({
       precompress: true,
@@ -11,7 +11,10 @@ const config: Config = {
     })
   },
   compilerOptions: {
-    runes: true
+    runes: true,
+    experimental: {
+      async: true
+    }
   }
 };
 
