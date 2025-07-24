@@ -1,10 +1,10 @@
 <script lang="ts">
   import { beforeNavigate } from "$app/navigation";
-  import { updated } from "$app/stores";
+  import { updated } from "$app/state";
   import type { Snippet } from "svelte";
 
   beforeNavigate(({ willUnload, to }) => {
-    if ($updated && !willUnload && to?.url) {
+    if (updated.current && !willUnload && to?.url) {
       location.href = to.url.href;
     }
   });
