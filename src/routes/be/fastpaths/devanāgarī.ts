@@ -7,9 +7,23 @@ type ScriptSpecials = {
 };
 
 const UNICODE_MAP: T[] = [
+  ["'", "॑"],
+  ["''", "᳚"],
+  ["-", "॒"],
   [".", "॰"],
+  ["0", "꣠"],
+  ["1", "꣡"],
+  ["2", "꣢"],
+  ["3", "꣣"],
+  ["4", "꣤"],
+  ["5", "꣥"],
+  ["6", "꣦"],
+  ["7", "꣧"],
+  ["8", "꣨"],
+  ["9", "꣩"],
   ["a", "ā"],
   ["au", "ã"],
+  ["cv", "ꣳ"],
   ["d", "ḍ"],
   ["h", "ḥ"],
   ["i", "ī"],
@@ -170,6 +184,23 @@ const CHAR_DICT = new (class {
   }
 })();
 
+const VEDA_ACCENTS = [
+  "॑",
+  "॒",
+  "᳚",
+  "꣠",
+  "꣡",
+  "꣢",
+  "꣣",
+  "꣤",
+  "꣥",
+  "꣦",
+  "꣧",
+  "꣨",
+  "꣩",
+  "ꣳ"
+];
+
 const UNASPIRATED_CONSONANTS = [
   "b",
   "c",
@@ -283,6 +314,12 @@ function iast_to_devanāgarī(data: string[]): string {
 
   while (i < data.length) {
     const c = data[i] as string;
+
+    if (sorted_arr_contains(VEDA_ACCENTS, c)) {
+      arr.push(c);
+      i++;
+      continue;
+    }
 
     if (c === CHAR_DICT.specials.om) {
       arr.push(CHAR_DICT.specials.om);
