@@ -1,0 +1,12 @@
+{
+  "name": "Unicode Aware Saṃskṛta Transliteration",
+  "short_name": "UAST",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "type": "image/svg"
+    }
+  ]
+}
