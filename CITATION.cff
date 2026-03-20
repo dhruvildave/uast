@@ -1,18 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/citation-file-format/citation-file-format/refs/heads/main/schema.json
 cff-version: 1.2.0
-title: "UAST: Unicode Aware Sanskrit Transliteration"
+title: "UAST: Unicode Aware Saṃskṛta Transliteration"
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
 type: software
 authors:
-  - given-names: Aneri
-    family-names: Dalwadi
-    email: aneri.d@ahduni.edu.in
-    orcid: "https://orcid.org/0000-0002-1771-1576"
   - given-names: Dhruvil
     family-names: Dave
     email: dhruvil.d@ahduni.edu.in
     orcid: "https://orcid.org/0000-0003-0616-7277"
+  - given-names: Aneri
+    family-names: Dalwadi
+    email: aneri.d@ahduni.edu.in
+    orcid: "https://orcid.org/0000-0002-1771-1576"
 identifiers:
   - type: doi
     value: 10.48550/ARXIV.2203.14277
