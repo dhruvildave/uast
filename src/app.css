@@ -1,11 +1,11 @@
-/* @import "https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&family=Noto+Sans+Grantha&family=Noto+Sans+Gujarati&family=Noto+Sans+Kannada&family=Noto+Sans+Malayalam&family=Noto+Sans+Oriya&family=Noto+Sans+Telugu&family=Source+Code+Pro&display=swap"; */
-@import "@fontsource/noto-sans-devanagari";
-@import "@fontsource/noto-sans-grantha";
-@import "@fontsource/noto-sans-gujarati";
-@import "@fontsource/noto-sans-kannada";
-@import "@fontsource/noto-sans-malayalam";
-@import "@fontsource/noto-sans-oriya";
-@import "@fontsource/noto-sans-telugu";
+/* @import "https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari&family=Noto+Serif+Grantha&family=Noto+Serif+Gujarati&family=Noto+Serif+Kannada&family=Noto+Serif+Malayalam&family=Noto+Serif+Oriya&family=Noto+Serif+Telugu&family=Source+Code+Pro&display=swap"; */
+@import "@fontsource/noto-serif-devanagari";
+@import "@fontsource/noto-serif-grantha";
+@import "@fontsource/noto-serif-gujarati";
+@import "@fontsource/noto-serif-kannada";
+@import "@fontsource/noto-serif-malayalam";
+@import "@fontsource/noto-serif-oriya";
+@import "@fontsource/noto-serif-telugu";
 @import "@fontsource/source-code-pro";
 
 :root {
