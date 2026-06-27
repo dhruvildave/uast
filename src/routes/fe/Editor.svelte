@@ -268,8 +268,7 @@ k ka/m/ ka/h/ ka/au/`
       name="input"
       class="input"
       placeholder={ph_from}
-      bind:value={input}
-    ></textarea>
+      bind:value={input}></textarea>
 
     <select
       class="from-select"
@@ -291,8 +290,7 @@ k ka/m/ ka/h/ ka/au/`
       name="output"
       class="output"
       placeholder={ph_to}
-      value={output}
-    ></textarea>
+      value={output}></textarea>
 
     <select
       class="to-select"

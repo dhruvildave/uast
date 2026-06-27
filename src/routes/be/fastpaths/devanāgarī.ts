@@ -258,7 +258,7 @@ function handle_unicode(uast: string): string[] {
 
   const arr: string[] = [];
 
-  for (let i = 0; i < str.length; ) {
+  for (let i = 0; i < str.length;) {
     const curr = str[i] as string;
     if (curr !== "/") {
       arr.push(curr);

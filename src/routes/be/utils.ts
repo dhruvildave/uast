@@ -1145,7 +1145,7 @@ function createHandleUnicode(lang: LangList): (uast: string) => string {
     const str = Array.from(uast);
     const arr: string[] = [];
 
-    for (let i = 0; i < str.length; ) {
+    for (let i = 0; i < str.length;) {
       const curr = str.at(i) ?? "";
 
       if (curr === "/") {
@@ -1821,7 +1821,7 @@ function dataToIAST(data: string): string {
 
       const arr: string[] = [];
 
-      for (let i = 0; i < str.length; ) {
+      for (let i = 0; i < str.length;) {
         const curr = str.at(i) ?? "";
 
         if (curr === "'") {
@@ -1943,7 +1943,7 @@ function iastToUAST(data: string): string {
   );
   const arr: string[] = [];
 
-  for (let i = 0; i < str.length; ) {
+  for (let i = 0; i < str.length;) {
     const curr = str.at(i) ?? "";
     const next = str.at(i + 1) ?? "";
 
@@ -2114,7 +2114,7 @@ function createDataFunction(lang: LangList): (data: string) => string {
 
         const str = Array.from(split);
 
-        for (let i = 0; i < str.length; ) {
+        for (let i = 0; i < str.length;) {
           const curr = str.at(i) ?? "";
 
           if (lang === "sa") {
