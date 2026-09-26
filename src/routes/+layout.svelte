@@ -3,7 +3,9 @@
   import { updated } from "$app/state";
   import type { Snippet } from "svelte";
 
-  beforeNavigate(({ willUnload, to }) => {
+  beforeNavigate(({ willUnload, to, shallow }) => {
+    if (shallow) return;
+
     if (updated.current && !willUnload && to?.url) {
       location.href = to.url.href;
     }
