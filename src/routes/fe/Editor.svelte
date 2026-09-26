@@ -258,6 +258,14 @@ k ka/m/ ka/h/ ka/au/`
   const ph_to = $derived(
     placeholders[to as keyof typeof placeholders] ?? placeholders["uast"]
   );
+
+  async function copyText() {
+    await navigator.clipboard.writeText(output);
+  }
+
+  async function pasteText() {
+    input = await navigator.clipboard.readText();
+  }
 </script>
 
 <main>
@@ -270,16 +278,22 @@ k ka/m/ ka/h/ ka/au/`
       placeholder={ph_from}
       bind:value={input}></textarea>
 
-    <select
-      class="from-select"
-      aria-label="from-select"
-      name="from-select"
-      bind:value={from}
-    >
-      {#each from_opts as i}
-        <option value={i[0]}>{i[1]}</option>
-      {/each}
-    </select>
+    <div>
+      <select
+        class="from-select"
+        aria-label="from-select"
+        name="from-select"
+        bind:value={from}
+      >
+        {#each from_opts as i}
+          <option value={i[0]}>{i[1]}</option>
+        {/each}
+      </select>
+
+      <button title="paste-text" onclick={pasteText}>
+        <img alt="paste icon" src="/img/paste.svg" width="28" height="28" />
+      </button>
+    </div>
   </article>
 
   <aside>
@@ -292,16 +306,22 @@ k ka/m/ ka/h/ ka/au/`
       placeholder={ph_to}
       value={output}></textarea>
 
-    <select
-      class="to-select"
-      aria-label="to-select"
-      name="to-select"
-      bind:value={to}
-    >
-      {#each to_opts as i}
-        <option value={i[0]}>{i[1]}</option>
-      {/each}
-    </select>
+    <div>
+      <select
+        class="to-select"
+        aria-label="to-select"
+        name="to-select"
+        bind:value={to}
+      >
+        {#each to_opts as i}
+          <option value={i[0]}>{i[1]}</option>
+        {/each}
+      </select>
+
+      <button title="copy-text" onclick={copyText}>
+        <img alt="copy icon" src="/img/copy.svg" width="28" height="28" />
+      </button>
+    </div>
   </aside>
 </main>
 
@@ -319,6 +339,12 @@ k ka/m/ ka/h/ ka/au/`
       display: flex;
       flex-direction: column;
 
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+
       select {
         height: 3rem; /* 48px */
         width: 40%;
@@ -335,7 +361,6 @@ k ka/m/ ka/h/ ka/au/`
         text-align: center;
 
         padding: 0.125rem; /* 2px */
-        margin: auto;
       }
 
       textarea {
@@ -449,5 +474,22 @@ k ka/m/ ka/h/ ka/au/`
     100% {
       opacity: 1;
     }
+  }
+
+  img {
+    filter: invert(0%);
+
+    @media (prefers-color-scheme: dark) {
+      & {
+        filter: invert(100%);
+      }
+    }
+  }
+
+  button {
+    cursor: pointer;
+    background: none;
+    outline: none;
+    border: none;
   }
 </style>
