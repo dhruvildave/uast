@@ -1,26 +1,17 @@
-// Disables access to DOM typings like `HTMLElement` which are not available
-// inside a service worker and instantiates the correct globals
-/// <reference no-default-lib="true"/>
-/// <reference lib="esnext" />
-/// <reference lib="webworker" />
-
-// Ensures that the `$service-worker` import has proper type definitions
-/// <reference types="@sveltejs/kit" />
-
-// Only necessary if you have an import from `$env/static/public`
-/// <reference types="../.svelte-kit/ambient.d.ts" />
-
-import { build, files, version } from "$service-worker";
-
-// This gives `self` the correct types
-const self = globalThis.self as unknown as ServiceWorkerGlobalScope;
+import { version } from "$app/env";
+import { assets, immutable } from "$app/manifest";
+import { resolve } from "$app/paths";
+import { self } from "$app/service-worker";
 
 // Create a unique cache name for this deployment
 const CACHE = `cache-${version}`;
 
+// `immutable`/`assets` paths from `$app/manifest` are relative to the
+// base path, so resolve them to absolute pathnames that can be matched
+// against `url.pathname` in the `fetch` handler
 const ASSETS = [
-  ...build, // the app itself
-  ...files // everything in `static`
+  ...immutable.map(asset => resolve(asset.path)), // the Vite output
+  ...assets.map(asset => resolve(asset.path)) // everything in `static`
 ];
 
 self.addEventListener("install", event => {
@@ -56,7 +47,7 @@ self.addEventListener("fetch", event => {
     const url = new URL(event.request.url);
     const cache = await caches.open(CACHE);
 
-    // `build`/`files` can always be served from the cache
+    // `immutable`/`assets` can always be served from the cache
     if (ASSETS.includes(url.pathname)) {
       const response = await cache.match(url.pathname);
 
@@ -65,32 +56,29 @@ self.addEventListener("fetch", event => {
       }
     }
 
-    // for everything else, try the network first, but
-    // fall back to the cache if we're offline
+    // for everything else, try the network first...
     try {
       const response = await fetch(event.request);
 
-      // if we're offline, fetch can return a value that is not a Response
-      // instead of throwing - and we can't pass this non-Response to respondWith
-      if (!(response instanceof Response)) {
-        throw new Error("invalid response from fetch");
-      }
-
-      if (response.status === 200) {
-        cache.put(event.request, response.clone());
+      if (
+        response.status === 200 &&
+        !response.headers.get("cache-control")?.includes("no-store")
+      ) {
+        // ...and cache responses in the background for next time....
+        void cache.put(event.request, response.clone());
       }
 
       return response;
-    } catch (err) {
+    } catch (error) {
+      // ...otherwise fall back to previously cached data if it exists...
       const response = await cache.match(event.request);
 
       if (response) {
         return response;
       }
 
-      // if there's no cache, then just error out
-      // as there is nothing we can do to respond to this request
-      throw err;
+      // ...or throw the error
+      throw error;
     }
   }
 
